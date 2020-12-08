@@ -20,7 +20,6 @@ header {
     height: 22px;
     vertical-align: middle;
 }
-
 /*ハンバーガーアイコンをCSSだけで表現*/
 #nav-open span, #nav-open span:before, #nav-open span:after {
     position: absolute;
@@ -29,7 +28,7 @@ header {
     border-radius: 3px;
     background: #a0522d;
     display: block;
-    content: '';/*beforeとアフター*/
+    content: '';/*beforeとafter*/
     cursor: pointer;
 }
 #nav-open span:before {
@@ -69,6 +68,7 @@ header {
     transform: translateX(-105%);/*左に隠しておく*/
 }
 
+
 /*チェックが入ったらもろもろ表示*/
 #nav-input:checked ~ #nav-close {
     display: block;/*カバーを表示*/
@@ -104,6 +104,19 @@ header {
   transform: rotate(45deg);
 }
 
+/*決定ボタンで閉じる*/
+#area-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
 /*中身*/
 #area-content {
     overflow: auto;
@@ -121,12 +134,12 @@ header {
 }
 
 /*チェックが入ったらもろもろ表示*/
-#area-input:checked ~ #nav-close {
+#area-input:checked ~ #area-close {
     display: block;/*カバーを表示*/
     opacity: .5;
 }
 
-#area-input:checked ~ #nav-content {
+#area-input:checked ~ #area-content {
     -webkit-transform: translateX(0%);
     transform: translateX(0%);/*中身を表示*/
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
@@ -155,6 +168,19 @@ header {
   transform: rotate(45deg);
 }
 
+/*決定ボタンで閉じる*/
+#genre-close {
+    display: none;/*はじめは隠しておく*/
+    position: fixed;
+    z-index: 99;
+    top: 0;/*全体に広がるように*/
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
 /*中身*/
 #genre-content {
     overflow: auto;
@@ -172,12 +198,12 @@ header {
 }
 
 /*チェックが入ったらもろもろ表示*/
-#genre-input:checked ~ #nav-close {
+#genre-input:checked ~ #genre-close {
     display: block;/*カバーを表示*/
     opacity: .5;
 }
 
-#genre-input:checked ~ #nav-content {
+#genre-input:checked ~ #genre-content {
     -webkit-transform: translateX(0%);
     transform: translateX(0%);/*中身を表示*/
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
