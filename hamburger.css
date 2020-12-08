@@ -24,12 +24,12 @@ header {
 /*ハンバーガーアイコンをCSSだけで表現*/
 #nav-open span, #nav-open span:before, #nav-open span:after {
     position: absolute;
-    height: 3px;/*線の太さ*/
-    width: 25px;/*長さ*/
+    height: 3px;
+    width: 25px;
     border-radius: 3px;
     background: #a0522d;
     display: block;
-    content: '';
+    content: '';/*beforeとアフター*/
     cursor: pointer;
 }
 #nav-open span:before {
@@ -81,70 +81,104 @@ header {
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
 
-#nav-content p{
-  background: #ffffff;
+/*AreaDrawer*/
+#area-drawer {
+  position: relative;
 }
 
-/* === ボタンを表示するエリア ============================== */
-.switchArea {
-  line-height    : 54px;                /* 1行の高さ          */
-  letter-spacing : 0;                   /* 文字間             */
-  text-align     : center;              /* 文字位置は中央     */
-  font-size      : 24px;                /* 文字サイズ         */
-
-  position       : relative;            /* 親要素が基点       */
-  margin         : auto;                /* 中央寄せ           */
-  width          : 144px;               /* ボタンの横幅       */
-  background     : #fff;                /* デフォルト背景色   */
+/*アイコン(<)のスペース*/
+#area-open {
+  display: block;
+  width: 30px;
+  height: 22px;
+  vertical-align: middle;
+}
+/*<を表現*/
+#area-open {
+  left: 3px;
+  width: 4px;
+  height: 4px;
+  border-top: 2px solid #7a0;
+  border-right: 2px solid #7a0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
- /* === チェックボックス ==================================== */
-.switchArea input[type="checkbox"] {
-  display        : none;            /* チェックボックス非表示 */
+/*中身*/
+#area-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る*/
+    max-width: 330px;/*最大幅*/
+    height: 100%;
+    background: #f5deb3;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);/*左に隠しておく*/
 }
 
- /* === チェックボックスのラベル（標準） ==================== */
-.switchArea label {
-  display        : block;               /* ボックス要素に変更 */
-  box-sizing     : border-box;          /* 枠線を含んだサイズ */
-  height         : 54px;                /* ボタンの高さ       */
-  border         : 2px solid #999999;   /* 未選択タブのの枠線 */
-  border-radius  : 27px;                /* 角丸               */
+/*チェックが入ったらもろもろ表示*/
+#area-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: .5;
 }
 
- /* === チェックボックスのラベル（ONのとき） ================ */
-.switchArea input[type="checkbox"]:checked +label {
-  border-color   : #78bd78;             /* 選択タブの枠線     */
+#area-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
 
- /* === 表示する文字（標準） ================================ */
-.switchArea label span:after{
-  content        : "OFF";               /* 表示する文字       */
-  padding        : 0 0 0 32px;          /* 表示する位置       */
-  color          : #999999;             /* 文字色             */
+/*GenreDrawer*/
+#genre-drawer {
+  position: relative;
 }
 
- /* === 表示する文字（ONのとき） ============================ */
-.switchArea  input[type="checkbox"]:checked + label span:after{
-  content        : "ON";                /* 表示する文字       */
-  padding        : 0 32px 0 0;          /* 表示する位置       */
-  color          : #78bd78;             /* 文字色             */
+/*アイコン(<)のスペース*/
+#genre-open {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
 }
 
- /* === 丸部分のSTYLE（標準） =============================== */
-.switchArea #swImg {
-  position       : absolute;            /* 親要素からの相対位置*/
-  width          : 46px;                /* 丸の横幅           */
-  height         : 46px;                /* 丸の高さ           */
-  background     : #999999;             /* カーソルタブの背景 */
-  top            : 4px;                 /* 親要素からの位置   */
-  left           : 4px;                 /* 親要素からの位置   */
-  border-radius  : 23px;                /* 角丸               */
-  transition     : .2s;                 /* 滑らか変化         */
+#genre-open {
+  left: 3px;
+  width: 4px;
+  height: 4px;
+  border-top: 2px solid #7a0;
+  border-right: 2px solid #7a0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
- /* === 丸部分のSTYLE（ONのとき） =========================== */
-.switchArea input[type="checkbox"]:checked ~ #swImg {
-  transform      : translateX(90px);    /* 丸も右へ移動       */
-  background     : #78bd78;             /* カーソルタブの背景 */
+/*中身*/
+#genre-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;/*最前面に*/
+    width: 90%;/*右側に隙間を作る*/
+    max-width: 330px;/*最大幅*/
+    height: 100%;
+    background: #f5deb3;/*背景色*/
+    transition: .3s ease-in-out;/*滑らかに表示*/
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);/*左に隠しておく*/
+}
+
+/*チェックが入ったらもろもろ表示*/
+#genre-input:checked ~ #nav-close {
+    display: block;/*カバーを表示*/
+    opacity: .5;
+}
+
+#genre-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);/*中身を表示*/
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
