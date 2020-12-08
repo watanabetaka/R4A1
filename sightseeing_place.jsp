@@ -7,7 +7,7 @@
 <%-- 左上のソートバーのボタン --%>
 <div id="sightseeing_place">うみたまご</div>
 <%-- 観光地の表示 --%>
-<%-- <div id="picture"><img src="../image/seaeggs.jpg"></div> --%>
+<div id="picture"><img src="../image/seaeggs.jpg"></div>
 <%-- 観光地の写真を表示 --%>
 
 <%-- 以下、観光地詳細画面（渡邊） --%>
