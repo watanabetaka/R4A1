@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="coupon.css">
+    <title>クーポン</title>
+  </head>
+  <body>
+    <header>クーポン</header>
+    <h5>使用可能クーポン</h5>
+
+    <img src="asuti.jpeg"> <!--データベースからの画像挿入-->
+    <div class="kanname">  <!--データベースから情報取得、名前、値段、終了時間-->
+      <p class="name">アスティオン堀川</p>
+      <p class="name">120000円</p>
+      <p class="name">2020/07/07/20:15:55</p>  <!--例時間-->
+    </div>
+    <input type="button" id="open" class="btn" value="発行" style="width: 20%; padding: 5%";> <!--発行ボタン-->
+    <br clear="all"> <!--floatの解除-->
+    <p class="kasen">&nbsp;</p> <!--下線-->
+
+    <div id="mask" class="hidden"></div> <!--モーダルウィンドウ背景-->
+    <section id="modal" class="hidden">　<!--モーダルウィンドウ本体-->
+      <p class="name">発行するとクーポンは<br>消えてしまいます。<br>発行しますか？</p>
+      <input type="button" class="YES modalbtn" value="YES" style="width: 40%; padding: 10%";>
+      <div id="close">
+        <input type="button" class="NO modalbtn" value="NO" style="width: 40%; padding: 10%";>
+      </div>
+    </section>
+    <script src="coupon.js"></script>
+
+    <footer>
+    </footer>
+  </body>
+</html>
