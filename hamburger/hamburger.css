@@ -134,12 +134,12 @@ header {
 }
 
 /*チェックが入ったらもろもろ表示*/
-#area-input:checked ~ #area-close {
+#area-input:checked ~ #area-close {/*チェックが入ったら黒幕を表示*/
     display: block;/*カバーを表示*/
     opacity: .5;
 }
 
-#area-input:checked ~ #area-content {
+#area-input:checked ~ #area-content {/*チェックが入ったら中身を表示*/
     -webkit-transform: translateX(0%);
     transform: translateX(0%);/*中身を表示*/
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
