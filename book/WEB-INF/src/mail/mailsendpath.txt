@@ -1,0 +1,2 @@
+java -classpath C:\work\tomcat\webapps\book\WEB-INF\lib\javax.mail.jar;./ mail.MailSend
+-classpath ../lib/*
