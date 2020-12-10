@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="hamburger.css">
-    <title>hamburger sample</title>
-  </head>
-  <body>
-    <header>
-  <div id="nav-drawer">
+<%@page contentType="text/html; charset=UTF-8" %>
+<%@include file="../header.html" %>
+
+<%-- 児玉くん --%>
+<%-- 左上のソートバーのボタン --%>
+<header>
+    <div id="nav-drawer">
       <input id="nav-input" type="checkbox" class="nav-unshown">
       <label id="nav-open" for="nav-input"><span></span></label>
       <label id="nav-close" for="nav-input" class="nav-unshown"></label>
@@ -68,10 +65,10 @@
         <div>
           <p>位置情報</p>
           <div class="toggle-switch">
-　　　　　  <input id="toggle" class="toggle-input" type='checkbox' />
-　　　　　  <label for="toggle" class="toggle-label"/>
-  　　　　  　<span></span>
-　　　　　</div>
+    　　　　　  <input id="toggle" class="toggle-input" type='checkbox' />
+    　　　　　  <label for="toggle" class="toggle-label"/>
+    　　　　  　<span></span>
+    　　　　　</div>
         </div>
 
         <div>
@@ -80,6 +77,15 @@
 
        </div>
     </div>
-   </header>
-  </body>
-</html>
+     <%-- 原田くん --%>
+     <%-- 観光地の表示 --%>
+    <div id="sightseeing_place">うみたまご</div>
+    <%-- 市名の表示 --%>
+    <div id="city_name">別府市</div>
+</header>
+<%-- 観光地の写真を表示 --%>
+<div id="picture"><img src="../image/seaeggs.jpg"></div>
+
+<%-- 以下、観光地詳細画面（渡邊） --%>
+
+<%@include file="../footer.html" %>
