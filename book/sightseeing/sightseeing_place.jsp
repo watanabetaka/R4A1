@@ -88,4 +88,25 @@
 
 <%-- 以下、観光地詳細画面（渡邊） --%>
 
+<div id="street_adress">〒870-0802 大分県大分市神崎字ウト３０７８−２２</div>
+
+<div id="phone_number">097-800-0000</div>
+
+<div id="business_hour">9~17時</div>
+
+<div id="nearest_station_time">東別府駅より徒歩15分</div>
+
+<%-- 観光地詳細画面（末松） --%>
+
+<a href="https://www.google.com/search?q=%E3%81%86%E3%81%BF%E3%81%9F%E3%81%BE%E3%81%94&oq=%E3%81%86%E3%81%BF%E3%81%9F%E3%81%BE%E3%81%94&aqs=chrome.0.69i59j35i39j0l3j69i60l3.5844j0j7&sourceid=chrome&ie=UTF-8"
+  id="google">Googleで検索</div>
+  <div class="yajirushi"><img src="../image/yajirushi.jpg"></div>
+
+<a href="https://www.jalan.net/activity/fw_search/?keyword=%82%A4%82%DD%82%BD%82%DC%82%B2&fromPage=top-keyword&ccnt=asobi-top-keyword"
+  id="jaran">じゃらんで表示</div>
+
+  <div class="yajirushi""><img src="../image/yajirushi.jpg"></div>
+
+<%@include file="gamenhuta.html" %>
+
 <%@include file="../footer.html" %>
