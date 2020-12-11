@@ -228,7 +228,6 @@ div#sightseeing_place {
     padding-left: 275px;
     padding-top: 63px;
     font-weight: bold;
-    font-family: "Nico Moji";
     font-family: 'Kosugi Maru', sans-serif;
     font-family: "M PLUS Rounded 1c";
 }
@@ -240,7 +239,6 @@ div#city_name {
     justify-content: space-around;
     padding-left: 100px;
     padding-top: 87px;
-    font-family: "Nico Moji";
     font-family: 'Kosugi Maru', sans-serif;
     font-family: "M PLUS Rounded 1c";
 }
