@@ -19,7 +19,7 @@ public class SightSeeingDAO extends DAO {
 		  Connection con=getConnection();
 
 
-			PreparedStatement st=con.prepareStatement("select * from sightseeing");
+			PreparedStatement st=con.prepareStatement("select * from sightseeing_place");
 			ResultSet rs=st.executeQuery();
 
 			while (rs.next()) {

@@ -4,7 +4,7 @@ public class SightSeeing implements java.io.Serializable {
 
 	private String sightseeing_name;
 	private int  city_id;
-		private String  picture_path;
+	private String  picture_path;
 
 	public void setSightSeeing_Name(String sightseeing_name) {
 		this.sightseeing_name = sightseeing_name;
