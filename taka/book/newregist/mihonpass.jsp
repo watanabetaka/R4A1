@@ -9,10 +9,9 @@
   </p>
 <form action="Login.action" method="post">
 <label for="password"><b>パスワード : </b></label>
-<input name="pass" id="password" type="password" placeholder="Type Your Password here"/>&nbsp;&nbsp;
+<input name="password" id="password" type="password" placeholder="Type Your Password here"/>&nbsp;&nbsp;
 <span id="result"></span>
 <p><input type="submit" name = "send"id = "send" value="送信"  disabled ></p>
 </form>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="passwordcheck.js"></script>
-<%@include file="../footer.html" %>
+</body>
+</html>
