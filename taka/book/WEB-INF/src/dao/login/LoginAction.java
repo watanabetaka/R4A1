@@ -19,14 +19,14 @@ public class LoginAction extends Action {
 
 		UserDAO dao=new UserDAO();
 		User user = dao.search(email, pass);
-
-		int user_id = getUser_id()
-		Cookie cookie = new Cookie(user.user_id)
+		Cookie cookie = new Cookie();
 		cookie.setMaxAge(60*60*24);
-		response.addCookie(cookie);
+
 
 		if (user !=null) {
 			session.setAttribute("user", user.getUser_id());
+			int user_id = session;
+			cookie.setValue(getAttribute("user"))
 			return "userlogin-out.jsp";
 		}
 

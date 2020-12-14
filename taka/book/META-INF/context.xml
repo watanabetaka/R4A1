@@ -10,11 +10,11 @@
 		username="sa"
 		password=""
 	/>
-<Resource
+<!-- <Resource
 name="mail/MySession" auth="Container"
 
 type="javax.mail.Session"
 
 mail.smtp.host = "smtp.mail.yahoo.co.jp"
-/>
+/> -->
 </Context>

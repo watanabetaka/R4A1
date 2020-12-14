@@ -77,6 +77,6 @@ public class MailSendAction extends  Action{
         } finally {
         }
 
-        return "userlogin-error.jsp";
+        return "newregistpass-error";
     }
 }

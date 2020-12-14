@@ -3,7 +3,7 @@
 
 <%-- <% out.println(getAttribute("user"));%> --%>
 <%
-out.println(session.getAttribute("user"));
+out.println(request.getCookies());
 %>
 
 
