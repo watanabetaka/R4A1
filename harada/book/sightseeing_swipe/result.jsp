@@ -6,11 +6,10 @@
 <c:forEach var="s" items="${list}">
   ${s.sightseeing_name}:${s.city_id}:${s.picture_path}<br>
 </c:forEach> --%>
-<%@page import="bean.SightSeeing, java.util.List ,java.util.Collections" %>
+<%@page import="bean.SightSeeing, java.util.List" %>
 
 <% List<SightSeeing> list=(List<SightSeeing>)request.getAttribute("list"); %>
 
-<% Collections.shuffle(list); %>
 
 <%-- <% for(SightSeeing s : list){ %>
   <%= s.getSightSeeing_Name() %>　:  <%= s.getCity_Id() %> : <img src="<%= s.getPicture_Path() %>"></img> <br>

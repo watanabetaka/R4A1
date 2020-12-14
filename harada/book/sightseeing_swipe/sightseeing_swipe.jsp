@@ -1,5 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../header.html" %>
+<%@page import="bean.SightSeeing, java.util.List" %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <%-- 児玉くん --%>
 <%-- 左上のソートバーのボタン --%>
@@ -79,12 +81,35 @@
     </div>
      <%-- 原田くん --%>
      <%-- 観光地の表示 --%>
-    <div id="sightseeing_place">うみたまご</div>
+
+     <% List<SightSeeing> list=(List<SightSeeing>)request.getAttribute("list"); %>
+
+     <%-- javaの配列をjavascriptの配列に入れる --%>
+     <script>
+     let array_sightseeing_name = [<%
+                                   for(SightSeeing s: list){
+                                     out.print("\""+s.getSightSeeing_Name()+"\",");
+                                   }
+                                   %>];
+     let array_picture_path = [<%
+                               for(SightSeeing s: list){
+                                 out.print("\""+s.getPicture_Path()+"\",");
+                               }
+                               %>];
+     </script>
+
+     <%-- 観光地名の表示 --%>
+    <div id="sightseeing_place"></div>
     <%-- 市名の表示 --%>
     <div id="city_name">別府市</div>
+
+
 </header>
 <%-- 観光地の写真を表示 --%>
-<div id="picture"><img src="../image/seaeggs.jpg"></div>
+<div id="picture"><img id="picture_path"></div>
+
+<%-- スワイプ機能・観光地名、氏名、観光地のパスを挿入 --%>
+<script type="text/javascript" src="../js/swipe.js"></script>
 
 <%@include file="../gamenhuta.html" %>
 

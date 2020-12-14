@@ -9,6 +9,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.util.List;
 import tool.Page;
+import java.util.Collections;
+
 public class SwipeAction extends Action {
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
@@ -29,9 +31,11 @@ public class SwipeAction extends Action {
 		// 	out.println(s.getPicture_Path());
 		// }
 
+		Collections.shuffle(list);
+
 		request.setAttribute("list",list);
 
-		request.getRequestDispatcher("result.jsp").forward(request,response);
+		request.getRequestDispatcher("sightseeing_swipe.jsp").forward(request,response);
 		return "error";
 	}
 }
