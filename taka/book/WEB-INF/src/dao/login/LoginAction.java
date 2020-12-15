@@ -11,22 +11,19 @@ public class LoginAction extends Action {
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
-		HttpSession session=request.getSession();
+
 
 		String email=request.getParameter("email");
 		String pass=request.getParameter("pass");
-		String userid;
 
 		UserDAO dao=new UserDAO();
 		User user = dao.search(email, pass);
-		Cookie cookie = new Cookie();
+		Integer userid = new Integer(user.getUser_id);
+		String value = userid.toString();
+		Cookie cookie = new Cookie("a",value);
 		cookie.setMaxAge(60*60*24);
 
-
 		if (user !=null) {
-			session.setAttribute("user", user.getUser_id());
-			int user_id = session;
-			cookie.setValue(getAttribute("user"))
 			return "userlogin-out.jsp";
 		}
 

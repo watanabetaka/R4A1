@@ -11,7 +11,7 @@ public class LoginAction extends Action {
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 
-		HttpSession session=request.getSession();
+
 
 		String email=request.getParameter("email");
 		String pass=request.getParameter("pass");
@@ -20,10 +20,13 @@ public class LoginAction extends Action {
 		UserDAO dao=new UserDAO();
 		User user = dao.search(email, pass);
 
-		int user_id = getUser_id()
-		Cookie cookie = new Cookie(user.user_id)
+           userid = Integer.toString(user.getUser_id());
+		Cookie cookie = new Cookie("a",userid);
 		cookie.setMaxAge(60*60*24);
 		response.addCookie(cookie);
+
+				HttpSession session=request.getSession();
+
 
 		if (user !=null) {
 			session.setAttribute("user", user.getUser_id());
