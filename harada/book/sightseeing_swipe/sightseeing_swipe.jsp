@@ -1,6 +1,10 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../header.html" %>
 <%@page import="bean.SightSeeing, java.util.List" %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <%-- 児玉くん --%>
@@ -82,6 +86,9 @@
      <%-- 原田くん --%>
      <%-- 観光地の表示 --%>
 
+     <script type="text/javascript" src="../js/swipe_drag.js"></script>
+     <%-- <script type="text/javascript" src="../js/swipe.js"></script> --%>
+
      <% List<SightSeeing> list=(List<SightSeeing>)request.getAttribute("list"); %>
 
      <%-- javaの配列をjavascriptの配列に入れる --%>
@@ -109,7 +116,7 @@
 <div id="picture"><img id="picture_path"></div>
 
 <%-- スワイプ機能・観光地名、氏名、観光地のパスを挿入 --%>
-<script type="text/javascript" src="../js/swipe.js"></script>
+<script type="text/javascript" src="../js/view.js"></script>
 
 <%@include file="../gamenhuta.html" %>
 
