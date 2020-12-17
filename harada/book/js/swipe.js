@@ -63,6 +63,7 @@ $(document).ready(function()
 		{
       if(count!=array_sightseeing_name.length){
   			$('#sightseeing_place').html(array_sightseeing_name[count]);
+				$('#city_name').html(array_city_name[count]);
         $('#picture_path').attr('src',array_picture_path[count]);
       }else{
         $('#sightseeing_place').html("");
@@ -76,6 +77,7 @@ $(document).ready(function()
 		{
       if(count!=array_sightseeing_name.length){
   			$('#sightseeing_place').html(array_sightseeing_name[count]);
+				$('#city_name').html(array_city_name[count]);
         $('#picture_path').attr('src',array_picture_path[count]);
       }else{
         $('#sightseeing_place').html("");

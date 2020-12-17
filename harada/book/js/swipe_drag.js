@@ -1,9 +1,15 @@
+count=0;
+console.log(array_sightseeing_id);
+console.log(array_sightseeing_name);
+console.log(array_city_name);
+console.log(array_picture_path);
+
 $(document).ready(function(event) {
 
   addNewProfile();
 
   function swipe() {
-    Draggable.create("#photo", {
+    Draggable.create("#picture_path", {
         throwProps:true,
         onDragEnd:function(endX) {
           if(Math.round(this.endX) > 0 ) {
@@ -19,41 +25,62 @@ $(document).ready(function(event) {
 
   function swipeLike() {
 
-      var $photo = $("div.content").find('#photo');
+    let request={
+      sightseeing_id:array_sightseeing_id[count-1]
+    };
 
-      var swipe = new TimelineMax({repeat:0, yoyo:false, repeatDelay:0, onComplete:remove, onCompleteParams:[$photo]});
-      swipe.staggerTo($photo, 0.8, {bezier:[{left:"+=400", top:"+=300", rotation:"60"}], ease:Power1.easeInOut});
+    $.ajax({
+      type : "GET",
+      url  : "http://localhost:8080/book/sightseeing_swipe/favorite_insert",
+      data : request,
+      async: true,
+      error:function(XMLHttpRequest,textStatus,errorThrown){
+        alert("エラーが発生し、お気に入りに登録できませんでした。:"+textStatus+errorThrown);
+      }
 
-      addNewProfile();
+    });
+
+    let picture_path = $("#picture").find('#picture_path');
+
+    let swipe = new TimelineMax({repeat:0, yoyo:false, repeatDelay:0, onComplete:remove, onCompleteParams:[picture_path]});
+    swipe.staggerTo(picture_path, 0.8, {bezier:[{left:"+=400", top:"+=300", rotation:"60"}], ease:Power1.easeInOut});
+
+    addNewProfile();
   }
 
   function swipeDislike() {
 
-      var $photo = $("div.content").find('#photo');
+    let picture_path = $("#picture").find('#picture_path');
 
-      var swipe = new TimelineMax({repeat:0, yoyo:false, repeatDelay:0, onComplete:remove, onCompleteParams:[$photo]});
-      swipe.staggerTo($photo, 0.8, {bezier:[{left:"+=-350", top:"+=300", rotation:"-60"}], ease:Power1.easeInOut});
+    let swipe = new TimelineMax({repeat:0, yoyo:false, repeatDelay:0, onComplete:remove, onCompleteParams:[picture_path]});
+    swipe.staggerTo(picture_path, 0.8, {bezier:[{left:"+=-350", top:"+=300", rotation:"-60"}], ease:Power1.easeInOut});
 
-      addNewProfile();
+    addNewProfile();
   }
 
-  function remove(photo) {
-      $(photo).remove();
+  function remove(picture_path) {
+      $(picture_path).remove();
   }
 
   function addNewProfile() {
-    var names = ['Lieke', 'Christina', 'Sanne', 'Soraya', 'Chanella', 'Larissa', 'Michelle'][Math.floor(Math.random() * 7)];
-    var ages = ['19','22','18','27','21', '18', '24'][Math.floor(Math.random() * 7)]
-    var photos = ['1', '2', '3', '4', '5', '6', '7'][Math.floor(Math.random() * 7)]
-    $("div.content").prepend('<div class="photo" id="photo" style="background-image:url(http://web.arjentienkamp.com/codepen/tinder/photo'+photos+'.jpg)">'
-      + '<span class="meta">'
-      + '<p>'+names+', '+ages+'</p>'
-      + '<span class="moments">0</span>'
-      + '<span class="users">0</span>'
-      + '</span>'
-      + '</div>');
 
-      swipe();
+    let sightseeing_name = array_sightseeing_name[count];
+    let city_name = array_city_name[count];
+    let picture_path = array_picture_path[count];
+    if(count !== array_sightseeing_name.length){
+      $('#sightseeing_place').html(sightseeing_name);
+      $('#city_name').html(city_name);
+      $("#picture").prepend('<img id="picture_path" src="'+picture_path+ '">');
+    }else{
+      $('#sightseeing_place').html("");
+      $('#city_name').html("");
+      $("#picture").prepend('<div id="no_sightseeing">表示できる観光地はありません</div>');
+    }
+
+    count=count+1;
+
+
+    swipe();
   }
 
 });

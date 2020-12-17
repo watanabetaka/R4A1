@@ -1,10 +1,12 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html" %>
-<%@page import="bean.SightSeeing, java.util.List" %>
+<%@include file="../html/header.html" %>
+<%@page import="bean.Sightseeing_Place, java.util.List" %>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/utils/Draggable.min.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <%-- 児玉くん --%>
@@ -86,38 +88,52 @@
      <%-- 原田くん --%>
      <%-- 観光地の表示 --%>
 
-     <script type="text/javascript" src="../js/swipe_drag.js"></script>
-     <%-- <script type="text/javascript" src="../js/swipe.js"></script> --%>
-
-     <% List<SightSeeing> list=(List<SightSeeing>)request.getAttribute("list"); %>
+     <%-- サーブレットより、listを取得 --%>
+     <% List<Sightseeing_Place> list=(List<Sightseeing_Place>)request.getAttribute("list"); %>
 
      <%-- javaの配列をjavascriptの配列に入れる --%>
      <script>
+     let array_sightseeing_id = [<%
+       for(Sightseeing_Place s: list){
+         out.print("\""+s.getSightseeing_Id()+"\",");
+       }
+       %>];
+
      let array_sightseeing_name = [<%
-                                   for(SightSeeing s: list){
-                                     out.print("\""+s.getSightSeeing_Name()+"\",");
-                                   }
-                                   %>];
+       for(Sightseeing_Place s: list){
+         out.print("\""+s.getSightseeing_Name()+"\",");
+       }
+       %>];
+
+     let array_city_name = [<%
+       for(Sightseeing_Place s: list){
+         out.print("\""+s.getCity_Name()+"\",");
+       }
+       %>];
+
      let array_picture_path = [<%
-                               for(SightSeeing s: list){
-                                 out.print("\""+s.getPicture_Path()+"\",");
-                               }
-                               %>];
+       for(Sightseeing_Place s: list){
+         out.print("\""+s.getPicture_Path()+"\",");
+       }
+       %>];
      </script>
+     <script type="text/javascript" src="../js/swipe_drag.js"></script>
+     <%-- <script type="text/javascript" src="../js/swipe.js"></script> --%>
 
      <%-- 観光地名の表示 --%>
     <div id="sightseeing_place"></div>
     <%-- 市名の表示 --%>
-    <div id="city_name">別府市</div>
-
+    <div id="city_name"></div>
 
 </header>
 <%-- 観光地の写真を表示 --%>
-<div id="picture"><img id="picture_path"></div>
+<div id="picture"></div>
+
+<div class="content"></div>
 
 <%-- スワイプ機能・観光地名、氏名、観光地のパスを挿入 --%>
-<script type="text/javascript" src="../js/view.js"></script>
+<%-- <script type="text/javascript" src="../js/view.js"></script> --%>
 
-<%@include file="../gamenhuta.html" %>
+<%@include file="../html/gamenhuta.html" %>
 
-<%@include file="../footer.html" %>
+<%@include file="../html/footer.html" %>

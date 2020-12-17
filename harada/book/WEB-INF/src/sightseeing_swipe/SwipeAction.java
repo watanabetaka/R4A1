@@ -1,7 +1,7 @@
 package sightseeing_swipe;
 
-import bean.SightSeeing;
-import dao.SightSeeingDAO;
+import bean.Sightseeing_Place;
+import dao.Sightseeing_PlaceDAO;
 import tool.Action;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,30 +12,28 @@ import tool.Page;
 import java.util.Collections;
 
 public class SwipeAction extends Action {
+	// 表示させる値を取得し、シャッフルするメソッド
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	) throws Exception {
 		PrintWriter out=response.getWriter();
 		Page.header(out);
 
+		// cookie・sessionよりuser_idを取得
 		// String user_id = session.getAttribute("user");
+		int user_id=5;
 
-		int user_id=2;
+		// user_idをもとに、DBから必要な値を取得
+		Sightseeing_PlaceDAO dao=new Sightseeing_PlaceDAO();
+		List<Sightseeing_Place> list = dao.search(user_id);
 
-		SightSeeingDAO dao=new SightSeeingDAO();
-		List<SightSeeing> list = dao.search();
-		//
-		// for(SightSeeing s : list){
-		// 	out.println(s.getSightSeeing_Name());
-		// 	out.println(s.getCity_Id());
-		// 	out.println(s.getPicture_Path());
-		// }
-
+		// 取得した値をシャッフルする
 		Collections.shuffle(list);
 
+		// 値をjspへ送る為にセットする
 		request.setAttribute("list",list);
 
-		request.getRequestDispatcher("sightseeing_swipe.jsp").forward(request,response);
-		return "error";
+		// jspへフォワードする
+		return "sightseeing_swipe.jsp";
 	}
 }
