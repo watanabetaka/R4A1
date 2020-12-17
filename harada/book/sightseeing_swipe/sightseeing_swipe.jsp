@@ -1,12 +1,16 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/header.html" %>
+<%-- javaで利用するクラスをインポート --%>
 <%@page import="bean.Sightseeing_Place, java.util.List" %>
+
+<%-- jqueryで利用するAPIをインポート --%>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/utils/Draggable.min.js"></script>
 
+<%-- jqueryをインポート --%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <%-- 児玉くん --%>
@@ -117,8 +121,9 @@
        }
        %>];
      </script>
+
+     <%-- スワイプ機能関連のjavascriptファイルを読み込み --%>
      <script type="text/javascript" src="../js/swipe_drag.js"></script>
-     <%-- <script type="text/javascript" src="../js/swipe.js"></script> --%>
 
      <%-- 観光地名の表示 --%>
     <div id="sightseeing_place"></div>
@@ -126,13 +131,9 @@
     <div id="city_name"></div>
 
 </header>
+
 <%-- 観光地の写真を表示 --%>
 <div id="picture"></div>
-
-<div class="content"></div>
-
-<%-- スワイプ機能・観光地名、氏名、観光地のパスを挿入 --%>
-<%-- <script type="text/javascript" src="../js/view.js"></script> --%>
 
 <%@include file="../html/gamenhuta.html" %>
 
