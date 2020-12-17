@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html" %>
+<%@include file="../html/header.html" %>
 
 ログイン名またはパスワードが違います。
 
@@ -9,4 +9,4 @@
 <p><input type="submit" value="ログイン"></p>
 </form>
 
-<%@include file="../footer.html" %>
+<%@include file="../html/footer.html" %>

@@ -1,29 +1,33 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html" %>
+<%@include file="../html/header.html" %>
 
-<%-- <% out.println(getAttribute("user"));%> --%>
-<%@ page import = "tool.Page"%>
-<%@ page import = "java.io.IOException"%>
-<%@ page import = "java.io.PrintWriter"%>
-<%@ page import = "javax.servlet.ServletException"%>
 <%@ page import = "javax.servlet.http.Cookie"%>
 <%@ page import = "javax.servlet.http.*"%>
 
 <%
-Cookie[] cookies=request.getCookies();
+//ログインか新規会員登録からメニュー画面へ遷移したばあい
+if(session.getAttribute("user") != null){
+        String session_id = (String)session.getAttribute("user");
+        int user_id = Integer.parseInt(session_id);
+        out.println(user_id);  //ここにセッションのユーザIDが入ってます
+   //ログインか新規会員登録以外からメニュー画面へ遷移した場合
+}else{
+  Cookie[] cookies=request.getCookies();
 
-if (cookies!=null) {
-  for (Cookie cookie : cookies) {
-    String name=cookie.getName();
-    String value=cookie.getValue();
-    if(name.equals("a")){
-       out.println("<p>"+value+"</p>");
-    }
-  }
-} else {
-  out.println("クッキーは存在しません");
+  if (cookies!=null) {
+     int user_id;
+     for (Cookie cookie : cookies) {
+        String name=cookie.getName();
+        if(name.equals("user")){
+          String value=cookie.getValue();
+          user_id = Integer.parseInt(value);//ここにセッションのユーザIDが入ってます
+          out.println(user_id);
+        }
+      }
+   } else {
+     out.println("クッキーは存在しません");
+   }
 }
+
 %>
-<p>aa</p>s
-<p><input type="button" onclick="location.href='http://localhost:8080/book/login/userlogin-out.jsp'" value="クッキーへ"></p>
-<%@include file="../footer.html" %>
+<%@include file="../html/footer.html" %>

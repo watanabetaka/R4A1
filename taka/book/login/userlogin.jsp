@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html" %>
+<%@include file="../html/header.html" %>
 
 <form action="Login.action" method="post">
 <p id = email>メールアドレス<input type="mailaddress" name="email"></p>
@@ -8,4 +8,4 @@
 <a href='http://10.23.104.16:8080/book/login/userlogin-out.jsp'>aaaaa </a>
 </form>
 
-<%@include file="../footer.html" %>
+<%@include file="../html/footer.html" %>
