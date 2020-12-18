@@ -32,7 +32,7 @@ public class LoginAction extends Action {
 			session.setAttribute("user", Integer.toString(user.getUser_id()));
 			// session.setAttribute("user2", "aaa");
 			String session_id = (String)session.getAttribute("user");
-				Cookie cookie = new Cookie("user", session_id);
+			Cookie cookie = new Cookie("user", session_id);
 			cookie.setMaxAge(60*60*24);
 			response.addCookie(cookie);
 			return "userlogin-out.jsp";

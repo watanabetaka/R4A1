@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.util.List;
 import javax.servlet.annotation.WebServlet;
+import session.Session;
 
 // ajax通信の開始
 @WebServlet(urlPatterns={"/sightseeing_swipe/favorite_insert"})
@@ -25,8 +26,8 @@ public class FavoriteInsert extends HttpServlet {
 				int sightseeing_id=Integer.parseInt(request.getParameter("sightseeing_id"));
 
 				// cookie・sessionよりuser_idを取得
-				// String user_id = session.getAttribute("user");
-				int user_id=6;
+				Session session = new Session();
+				int user_id = session.getUser_id(request);
 
 				// beanへ値をセット
 				Favorite f=new Favorite();
