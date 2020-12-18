@@ -1,0 +1,84 @@
+header{
+  text-align: center;
+  font-size: 300%
+}
+
+h5{
+  font-size: 200%
+}
+img{
+  width: 30%; /*画像のサイズによって変更、幅、高さ*/
+  height: 50%;
+  float: left;
+  margin-bottom: 0px;
+  margin-left: 3%;
+
+}
+
+.btn{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top :7%;
+    font-size: 250%;
+}
+
+.kanname{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 5%;
+  float: left;
+  text-align: center;
+}
+
+.modalbtn{
+  display: block;
+  float: left;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 200%;
+}
+
+.name{
+  margin-top: 0px;
+  line-height: 130%;
+  font-size: 200%;
+}
+
+.kasen{
+  border-top: solid 2px orange;
+}
+/*ボタンのサイズ変更CSSいろいろｗ*/
+.open,#close{
+  cursor: pointer;
+}
+
+#mask {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#modal {
+  background: #fff;
+  color: #555;
+  width: 50%;
+  padding: 10%;
+  font-size: 150%;
+  border-radius: 4px;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 2;
+  transition: 0.4s;
+}
+
+#mask.hidden,#modal.hidden {
+  display: none;
+}
