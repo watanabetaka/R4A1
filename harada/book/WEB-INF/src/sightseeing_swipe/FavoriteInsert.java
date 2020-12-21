@@ -27,7 +27,7 @@ public class FavoriteInsert extends HttpServlet {
 
 				// cookie・sessionよりuser_idを取得
 				Session session = new Session();
-				int user_id = session.getUser_id(request);
+				int user_id = session.getUser_id(request,response);
 
 				// beanへ値をセット
 				Favorite f=new Favorite();

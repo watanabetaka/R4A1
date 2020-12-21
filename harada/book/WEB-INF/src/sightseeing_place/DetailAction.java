@@ -23,13 +23,16 @@ public class SwipeAction extends Action {
 		PrintWriter out=response.getWriter();
 		Page.header(out);
 
+		// int sightseeing_id=Integer.parseInt(request.getParameter("sightseeing_id"));
+		int sightseeing_id = 1;
+
 		// cookie・sessionよりuser_idを取得
 		Session session = new Session();
 		int user_id = session.getUser_id(request,response);
 
 		// user_idをもとに、DBから必要な値を取得
-		Sightseeing_PlaceDAO dao=new Sightseeing_PlaceDAO();
-		List<Sightseeing_Place> list = dao.search(user_id);
+		FavoriteDAO dao=new FavoriteDAO();
+		List<Favorite> list = dao.search(sightseeing_id,user_id);
 
 		// 取得した値をシャッフルする
 		Collections.shuffle(list);

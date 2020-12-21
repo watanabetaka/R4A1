@@ -39,7 +39,7 @@ public class SortAction extends Action {
 
 		// cookie・sessionよりuser_idを取得
 		Session session = new Session();
-		int user_id = session.getUser_id(request,response);
+		int user_id = session.getUser_id(request);
 
 		// DAOのインスタンス化
 		Sightseeing_PlaceDAO dao=new Sightseeing_PlaceDAO();
