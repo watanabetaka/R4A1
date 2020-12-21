@@ -1,0 +1,20 @@
+
+
+<Context reloadable="true">
+	<Resource
+		name="jdbc/book"
+		auth="Container"
+		type="javax.sql.DataSource"
+		driverClassName="org.h2.Driver"
+		url="jdbc:h2:tcp://localhost/~/book"
+		username="sa"
+		password=""
+	/>
+<Resource
+name="mail/MySession" auth="Container"
+
+type="javax.mail.Session"
+
+mail.smtp.host = "smtp.mail.yahoo.co.jp"
+/>
+</Context>

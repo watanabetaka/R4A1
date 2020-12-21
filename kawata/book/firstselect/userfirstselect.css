@@ -1,0 +1,44 @@
+h1 {
+    color: white;
+    font-size: 86px;
+    text-align: center;
+    padding-top: 200px;
+    /* position: fixed; */
+}
+
+
+body {
+    /*background-image: url(02_鉄輪湯けむりライトアップ.jpg);*/
+    background-image: url(../image/01-1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+input[type="button"]{
+
+    width: 320px;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 25px 10px;
+    color: #333;
+    background: rgba(255,255,255,0.8);
+    /* background-color: #fff; */
+    /* border: 1px solid #333; */
+    border-radius: 55px;
+    margin: 0 auto;
+}
+
+
+a {
+    color: white;
+    font-size: 53px;
+    position: fixed;
+    bottom: 70px;
+    right: 60px;
+}
