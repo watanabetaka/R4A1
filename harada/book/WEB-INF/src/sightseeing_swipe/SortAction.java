@@ -27,9 +27,9 @@ public class SortAction extends Action {
 		Page.header(out);
 
 		// 児玉君から送信されたデータの受け取り
-		// String array_city[] = request.getParamterValues("array_city");
-		// String array_genre[] = request.getParamterValues("array_genre");
-		// String spot = request.getParamterValues("spot");
+		// String array_city[] = request.getParameterValues("array_city");
+		// String array_genre[] = request.getParameterValues("array_genre");
+		// String spot = request.getParameter("spot");
 
 		// テストデータを配列へ挿入
 		String array_city[]={"大分市","竹田市"};
