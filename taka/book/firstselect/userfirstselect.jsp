@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html" %>
+<%@include file="../html/header.html" %>
 
 <h1>まいらいずおおいたへ
     ようこそ</h1>
@@ -10,4 +10,4 @@
 
  <a href="http://localhost:8080/book/login/userlogin.jsp">企業はこちらから</a>
 
-<%@include file="../footer.html" %>
+<%@include file="../html/footer.html" %>

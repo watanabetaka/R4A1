@@ -1,0 +1,28 @@
+
+#picture {
+  padding: 10px;
+  padding-top: 0px;
+}
+
+#picture #picture_path {
+  position:absolute;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:265px;
+  height:315px;
+  border:1px solid #a6a9aa;
+  border-radius: 8px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0px 1px 7px 0px #cfcfcf;
+}
+#picture #no_sightseeing {
+  position:absolute;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:265px;
+  height:315px;
+  background-repeat: no-repeat;
+}

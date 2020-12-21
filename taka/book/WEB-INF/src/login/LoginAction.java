@@ -17,9 +17,6 @@ public class LoginAction extends Action {
 
 		HttpSession session=request.getSession();
 
-
-
-
 		String email=request.getParameter("email");
 		String pass=request.getParameter("pass");
 
@@ -34,6 +31,7 @@ public class LoginAction extends Action {
 			String session_id = (String)session.getAttribute("user");
 			Cookie cookie = new Cookie("user", session_id);
 			cookie.setMaxAge(60*60*24);
+			cookie.setPath("/book");
 			response.addCookie(cookie);
 			return "userlogin-out.jsp";
 		}

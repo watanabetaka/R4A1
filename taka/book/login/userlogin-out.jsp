@@ -18,6 +18,7 @@ if(session.getAttribute("user") != null){
      int user_id;
      for (Cookie cookie : cookies) {
         String name=cookie.getName();
+        out.println(name);
         if(name.equals("user")){
           String value=cookie.getValue();
           user_id = Integer.parseInt(value);//ここにセッションのユーザIDが入ってます
