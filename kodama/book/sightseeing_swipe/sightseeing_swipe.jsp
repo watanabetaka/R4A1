@@ -93,9 +93,11 @@
          <label for="toggle" class="toggle-label"/>
        </div>   -->
 
-      <form>
-        <div>
-         <input type="submit" id="sendtojava" value="検索" onclick="send();">
+      <form action="Sort.action">
+        <div id="actions">
+          <input type="hidden" name="array_city" value="">
+          <input type="hidden" name="array_genre" value="">
+          <input type="submit" id="sendtojava" value="検索" onclick=send();>
         </div>
       </form>
 

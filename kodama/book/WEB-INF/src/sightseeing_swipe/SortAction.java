@@ -14,6 +14,7 @@ import javax.servlet.http.Cookie;
 import java.io.*;
 import javax.servlet.*;
 import session.Session;
+import java.util.Arrays;
 
 public class SortAction extends Action {
 	// ソート画面からソート情報の値を取得し、
@@ -29,16 +30,18 @@ public class SortAction extends Action {
 
 		// 児玉君から送信されたデータの受け取り
 		 String array_city[] = request.getParameterValues("array_city");
-		 String array_genre[] = request.getParameterValues("array_genre1");
-		 String spot = request.getParameter("spot");
-		 System.out.println(array_city);
-		 System.out.println(array_genre);
-		 System.out.println(spot);
+		 String array_genre[] = request.getParameterValues("array_genre");
+		 // String spot = request.getParameter("spot");
+		 System.out.println(Arrays.toString(array_city));
+		 System.out.println(Arrays.toString(array_genre));
+		 // System.out.println(spot);
 
 		// // テストデータを配列へ挿入
 		// String array_city[]={"大分市","竹田市"};
 		// String array_genre[]={"ホテル・旅館","カフェ・スイーツ"};
 		// String spot = "false";
+
+		System.out.print(array_city);
 
 		// cookie・sessionよりuser_idを取得
 		Session session = new Session();
@@ -72,12 +75,13 @@ public class SortAction extends Action {
 
 		// 位置情報ボタンがONになっている場合は、位置情報が近い順に表示し、
 		// OFFの場合は、観光地をシャッフルする処理
-		if (spot== "true"){
-			// 位置情報で観光地をソートする処理
-		}else{
-			// 観光地をシャッフルする処理
-			Collections.shuffle(list);
-		}
+		// if (spot== "true"){
+		// 	// 位置情報で観光地をソートする処理
+		// }else{
+		// 	// 観光地をシャッフルする処理
+		// 	Collections.shuffle(list);
+		// }
+
 
 		// 値をjspへ送る為にセットする
 		request.setAttribute("list",list);
