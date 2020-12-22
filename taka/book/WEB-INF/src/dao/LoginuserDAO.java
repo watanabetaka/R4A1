@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class UserDAO extends DAO {
+public class LoginuserDAO extends DAO {
 						/*入力されたユーザーIDとパスワードがデータベースにあるも
 						のと一致しているか確認する*/
 		public User search(String email, String pass)
