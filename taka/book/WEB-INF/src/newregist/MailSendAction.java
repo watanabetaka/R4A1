@@ -17,6 +17,8 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import tool.Action;
 import javax.servlet.http.*;
+import dao.RegistuserDAO;
+import java.util.Random;
 
 public class MailSendAction extends  Action{
 
@@ -24,11 +26,29 @@ public class MailSendAction extends  Action{
         HttpServletRequest request, HttpServletResponse response
       ) throws Exception {
 
+
         String email=request.getParameter("email");
 
-        try {
-            // メール送信のプロパティ設定
+        RegistuserDAO dao=new RegistuserDAO();
+    		boolean mailflag = dao.searchmail(email);
+
+        if(mailflag){
+            HttpSession session1=request.getSession();
+            // 暗証番号生成
+            char[] chars = "abcdefghijklmnopqrstuvwxyzABSDEFGHIJKLMNOPQRSTUVWXYZ1234567890".toCharArray();
+            Random r = new Random(System.currentTimeMillis());
+            char[] pin = new char[6];
+            for (int i = 0;  i < 6;  i++) {
+                pin[i] = chars[r.nextInt(chars.length)];
+            }
+
+
+
+            session1.setAttribute("email",email);
+            session1.setAttribute("pin",String.valueOf(pin));
+
             Properties props = new Properties();
+              // メール送信のプロパティ設定
             props.put("mail.smtp.host", "smtp.mail.yahoo.co.jp");
             props.put("mail.smtp.port", "587");//25番ポートブロックをかいくぐるため
             props.put("mail.smtp.auth", "true");
@@ -57,9 +77,9 @@ public class MailSendAction extends  Action{
                 new InternetAddress("liverpool35takayoshi@yahoo.co.jp")});
             message.setRecipients(Message.RecipientType.TO,
                 InternetAddress.parse(email));
-            message.setSubject("完了");
+            message.setSubject("暗証番号");
             MimeBodyPart messageBodyPart = new MimeBodyPart();
-            messageBodyPart.setText("テストメール。");
+            messageBodyPart.setText(String.valueOf(pin));
 
             // メールのメタ情報を作成
             Multipart multipart = new MimeMultipart();
@@ -70,13 +90,9 @@ public class MailSendAction extends  Action{
             // メールを送信する
             message.setContent(multipart);
             Transport.send(message);
+            return "newregistpin.jsp";
 
-        } catch (Exception e) {
-            System.out.print("例外が発生！\r\n");
-            e.printStackTrace();
-        } finally {
-        }
-
-        return "newregistpass-error";
+      }
+        return "newregistmail-error.jsp";
     }
 }
