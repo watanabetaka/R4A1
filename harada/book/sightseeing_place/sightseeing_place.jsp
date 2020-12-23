@@ -1,5 +1,6 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../header.html" %>
+<%@page import="bean.Sightseeing_Place, java.util.List" %>
 
 <%-- 児玉くん --%>
 <%-- 左上のソートバーのボタン --%>
@@ -79,32 +80,99 @@
     </div>
      <%-- 原田くん --%>
      <%-- 観光地の表示 --%>
-    <div id="sightseeing_place">うみたまご</div>
-    <%-- 市名の表示 --%>
-    <div id="city_name">別府市</div>
+
+     <%-- サーブレットより、listを取得 --%>
+     <% List<Sightseeing_Place> list=(List<Sightseeing_Place>)request.getAttribute("list"); %>
+
+     <%-- 観光地名の表示 --%>
+     <div id="sightseeing_place">
+       <%
+       for(Sightseeing_Place s: list){
+         out.print(s.getSightseeing_Name());
+       }
+       %>
+     </div>
+
+     <%-- 市名の表示 --%>
+     <div id="city_name">
+       <%
+       for(Sightseeing_Place s: list){
+         out.print(s.getCity_Name());
+       }
+       %>
+     </div>
+
+     <%-- ジャンルの表示 --%>
+     <div id="genre_name">
+       <%
+       for(Sightseeing_Place s: list){
+         out.print(s.getGenre_Name());
+       }
+       %>
+     </div>
+     <%-- スワイプ機能関連のjavascriptファイルを読み込み --%>
+     <%-- <script type="text/javascript" src="../js/swipe_drag.js"></script> --%>
+
 </header>
+
 <%-- 観光地の写真を表示 --%>
-<div id="picture"><img src="../image/seaeggs.jpg"></div>
+<div id="picture">
+  <img src="<% for(Sightseeing_Place s: list){ out.print(s.getPicture_Path()); } %>">
+</div>
 
 <%-- 以下、観光地詳細画面（渡邊） --%>
 
-<div id="street_adress">〒870-0802 大分県大分市神崎字ウト３０７８−２２</div>
+<%-- 住所の表示 --%>
+<%-- 郵便番号の表示 --%>
+<div id="postal_code">
+  <%
+  for(Sightseeing_Place s: list){
+    out.print(s.getPostal_Code());
+  }
+  %>
+</div>
 
-<div id="phone_number">097-800-0000</div>
+<div id="street_adress">
+  <%
+  for(Sightseeing_Place s: list){
+    out.print(s.getStreet_Adress());
+  }
+  %>
+</div>
 
-<div id="business_hour">9~17時</div>
+<div id="phone_number">
+  <%
+  for(Sightseeing_Place s: list){
+    out.print(s.getPhone_Number());
+  }
+  %>
+</div>
 
-<div id="nearest_station_time">東別府駅より徒歩15分</div>
+<div id="business_hour">
+  <%
+  for(Sightseeing_Place s: list){
+    out.print(s.getBusiness_Hour());
+  }
+  %>
+</div>
+
+<div id="nearest_station_time">
+  <%
+  for(Sightseeing_Place s: list){
+    out.print(s.getNearest_Station());
+  }
+  %>
+</div>
 
 <%-- 観光地詳細画面（末松） --%>
 
-<a href="https://www.google.com/search?q=%E3%81%86%E3%81%BF%E3%81%9F%E3%81%BE%E3%81%94&oq=%E3%81%86%E3%81%BF%E3%81%9F%E3%81%BE%E3%81%94&aqs=chrome.0.69i59j35i39j0l3j69i60l3.5844j0j7&sourceid=chrome&ie=UTF-8"
-  id="google">Googleで検索</a>
+<%-- 入力された観光地名でGoogle検索 --%>
+<a href="https://www.google.com/search?q=<% for(Sightseeing_Place s: list){ out.print(s.getSightseeing_Name()); } %>" id="google">Googleで検索</a>
 
 <div class="yajirushi"><img src="../image/yajirushi.jpg"></div>
 
-<a href="https://www.jalan.net/activity/fw_search/?keyword=%82%A4%82%DD%82%BD%82%DC%82%B2&fromPage=top-keyword&ccnt=asobi-top-keyword"
-  id="jaran">じゃらんで表示</a>
+<%-- 予約サイトURLのURL挿入 --%>
+<a href="<% for(Sightseeing_Place s: list){ out.print(s.getUrl()); } %>" id="jaran">じゃらんで表示</a>
 
 <div class="yajirushi"><img src="../image/yajirushi.jpg"></div>
 
