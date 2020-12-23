@@ -15,79 +15,93 @@
 
 <%-- 児玉くん --%>
 <%-- 左上のソートバーのボタン --%>
+<script type="text/javascript" src="../js/hamburger.js"></script>
 <header>
-    <div id="nav-drawer">
+  <div id="nav-drawer">
       <input id="nav-input" type="checkbox" class="nav-unshown">
       <label id="nav-open" for="nav-input"><span></span></label>
       <label id="nav-close" for="nav-input" class="nav-unshown"></label>
-      <div id="nav-content">
-
-         <div id="area-drawer">
-            <input id="area-input" type="checkbox" class="nav-unshown">
-            <label id="area-open" for="area-input"><span></span></label>
-            <label id="area-close" for="area-input" class="nav-unshown"></label>
-            <div id="area-content">
-              <p>エリア選択</p>
-              <form>
-               <div>
-                <input type="checkbox" id="oitashi" name="" value="">
-                <label for="oitashi">大分市</label>
-               </div>
-               <div>
-                <input type="checkbox" id="beppushi" name="" value="">
-                <label for="beppushi">別府市</label>
-               </div>
-               <div>
-                <input type="checkbox" id="yufushi" name="" value="">
-                <label for="yufushi">由布市</label>
-               </div>
-               <div>
-                <button type="submit">検索</button>
-               </div>
-             </form>
+        <div id="nav-content">
+          <p>エリア選択</p>
+            <div id="area-drawer">
+              <input id="area-input" type="checkbox" class="nav-unshown">
+              <label id="area-open" for="area-input"><span></span></label>
+              <label id="area-close" for="area-input" class="nav-unshown"></label>
+              <div id="area-content">
+                <p>エリア選択</p>
+                <form name=area_form>
+                 <div>
+                  <input type="checkbox" class="area" name="area_name" value="">
+                  <label class="city_kind">大分市</label>
+                 </div>
+                 <div>
+                  <input type="checkbox" class="area" name="area_name" value="">
+                  <label class="city_kind">竹田市</label>
+                 </div>
+                 <div>
+                  <input type="checkbox" class="area" name="area_name" value="">
+                  <label class="city_kind">由布市</label>
+                 </div>
+                </form>
+                 <div>
+                  <input type="buttom" value="決定" onclick="changeCheckbox('area-input');" />
+                 </div>
+              </div>
             </div>
-          </div>
 
-         <div id="genre-drawer">
-            <input id="genre-input" type="checkbox" class="nav-unshown">
-            <label id="genre-open" for="genre-input"><span></span></label>
-            <label id="genre-close" for="genre-input" class="nav-unshown" ></label>
-            <div id="genre-content">
-              <p>ジャンル選択</p>
-              <form>
-               <div>
-                <input type="checkbox" id="hotel" name="" value="">
-                <label for="hotel">ホテル・旅館</label>
-               </div>
-               <div>
-                <input type="checkbox" id="onsen" name="" value="">
-                <label for="onsen">温泉</label>
-               </div>
-               <div>
-                <input type="checkbox" id="zyouseki" name="" value="">
-                <label for="zyouseki">城跡</label>
-               </div>
-               <div>
-                <button type="submit">検索</button>
-               </div>
-             </form>
-            </div>
-          </div>
+            <p>ジャンル選択</p>
+           <div id="genre-drawer">
+              <input id="genre-input" type="checkbox" class="nav-unshown">
+              <label id="genre-open" for="genre-input"><span></span></label>
+              <label id="genre-close" for="genre-input" class="nav-unshown" ></label>
+              <div id="genre-content">
+                <p>ジャンル選択</p>
+                <form name="genre_form">
+                 <div>
+                  <input type="checkbox" class="genre" name="genre_name" value="">
+                  <label class="genre_kind">ホテル・旅館</label>
+                 </div>
+                 <div>
+                  <input type="checkbox" class="genre" name="genre_name" value="">
+                  <label class="genre_kind">レジャー</label>
+                 </div>
+                 <div>
+                  <input type="checkbox" class="genre" name="genre_name" value="">
+                  <label class="genre_kind">カフェ・スイーツ</label>
+                 </div>
+                </form>
+                 <div>
+                  <input type="buttom" value="決定" onclick="changeCheckbox('genre-input');" />
+                 </div>
+              </div>
+           </div>
 
-        <div>
-          <p>位置情報</p>
-          <div class="toggle-switch">
-    　　　　　  <input id="toggle" class="toggle-input" type='checkbox' />
-    　　　　　  <label for="toggle" class="toggle-label"/>
-    　　　　  　<span></span>
-    　　　　　</div>
-        </div>
 
-        <div>
-         <button type="submit">検索</button>
-        </div>
-
+      <div class="switch">
+        <p>位置情報</p>
+          <label class="switch__label">
+            <form name="location_form">
+    　　　　    <input type="checkbox" id="location" name="location_name" class="switch__input"/>
+            </form>
+  　　　　    <span class="switch__content"></span>
+  　　　　    <span class="switch__circle"></span>
+  　　　　 </label>
        </div>
+
+     <!--  <div class="toggle-switch">
+         <input id="toggle" class="toggle-input" type='checkbox' />
+         <label for="toggle" class="toggle-label"/>
+       </div>   -->
+
+      <%-- フォームの検索ボタンを押したらSortAction.javaをフォルダ内から探索して遷移する --%>
+      <form action="Sort.action">
+        <div id="actions">
+          <%-- 検索ボタンを押したらjavascriptファイルを呼び出す処理 --%>
+          <input type="submit" id="sendtojava" value="検索" onclick=send();>
+        </div>
+      </form>
+
+     </div>
     </div>
      <%-- 原田くん --%>
      <%-- 観光地の表示 --%>
