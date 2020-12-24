@@ -1,7 +1,7 @@
 package sightseeing_place;
 
-import bean.Sightseeing_Place;
-import dao.Sightseeing_PlaceDAO;
+import bean.Favorite;
+import dao.FavoriteDAO;
 import tool.Action;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,7 +15,7 @@ import java.io.*;
 import javax.servlet.*;
 import session.Session;
 
-public class DetailAction extends Action {
+public class FavoritedeleteAction extends Action {
 	// 表示させる値を取得し、シャッフルするメソッド
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
@@ -32,15 +32,28 @@ public class DetailAction extends Action {
 		Session session = new Session();
 		int user_id = session.getUser_id(request,response);
 
+		// beanへ値をセット
+		Favorite f=new Favorite();
+		f.setSightseeing_Id(sightseeing_id);
+		f.setUser_Id(user_id);
+
 		// Sightseeing_PlaceDAOをインスタンス化
-		Sightseeing_PlaceDAO dao=new Sightseeing_PlaceDAO();
+		FavoriteDAO dao = new FavoriteDAO();
 		// sightseeing_idをもとに、DBから必要な値を取得
-		List<Sightseeing_Place> list = dao.detail_search(sightseeing_id);
+		int line=dao.delete(f);
+
+		String message;
+
+		if(line > 0){
+			message = "観光地を削除しました";
+		}else{
+			message = "観光地を削除するのに失敗しました";
+		}
 
 		// 値をjspへ送る為にセットする
-		request.setAttribute("list",list);
+		request.setAttribute("message",message);
 
 		// jspへフォワードする
-		return "sightseeing_place.jsp";
+		return "favoritedelete_result.jsp";
 	}
 }

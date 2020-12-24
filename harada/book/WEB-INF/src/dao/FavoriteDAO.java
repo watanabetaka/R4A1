@@ -42,4 +42,18 @@ public class FavoriteDAO extends DAO {
 		con.close();
 	}
 
+	public int delete(Favorite favorite) throws Exception {
+	  Connection con=getConnection();
+
+		PreparedStatement st=con.prepareStatement("delete from favorite where sightseeing_id = ? and user_id  = ? ;");
+		st.setInt(1,favorite.getSightseeing_Id());
+		st.setInt(2,favorite.getUser_Id());
+
+		int line = st.executeUpdate();
+
+		st.close();
+		con.close();
+		return line;
+	}
+
 }

@@ -42,6 +42,7 @@ public class SortAction extends Action {
 		// String spot = "false";
 
 		// cookie・sessionよりuser_idを取得
+		// 取得できなければログイン画面へ
 		Session session = new Session();
 		int user_id = session.getUser_id(request,response);
 
