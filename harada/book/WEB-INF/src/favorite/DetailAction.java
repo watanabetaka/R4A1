@@ -1,4 +1,4 @@
-package sightseeing_place;
+package favorite;
 
 import bean.Sightseeing_Place;
 import dao.Sightseeing_PlaceDAO;
@@ -24,8 +24,7 @@ public class DetailAction extends Action {
 		Page.header(out);
 
 		// 末松君からsightseeing_idを取得
-		// int sightseeing_id=Integer.parseInt(request.getParameter("sightseeing_id"));
-		int sightseeing_id = 2;
+		int sightseeing_id=Integer.parseInt(request.getParameter("sightseeing_id"));
 
 		// cookie・sessionよりuser_idを取得
 		// 取得できなければログイン画面へ
@@ -33,7 +32,7 @@ public class DetailAction extends Action {
 		int user_id = session.getUser_id(request,response);
 
 		// Sightseeing_PlaceDAOをインスタンス化
-		Sightseeing_PlaceDAO dao=new Sightseeing_PlaceDAO();
+		Sightseeing_PlaceDAO dao = new Sightseeing_PlaceDAO();
 		// sightseeing_idをもとに、DBから必要な値を取得
 		List<Sightseeing_Place> list = dao.detail_search(sightseeing_id);
 

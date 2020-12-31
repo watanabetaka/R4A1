@@ -13,9 +13,10 @@
 <header>
   <%-- 末松が作成した、お気に入り一覧画面へ戻るボタン --%>
   <div id="back">
-    <form action="">
+    <%-- <form action="favoritelist">
       <input type="submit" value="＜">
-    </form>
+    </form> --%>
+    <a href="favoritelist">＜</a>
   </div>
 
   <%-- タイトルの表示 --%>
@@ -23,18 +24,20 @@
 
   <%-- 削除ボタン --%>
   <div id="delete">
-    <script>
-      let sightseeing_id = '<%
+
+    <%-- 削除ボタンが他のCSSで加工されている要素と重なってしまっており、ボタンとしての機能を持っていません--%>
+
+    <form action="Favoritedelete.action" id="delete_button">
+      <input type="hidden" name="sightseeing_id" value="<%
       for(Sightseeing_Place s: list){
         out.print(s.getSightseeing_Id());
       }
-      %>';
-    </script>
-
-    <form action="Favoritedelete.action" id="delete_button">
-      <input type="submit" value="削除" onclick=delete_send();>
+      %>">
+      <input type="hidden" name="test" value="aa">
+        <input type="submit" value="削除">
     </form>
-  </div>
+
+
 </header>
 
 <%-- 観光地の表示 --%>
@@ -78,13 +81,6 @@ for(Sightseeing_Place s: list){
 <%-- 郵便番号の表示 --%>
 <div id="postal_code">〒
   <div id="postal_code_insert">
-    <script>
-    let postal_code= '<%
-      for(Sightseeing_Place s: list){
-        out.print(s.getPostal_Code());
-      }
-      %>';
-    </script>
   </div>
 </div>
 
@@ -99,37 +95,22 @@ for(Sightseeing_Place s: list){
 
 <%-- 電話番号の表示 --%>
 <div id="phone_number">
-  <script>
-    let phone_number = '<%
-    for(Sightseeing_Place s: list){
-      out.print(s.getPhone_Number());
-    }
-    %>';
-  </script>
 </div>
 
 <%-- 営業時間の表示 --%>
 <div id="business_hour">
-  <%
-  for(Sightseeing_Place s: list){
-    out.print(s.getBusiness_Hour());
-  }
-  %>
+
 </div>
 
 <%-- 最寄り駅と最寄り駅からの時間を表示 --%>
 <div id="nearest_station_time">
-  <%
-  for(Sightseeing_Place s: list){
-    out.print(s.getNearest_Station());
-  }
-  %>
 </div>
 
 <%-- 観光地詳細画面（末松） --%>
 
 <%-- 観光地名をGoogle検索 --%>
-<a href="https://www.google.com/search?q=<% for(Sightseeing_Place s: list){ out.print(s.getSightseeing_Name()); } %>" id="google">Googleで検索</a>
+<a target="_blank" href="google://search?q=<% for(Sightseeing_Place s: list){ out.print(s.getSightseeing_Name()); } %>" id="google">Googleで検索</a>
+<%-- <a target="_blank" href="https://www.google.co.jp" id="google">Googleで検索</a> --%>
 
 <div class="yajirushi"><img src="../image/yajirushi.jpg"></div>
 
@@ -138,15 +119,49 @@ for(Sightseeing_Place s: list){
 <%-- もし企業が予約サイトURLを登録していなければ表示されない --%>
 <div id="reservation_url">
   <%-- <a href="<% for(Sightseeing_Place s: list){ out.print(s.getUrl()); } %>" id="jaran">じゃらんで表示</a> --%>
-  <script>
-    let reservation_url='<%
-    for(Sightseeing_Place s: list){
-      out.print(s.getUrl());
-    } %>';
-    </script>
 </div>
 
+
 <%-- <div class="yajirushi"><img src="../image/yajirushi.jpg"></div> --%>
+
+<%-- シェアするコード（末松君実装中） --%>
+<%-- <a href="twitter://" id="twitter">Twitterでシェア</a> --%>
+<a target="_blank" href="https://twitter.com/?lang=ja" id="twitter">Twitterでシェア</a>
+<%-- <a href="istagram://" id="instagram">Instagramでシェア</a> --%>
+<a target="_blank" href="https://www.instagram.com/?hl=ja" id="instagram">Instagramでシェア</a>
+<a target="_blank" href="https://ja-jp.facebook.com/" id="facebook">facebookでシェア</a>
+
+<%-- JAVAの値をJavascriptに変換 --%>
+<script>
+let postal_code= '<%
+for(Sightseeing_Place s: list){
+  out.print(s.getPostal_Code());
+}
+%>';
+
+let phone_number = '<%
+for(Sightseeing_Place s: list){
+  out.print(s.getPhone_Number());
+}
+%>';
+
+let business_hour= '<%
+for(Sightseeing_Place s: list){
+  out.print(s.getBusiness_Hour());
+}
+%>';
+
+let nearest_station_time= '<%
+for(Sightseeing_Place s: list){
+  out.print(s.getNearest_Station());
+}
+%>';
+
+let reservation_url='<%
+for(Sightseeing_Place s: list){
+  out.print(s.getUrl());
+} %>';
+</script>
 
 <%-- 観光地の体裁を整えるjavascriptファイルを読み込み --%>
 <script type="text/javascript" src="../js/sightseeing_detail.js"></script>

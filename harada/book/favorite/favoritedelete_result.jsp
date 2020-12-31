@@ -11,8 +11,7 @@
 <header>
   <%-- 末松が作成した、お気に入り一覧画面へ戻るボタン --%>
   <div id="back">
-    <form action="">
-      <input type="submit" value="＜">
+    <a href="favoritelist">＜</a>
     </form>
   </div>
 
@@ -27,9 +26,7 @@
 <%= message %>
 
 <%-- お気に入り一覧へ戻るボタン --%>
-<form action="">
-  <input type = "submit" value="お気に入り一覧へ戻る">
-</form>
+<a href="favoritelist">お気に入り一覧へ戻る</a>
 
 <%@include file="../gamenhuta.html" %>
 

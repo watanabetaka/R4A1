@@ -1,4 +1,4 @@
-package sightseeing_place;
+package favorite;
 
 import bean.Favorite;
 import dao.FavoriteDAO;
@@ -24,8 +24,7 @@ public class FavoritedeleteAction extends Action {
 		Page.header(out);
 
 		// 末松君からsightseeing_idを取得
-		// int sightseeing_id=Integer.parseInt(request.getParameter("sightseeing_id"));
-		int sightseeing_id = 2;
+		int sightseeing_id=Integer.parseInt(request.getParameter("sightseeing_id"));
 
 		// cookie・sessionよりuser_idを取得
 		// 取得できなければログイン画面へ
