@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 public class Sightseeing_PlaceDAO extends DAO {
 
+	// sightseeing_id をもとに、観光地詳細画面にて表示する値を取得
 	public List<Sightseeing_Place> detail_search(int sightseeing_id) throws Exception {
 		List<Sightseeing_Place> list=new ArrayList<>();
 
@@ -51,6 +52,37 @@ public class Sightseeing_PlaceDAO extends DAO {
 		return list;
 	}
 
+	// sightseeing_placeデータベースより、user_idをもとに、
+	// sightseeing_id , sightseeing_name を取得するメソッド
+	public List<Sightseeing_Place> search(int user_id,int dummy,int dummy1) throws Exception {
+		List<Sightseeing_Place> list=new ArrayList<>();
+
+		// データベースとの接続
+		Connection con=getConnection();
+
+		PreparedStatement st=con.prepareStatement("SELECT sightseeing_id , sightseeing_name FROM sightseeing_place where user_id = ? ");
+
+		// user_idをSQL文にセット
+		st.setInt(1,user_id);
+
+		// 取得した値をrsに挿入
+		ResultSet rs=st.executeQuery();
+
+		// beanに取得した値をセット
+		while (rs.next()) {
+			Sightseeing_Place s=new Sightseeing_Place();
+			s.setSightseeing_Id(rs.getInt("sightseeing_id"));
+			s.setSightseeing_Name(rs.getString("sightseeing_name"));
+			list.add(s);
+		}
+
+		// データベースへの接続を終了
+		st.close();
+		con.close();
+
+		// 取得した値を返却
+		return list;
+	}
 
 		// データベースより、user_idをもとに
 	 // 観光地ID、観光地名、市名、写真パス を取得するメソッド

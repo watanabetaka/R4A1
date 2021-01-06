@@ -41,6 +41,8 @@ public class FavoriteDAO extends DAO {
 		con.close();
 	}
 
+
+	// user_id をもとに favorite データベースから探索し、値を取得
 	public List<Favorite> search(int user_id) throws Exception{
 		List<Favorite> list=new ArrayList<>();
 

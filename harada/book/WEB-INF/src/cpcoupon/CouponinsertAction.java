@@ -1,7 +1,7 @@
-package favorite;
+package cpcoupon;
 
-import bean.Favorite;
-import dao.FavoriteDAO;
+import bean.Application_Coupon;
+import dao.Application_CouponDAO;
 import tool.Action;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,7 +15,7 @@ import java.io.*;
 import javax.servlet.*;
 import session.Session;
 
-public class FavoritedeleteAction extends Action {
+public class CouponinsertAction extends Action {
 	// 表示させる値を取得し、シャッフルするメソッド
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
@@ -23,36 +23,29 @@ public class FavoritedeleteAction extends Action {
 		PrintWriter out=response.getWriter();
 		Page.header(out);
 
-		// 削除するsightseeing_idを取得
+		// 追加する coupon_name , sightseeing_idを取得
+		String coupon_name=request.getParameter("coupon_name");
 		int sightseeing_id=Integer.parseInt(request.getParameter("sightseeing_id"));
 
 		// cookie・sessionよりuser_idを取得
-		// 取得できなければログイン画面へ
 		Session session = new Session();
 		int user_id = session.getUser_id(request,response);
 
 		// beanへ値をセット
-		Favorite f=new Favorite();
-		f.setSightseeing_Id(sightseeing_id);
+		Application_Coupon f=new Application_Coupon();
 		f.setUser_Id(user_id);
+		f.setCoupon_Name(coupon_name);
+		f.setSightseeing_Id(sightseeing_id);
 
 		// Sightseeing_PlaceDAOをインスタンス化
-		FavoriteDAO dao = new FavoriteDAO();
+		Application_CouponDAO dao = new Application_CouponDAO();
 		// sightseeing_idをもとに、DBから必要な値を取得
-		int line=dao.delete(f);
-
-		String message;
-
-		if(line > 0){
-			message = "観光地を削除しました";
-		}else{
-			message = "観光地を削除するのに失敗しました";
-		}
+		int line=dao.insert(f);
 
 		// 値をjspへ送る為にセットする
-		request.setAttribute("message",message);
+		request.setAttribute("line",line);
 
 		// jspへフォワードする
-		return "favoritedelete_result.jsp";
+		return "coupon_application_result.jsp";
 	}
 }

@@ -98,7 +98,7 @@
     <div id="favorite_title">お気に入り一覧</div>
 </header>
 
-  <% List<Favorite> list =(List<Favorite>)request.getAttribute("list"); %>
+<% List<Favorite> list =(List<Favorite>)request.getAttribute("list"); %>
 
 <table>
 <br>
