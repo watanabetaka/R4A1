@@ -28,7 +28,7 @@ $(document).ready(function() {
         if (password.match(/(.*[!,%,&,@,#,$,^,*,?,_,~].*[!,%,&,@,#,$,^,*,?,_,~])/)) strength += 1
 
         // 点数を元に強さを計測
-        if (strength < 2) {
+        if (strength < 3) {
             $('#result').removeClass()
             $('#result').addClass('弱いです〜')
             inputElement.prop('disabled', true);
@@ -37,7 +37,7 @@ $(document).ready(function() {
             $('#result').removeClass()
             $('#result').addClass('強いです！!')
             inputElement.prop('disabled', false);
-            return 'かちゅみーー'
+            return '適切です'
         }
 
       }

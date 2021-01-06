@@ -20,7 +20,6 @@ public class CookiejudgeAction extends Action {
 				String tmp = Integer.toString(user_id);
 
 					if(tmp != null){
-							System.out.println(1);
 							RequestDispatcher dispatch = request.getRequestDispatcher("../sightseeing_swipe/Swipe.action");
 							dispatch.forward(request, response);
 					}else{

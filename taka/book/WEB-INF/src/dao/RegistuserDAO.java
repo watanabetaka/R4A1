@@ -19,21 +19,23 @@ public class RegistuserDAO extends DAO {
 
 			  Connection con=getConnection();
 
-		PreparedStatement st;
-		st=con.prepareStatement(
-			"select * from user where email=? ");
-		st.setString(1, email);
-		ResultSet rs=st.executeQuery();
+				PreparedStatement st;
+				st=con.prepareStatement(
+				"update  user set email = ? where email=? ");
+				st.setString(1, email);
+				st.setString(2, email);
+				int line = st.executeUpdate();
 
-		if(rs != null){
-				mailflag = true;
-		}
+				if(line > 0){
+					mailflag = true;
+				}
 
 		st.close();
 		con.close();
+		System.out.println(mailflag);
 		return mailflag;
 	}
-	public int insert(String email,String pass)
+	public int insert(String email,String hashpass)
 	throws Exception {
 
 		Connection con=getConnection();
@@ -41,7 +43,7 @@ public class RegistuserDAO extends DAO {
 		PreparedStatement st;
 		st=con.prepareStatement(
 		"insert into user values(default,?,1,true,?)");
-		st.setString(1, pass);
+		st.setString(1, hashpass);
 		st.setString(2, email);
 		//更新した行数が入る
 		int line = st.executeUpdate();

@@ -26,13 +26,14 @@ public class MailSendAction extends  Action{
         HttpServletRequest request, HttpServletResponse response
       ) throws Exception {
 
-
+        //ユーザーから入力されたメールアドレスをemail変数に格納する
         String email=request.getParameter("email");
-
+        //新規登録用のdaoをインスタンス化する
         RegistuserDAO dao=new RegistuserDAO();
+        //
     		boolean mailflag = dao.searchmail(email);
 
-        if(mailflag){
+        if(!mailflag){
             HttpSession session1=request.getSession();
             // 暗証番号生成
             char[] chars = "abcdefghijklmnopqrstuvwxyzABSDEFGHIJKLMNOPQRSTUVWXYZ1234567890".toCharArray();
@@ -41,9 +42,8 @@ public class MailSendAction extends  Action{
             for (int i = 0;  i < 6;  i++) {
                 pin[i] = chars[r.nextInt(chars.length)];
             }
-
-
-
+            // セッションの時間指定
+            session1.setMaxInactiveInterval(60*30);
             session1.setAttribute("email",email);
             session1.setAttribute("pin",String.valueOf(pin));
 
@@ -89,7 +89,7 @@ public class MailSendAction extends  Action{
 
             // メールを送信する
             message.setContent(multipart);
-            Transport.send(message);
+              Transport.send(message);
             return "newregistpin.jsp";
 
       }
