@@ -1,5 +1,5 @@
 // このjavascriptファイルにおいて行っていること
-// 要素をドラッグ可能にし、アイメーションを追加
+// 要素をドラッグ可能にし、アニメーションを追加
 // サーブレットとのajax通信を行い、データベースへ追加（レスポンスはなし）
 
 // 添え字の初期化
@@ -52,7 +52,7 @@ $(document).ready(function(event) {
       // 送信したいリクエストタイプを指定
       type : "GET",
       // 通信するサーブレットのURLを指定
-      url  : "http://10.23.104.39:8080/book/sightseeing_swipe/favorite_insert",
+      url  : "http://192.168.68.117:8080/book/sightseeing_swipe/favorite_insert",
       // 送信するデータを指定
       data : request,
       // 非同期通信であればtrue、同期通信であればfalseを指定

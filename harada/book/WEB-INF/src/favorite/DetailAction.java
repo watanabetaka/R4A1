@@ -1,4 +1,4 @@
-package sightseeing_swipe;
+package favorite;
 
 import bean.Sightseeing_Place;
 import dao.Sightseeing_PlaceDAO;
@@ -15,7 +15,7 @@ import java.io.*;
 import javax.servlet.*;
 import session.Session;
 
-public class SwipeAction extends Action {
+public class DetailAction extends Action {
 	// 表示させる値を取得し、シャッフルするメソッド
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
@@ -23,24 +23,23 @@ public class SwipeAction extends Action {
 		PrintWriter out=response.getWriter();
 		Page.header(out);
 
-		// int sightseeing_id=Integer.parseInt(request.getParameter("sightseeing_id"));
-		int sightseeing_id = 1;
+		// 末松君からsightseeing_idを取得
+		int sightseeing_id=Integer.parseInt(request.getParameter("sightseeing_id"));
 
 		// cookie・sessionよりuser_idを取得
+		// 取得できなければログイン画面へ
 		Session session = new Session();
 		int user_id = session.getUser_id(request,response);
 
-		// user_idをもとに、DBから必要な値を取得
-		FavoriteDAO dao=new FavoriteDAO();
-		List<Favorite> list = dao.search(sightseeing_id,user_id);
-
-		// 取得した値をシャッフルする
-		Collections.shuffle(list);
+		// Sightseeing_PlaceDAOをインスタンス化
+		Sightseeing_PlaceDAO dao = new Sightseeing_PlaceDAO();
+		// sightseeing_idをもとに、DBから必要な値を取得
+		List<Sightseeing_Place> list = dao.detail_search(sightseeing_id);
 
 		// 値をjspへ送る為にセットする
 		request.setAttribute("list",list);
 
 		// jspへフォワードする
-		return "sightseeing_swipe.jsp";
+		return "sightseeing_place.jsp";
 	}
 }
