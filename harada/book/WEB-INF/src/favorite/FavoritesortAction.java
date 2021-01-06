@@ -31,10 +31,10 @@ public class FavoritesortAction extends Action {
 		// 児玉君から送信されたデータの受け取り
 		 String array_city[] = request.getParameterValues("array_city");
 		 String array_genre[] = request.getParameterValues("array_genre");
-		 // String spot = request.getParameter("spot");
+		 Boolean asc_sort = Boolean.valueOf(request.getParameter("asc_sort"));
 		 System.out.println(Arrays.toString(array_city));
 		 System.out.println(Arrays.toString(array_genre));
-		 // System.out.println(spot);
+		 System.out.println(asc_sort);
 
 		// // テストデータを配列へ挿入
 		// String array_city[]={"大分市","竹田市"};
@@ -57,7 +57,6 @@ public class FavoritesortAction extends Action {
 		// 市名が入力されており、ジャンルが入力されていない場合の処理
 		if(array_city != null && array_genre == null ){
 			// user_id , array_city　をもとに、DBから必要な値を取得
-			System.out.println("haitta");
 			list = dao.search(user_id,array_city);
 		}
 
@@ -74,14 +73,12 @@ public class FavoritesortAction extends Action {
 			list = dao.search(user_id,array_city,array_genre);
 		}
 
-		// 位置情報ボタンがONになっている場合は、位置情報が近い順に表示し、
-		// OFFの場合は、観光地をシャッフルする処理
-		// if (spot== "true"){
-		// 	// 位置情報で観光地をソートする処理
-		// }else{
-		// 	// 観光地をシャッフルする処理
-		// 	Collections.shuffle(list);
-		// }
+		// 古い順に並べ替え ボタンがONになっている場合は、観光地を追加順に表示する
+		if (asc_sort == true){
+			// 観光地を日時で昇順にソートする処理
+			Collections.reverse(list);
+		}else{
+		}
 
 
 		// 値をjspへ送る為にセットする

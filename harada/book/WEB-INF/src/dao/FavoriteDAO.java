@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-// favoriteデータベースに挿入する
 public class FavoriteDAO extends DAO {
 
 
@@ -17,7 +16,7 @@ public class FavoriteDAO extends DAO {
 	public void search(int user_id , int sightseeing_id) throws Exception {
 	  Connection con=getConnection();
 
-		PreparedStatement st=con.prepareStatement("select * from favorite where sightseeing_id = ? and user_id = ?");
+		PreparedStatement st=con.prepareStatement("select * from favorite where sightseeing_id = ? and user_id = ? order by f.favorite_itime desc");
 		st.setInt(1,sightseeing_id);
 		st.setInt(2,user_id);
 
@@ -32,7 +31,7 @@ public class FavoriteDAO extends DAO {
 	  Connection con=getConnection();
 
 
-		PreparedStatement st=con.prepareStatement("insert into favorite values (?,?)");
+		PreparedStatement st=con.prepareStatement("insert into favorite values (?,?,current_timestamp)");
 		st.setInt(1,favorite.getSightseeing_Id());
 		st.setInt(2,favorite.getUser_Id());
 
@@ -48,7 +47,7 @@ public class FavoriteDAO extends DAO {
 		Connection con=getConnection();
 
 		PreparedStatement st=con.prepareStatement(
-			"select s.sightseeing_id , s.sightseeing_name , s.picture_path from sightseeing_place as s  join favorite as f  on s.sightseeing_id = f.sightseeing_id where f.user_id= ?");
+			"select s.sightseeing_id , s.sightseeing_name , s.picture_path from sightseeing_place as s  join favorite as f  on s.sightseeing_id = f.sightseeing_id where f.user_id= ?　order by f.favorite_itime desc");
 		st.setInt(1,user_id);
 		ResultSet rs=st.executeQuery();
 
@@ -91,7 +90,7 @@ public class FavoriteDAO extends DAO {
 
 		// favoriteデータベースより、user_idをもとに、sightseeing_idを取得し、
 		// そのsightseeing_idが存在しないFavoriteデータベースの行を取得
-		PreparedStatement st=con.prepareStatement("SELECT s.sightseeing_id , s.sightseeing_name, s.picture_path FROM sightseeing_place as s join city as c on s.city_id = c.city_id join genre as g on s.genre_id = g.genre_id join favorite as f on s.sightseeing_id = f.sightseeing_id WHERE f.user_id = ? ");
+		PreparedStatement st=con.prepareStatement("SELECT s.sightseeing_id , s.sightseeing_name, s.picture_path FROM sightseeing_place as s join city as c on s.city_id = c.city_id join genre as g on s.genre_id = g.genre_id join favorite as f on s.sightseeing_id = f.sightseeing_id WHERE f.user_id = ? order by f.favorite_itime desc ");
 
 		// user_idをSQL文にセット
 		st.setInt(1,user_id);
@@ -127,7 +126,7 @@ public class FavoriteDAO extends DAO {
 		// favoriteデータベースより、user_idをもとに、sightseeing_idを取得し、
 		// そのsightseeing_idが存在しないFavoriteデータベースの行を取得
 		// その行から、取得した city_name と一致する行を取得
-		PreparedStatement st=con.prepareStatement("SELECT s.sightseeing_id , s.sightseeing_name, s.picture_path FROM sightseeing_place as s join city as c on s.city_id = c.city_id join genre as g on s.genre_id = g.genre_id join favorite as f on s.sightseeing_id = f.sightseeing_id WHERE f.user_id = ? and c.city_name = ? ");
+		PreparedStatement st=con.prepareStatement("SELECT s.sightseeing_id , s.sightseeing_name, s.picture_path FROM sightseeing_place as s join city as c on s.city_id = c.city_id join genre as g on s.genre_id = g.genre_id join favorite as f on s.sightseeing_id = f.sightseeing_id WHERE f.user_id = ? and c.city_name = ? order by f.favorite_itime desc ");
 
 		// 取得した市名配列の全ての行をループで取得
 		for(String city_name:array_city){
@@ -169,7 +168,7 @@ public class FavoriteDAO extends DAO {
 		// favoriteデータベースより、user_idをもとに、sightseeing_idを取得し、
 		// そのsightseeing_idが存在しないFavoriteデータベースの行を取得
 		// その行から、取得した genre_name と一致する行を取得
-		PreparedStatement st=con.prepareStatement("SELECT s.sightseeing_id , s.sightseeing_name, s.picture_path FROM sightseeing_place as s join city as c on s.city_id = c.city_id join genre as g on s.genre_id = g.genre_id join favorite as f on s.sightseeing_id = f.sightseeing_id WHERE f.user_id = ? and g.genre_name= ?");
+		PreparedStatement st=con.prepareStatement("SELECT s.sightseeing_id , s.sightseeing_name, s.picture_path FROM sightseeing_place as s join city as c on s.city_id = c.city_id join genre as g on s.genre_id = g.genre_id join favorite as f on s.sightseeing_id = f.sightseeing_id WHERE f.user_id = ? and g.genre_name= ? order by f.favorite_itime desc");
 
 		// 取得したジャンル名配列の全ての行をループで取得
 		for(String genre_name:array_genre){
@@ -211,7 +210,7 @@ public class FavoriteDAO extends DAO {
 		// favoriteデータベースより、user_idをもとに、sightseeing_idを取得
 		// そのsightseeing_idが存在しないFavorite , city , genreデータベースの行を取得
 		// その行から、取得したcity_name と genre_name　の複合条件に一致した行を取得
-		PreparedStatement st=con.prepareStatement("SELECT s.sightseeing_id , s.sightseeing_name, s.picture_path FROM sightseeing_place as s join city as c on s.city_id = c.city_id join genre as g on s.genre_id = g.genre_id join favorite as f on s.sightseeing_id = f.sightseeing_id WHERE f.user_id = ? and c.city_name = ? and g.genre_name = ?　");
+		PreparedStatement st=con.prepareStatement("SELECT s.sightseeing_id , s.sightseeing_name, s.picture_path FROM sightseeing_place as s join city as c on s.city_id = c.city_id join genre as g on s.genre_id = g.genre_id join favorite as f on s.sightseeing_id = f.sightseeing_id WHERE f.user_id = ? and c.city_name = ? and g.genre_name = ?　order by f.favorite_itime desc");
 
 		// 取得した市名とジャンル名の複合条件を作成する処理
 		// 取得した市名配列の全ての行をループで取得

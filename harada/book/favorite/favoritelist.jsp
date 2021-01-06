@@ -69,16 +69,16 @@
            </div>
 
 
-      <div class="switch">
-        <p>位置情報</p>
-          <label class="switch__label">
-            <form name="location_form">
-    　　　　    <input type="checkbox" id="location" name="location_name" class="switch__input"/>
+      <%-- <div class="switch"> --%>
+        <p>古い順に並び替え</p>
+          <%-- <label class="switch__label"> --%>
+            <form name="ascsort_form">
+    　　　　    <input type="checkbox" name="asc_name" id="asc_sort">
             </form>
-  　　　　    <span class="switch__content"></span>
-  　　　　    <span class="switch__circle"></span>
-  　　　　 </label>
-       </div>
+  　　　　    <%-- <span class="switch__content"></span>
+  　　　　    <span class="switch__circle"></span> --%>
+  　　　　 <%-- </label> --%>
+       <%-- </div> --%>
 
      <!--  <div class="toggle-switch">
          <input id="toggle" class="toggle-input" type='checkbox' />
@@ -124,6 +124,6 @@
 </table>
 
 
-<%@include file="../html/gamenhuta.html" %>
+<%-- <%@include file="../html/gamenhuta.html" %> --%>
 
 <%@include file="../html/footer.html" %>

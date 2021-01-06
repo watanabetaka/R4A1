@@ -5,10 +5,11 @@ function changeCheckbox(idname){
 
 let array_genre = [];/*SortAction.javaに送信*/
 let array_city = [];/*SortAction.javaに送信*/
-let spot = false;/*SortAction.javaに送信*/
+let  = false;/*SortAction.javaに送信*/
 
 function send() {
 
+  console.log("aaa");
   // area_arrayに値を挿入する処理
   // area_nameの個数分ループ
   for (let i=0; i<document.area_form.area_name.length; i++){
@@ -29,6 +30,10 @@ function send() {
     }
   }
 
+  if ($("#asc_sort:checked").val() == "on"){
+    $('#actions').append('<input type="hidden" name="asc_sort" value="true">');
+    //チェックされていた場合
+  }
 }
 
 // /*もし位置情報にチェックが入っているなら*/
