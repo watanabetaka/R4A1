@@ -2,8 +2,8 @@
 <%@include file="../html/header.html" %>
 <form action='checkresult' method='post'>
 <p>現在のパスワード　　　　　　<input type='text' id='now_pass' placeholder="Type Your Password here"></p>
-<p>新しいメールアドレス　　　　<input type='text' id='new_address' placeholder="info@example.com" onKeyUp="confirm()"><span id='result'></span></p>
-<p>新しいメールアドレス（確認）<input type='text' id='new_address_2' placeholder="info@example.com" onKeyUp="confirm()"><span id='result_2'></span></p>
+<p>新しいメールアドレス　　　　<input type='text' id='new_address' placeholder="info@example.com" onKeyUp="confirm()"><span id='result'>不適切です</span></p>
+<p>新しいメールアドレス（確認）<input type='text' id='new_address_2' placeholder="info@example.com" onKeyUp="confirm()"><span id='result_2'>不適切です</span></p>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="../js/mypagemailcheck.js"></script>
 <script>
@@ -18,10 +18,7 @@ function confirm(){
   }else{
     t2.innerHTML = "不適切です";
   }
-
   if(t1.innerHTML=="適切です"&&t2.innerHTML=="適切です"){
-    console.log(t1.innerHTML);
-    console.log(t1.innerHTML);
     inputElement.prop('disabled', false);
   }else{
     inputElement.prop('disabled', true);
