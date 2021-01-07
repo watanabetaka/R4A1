@@ -1,8 +1,7 @@
 package tool;
 
 import java.io.PrintWriter;
-
-public class Page {
+public class Page{
 
 	public static void header(PrintWriter out) {
 		out.println("<!DOCTYPE html>");
@@ -14,7 +13,7 @@ public class Page {
 		out.println("<body>");
 	}
 
-	public static void footer(PrintWriter out) {
+	public static void footer(PrintWriter out){
 		out.println("</body>");
 		out.println("</html>");
 	}

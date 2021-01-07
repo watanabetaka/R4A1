@@ -1,16 +1,15 @@
 package bean;
 
+import javax.servlet.http.*;
+
 public class User implements java.io.Serializable {
 
-	private String user_id;
-	 	private String  pass;
-		private String email;
+	private String email;
+	private String  pass;
+  private int user_id;
 
-	public String getuser_Id() {
-		return user_id;
-	}
 
-	public String getemail() {
+	public String getEmail() {
 		return email;
 	}
 
@@ -18,10 +17,13 @@ public class User implements java.io.Serializable {
 		return pass;
 	}
 
+	public int getUser_id() {
+ 	 return user_id;
+  }
 
-	public void setuser_Id(String user_id) {
-		this.user_id = user_id;
-	}
+
+
+
 
 	public void setEmail(String email) {
 		this.email = email;
@@ -30,6 +32,10 @@ public class User implements java.io.Serializable {
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
+
+	public void setUser_id(int user_id) {
+ 	 this.user_id = user_id;
+  }
 
 
 }
