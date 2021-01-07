@@ -1,0 +1,18 @@
+原田のファイルについての連絡
+
+作成した機能（実行URL)
+スワイプ機能（http://localhost:8080/book/sightseeing_swipe/Swipe.action)
+お気に入り機能<シェア機能を除く>（http://localhost:8080/book/favorite/favoritelist)
+クーポン申請機能（http://localhost:8080/book/cpcoupon/Sightseeingsearch.action)
+
+実行できない人は、googleドライブの、 
+マイドライブ/開発関連/開発用/http://localhost:8080/ を記述した人用
+ファイルを参照して、指定のファイルを変更してください。
+
+それでもエラーになる人は原田に言ってください。
+
+
+CSSを画面に挿入したい人は、book直下の以下のフォルダの中の、jspファイルを参照してください。
+・sightseeing_swipe
+・favorite
+・cpcoupon
