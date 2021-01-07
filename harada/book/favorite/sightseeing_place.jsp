@@ -113,11 +113,13 @@ for(Sightseeing_Place s: list){
 <%-- SNSでシェアする機能（末松君実装） --%>
 <%-- 末松くんへ --%>
 <%-- 下記のaタグのフォーマットに従って作ってください --%>
-<a target="_blank" href="https://twitter.com/?lang=ja" id="twitter">Twitterでシェア</a>
+<%-- <a target="_blank" href="https://twitter.com/?lang=ja" id="twitter">Twitterでシェア</a> --%>
+<a target="_blank" href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="「」に行きました！" data-url=" " data-hashtags="まいらいずおおいた" id="twitter">twitterでシェア</a>
 <a target="_blank" href="https://www.instagram.com/?hl=ja" id="instagram">Instagramでシェア</a>
 <a target="_blank" href="https://ja-jp.facebook.com/" id="facebook">facebookでシェア</a>
 
-
+<%-- twitterのAPI --%>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <%-- JAVAの値をJavascriptに変換 --%>
 <script>
