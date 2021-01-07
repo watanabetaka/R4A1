@@ -29,15 +29,16 @@ $(document).ready(function() {
 
         // 点数を元に強さを計測
         if (strength < 3) {
+            console.log(document.getElementById("result").innerHTML);
             $('#result').removeClass();
             document.getElementById("result").innerHTML = "適切です";
+            console.log(document.getElementById("result").innerHTML);
             if(document.getElementById("result").innerHTML=="適切です"&&document.getElementById("result_confirm").innerHTML=="適切です"){
-              console.log(document.getElementById("result").innerHTML);
               inputElement.prop('disabled', false);
             }
         } else {
             $('#result').removeClass();
-            inputElement.prop('disabled', true);
+            inputElement.prop('disabled', false);
         }
 
       }

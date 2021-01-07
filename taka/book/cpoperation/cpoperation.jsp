@@ -9,10 +9,8 @@
 
 <p><input type="button" id = mailpass onclick="location.href='http://localhost:8080/book/login/userlogin.jsp'" value="メアド・パスワード変更"></p>
 
-<p><input type="button" id = coupon onclick="location.href='http://localhost:8080/book/login/userlogin.jsp'" value="クーポン申請"></p>
+<p><input type="button" id = coupon onclick="location.href='http://localhost:8080/book/cplogin/Logout.action'" value="クーポン申請"></p>
 
-<form action="Logout.action" method="post">
-<p><input type="submit" id = logout  value="ログアウト"></p>
-</form>
+<p><input type="button" id = logout "location.href='http://localhost:8080/book/cplogin/Logout.action'"  value="ログアウト"></p>
 
 <%@include file="../html/footer.html" %>
