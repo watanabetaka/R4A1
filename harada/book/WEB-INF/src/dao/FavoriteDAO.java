@@ -83,7 +83,7 @@ public class FavoriteDAO extends DAO {
 	}
 
 	// データベースより、user_idをもとに
- // 観光地ID、観光地名、写真パス を取得するメソッド
+ 	// 観光地ID、観光地名、写真パス を取得するメソッド
 	public List<Favorite> search(int user_id , String dummy) throws Exception {
 		List<Favorite> list=new ArrayList<>();
 
@@ -248,6 +248,22 @@ public class FavoriteDAO extends DAO {
 		// 取得した値を返却
 		return list;
 	}
+
+	// sightseeing_id , user_id をもとに favorite データベースから探索し、値を取得
+	public void search(int user_id , int sightseeing_id , String array_city[] , String array_genre[]) throws Exception {
+		Connection con=getConnection();
+
+		PreparedStatement st=con.prepareStatement("select * from favorite where sightseeing_id = ? and user_id = ? order by f.favorite_itime desc");
+		st.setInt(1,sightseeing_id);
+		st.setInt(2,user_id);
+
+		st.executeUpdate();
+
+		st.close();
+		con.close();
+	}
+
+
 
 
 }

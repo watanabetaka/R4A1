@@ -1,0 +1,4 @@
+java -classpath C:\work\tomcat\webapps\book\WEB-INF\lib\javax.mail.jar;./ mail.MailSend
+-classpath ../lib/*
+
+set CLASSPATH=%CATALINA_HOME%\lib\servlet-api.jar;%CATALINA_HOME%\webapps\book\WEB-INF\lib\javax.mail.jar;%CATALINA_HOME%\webapps\book\WEB-INF\lib\activation.jar;
