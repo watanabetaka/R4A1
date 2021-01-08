@@ -2,8 +2,8 @@
 <%@include file="../html/header.html" %>
 <form action='checkresult' method='post'>
 <p>現在のパスワード　　　　<input type='text' id='now_pass' placeholder="Type Your Password here"></p>
-<p>新しいパスワード　　　　<input type='text' id='new_pass' placeholder="Type Your Password here" onKeyUp="confirm()"><span id="result">不適切です</span></p>
-<p>新しいパスワード（確認）<input type='text' id='new_pass_2' placeholder="Type Your Password here" onKeyUp="confirm()"><span id=result_2>不適切です</span></p>
+<p>新しいパスワード　　　　<input type='text' id='new_pass' placeholder="Type Your Password here" onKeyUp="confirm()"><span id="result"></span></p>
+<p>新しいパスワード（確認）<input type='text' id='new_pass_2' placeholder="Type Your Password here" onKeyUp="confirm()"><span id=result_2></span></p>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="../js/mypagepasscheck.js"></script>
 <script>
@@ -14,11 +14,11 @@ function confirm(){
   var t2=document.getElementById("result_2");
   var inputElement = $('input[name="send"]');
   if(pass_1==pass_2){
-    t2.innerHTML = "適切です";
+    t2.innerHTML = "上の入力と一致しています";
   }else{
-    t2.innerHTML = "不適切です";
+    t2.innerHTML = "上の入力と一致していません";
   }
-  if(t1.innerHTML=="適切です"&&t2.innerHTML=="適切です"){
+  if(t1.innerHTML=="入力方式が合致しています"&&t2.innerHTML=="上の入力と一致しています"){
     inputElement.prop('disabled', false);
   }else{
     inputElement.prop('disabled', true);
@@ -27,8 +27,8 @@ function confirm(){
 </script>
 </form>
 <p>パスワードは
-  <br>※大文字・小文字・数字・記号を含める
-  <br>※8文字以上10文字以下
+  <br>※アルファベットの大文字・数字を含める
+  <br>※8文字以上
 </p>
 <p><input type='button' name='send' value="登録" disabled></p>
 

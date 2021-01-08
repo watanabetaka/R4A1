@@ -9,14 +9,15 @@ $(document).ready(function() {
         let inputElement = $('input[name="send"]');
       var reg = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;;
         if (reg.test(address)) {
-          document.getElementById("result").innerHTML = "適切です";
-          if(document.getElementById("result").innerHTML=="適切です"&&document.getElementById("result_2").innerHTML=="適切です"){
-            inputElement.prop('disabled', false);
-          }
-          console.log(document.getElementById("result").innerHTML);
-          console.log(document.getElementById("result_2").innerHTML);
+          $('#result').removeClass()
+          $('#result').addClass('強いです！!')
+          inputElement.prop('disabled', false);
+          return 'オッケー'
         } else {
-          $('#result_1').removeClass()
-          inputElement.prop('disabled',true);
+          $('#result').removeClass()
+          $('#result').addClass('弱いです〜')
+          inputElement.prop('disabled', true);
+          return '不適切です'
+        }
     }
 });
