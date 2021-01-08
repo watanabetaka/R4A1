@@ -6,5 +6,6 @@
 <p id = pass>パスワード<input type="password" name="pass"></p>
 <p id = login><input type="submit" value="ログイン"></p>
 </form>
+<a href="http://localhost:8080/book/login/userlogin.jsp">パスワード再発行</a>
 
 <%@include file="../html/footer.html" %>
