@@ -12,7 +12,7 @@ $(document).ready(function() {
           $('#result').removeClass()
           $('#result').addClass('強いです！!')
           inputElement.prop('disabled', false);
-          return '適切です'
+          return 'オッケー'
         } else {
           $('#result').removeClass()
           $('#result').addClass('弱いです〜')
