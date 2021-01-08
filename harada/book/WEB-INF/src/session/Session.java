@@ -21,9 +21,8 @@ public class Session {
       String session_id = (String)session.getAttribute("user");
 			//int型に変換
       user_id = Integer.parseInt(session_id);
- 		//ここにセッションのユーザIDが入ってます
+      System.out.println(user_id);  //ここにセッションのユーザIDが入ってます
       //ログインか新規会員登録以外からメニュー画面へ遷移した場合
-
     	}else{
 				// Cookieの取得
       Cookie[] cookies=request.getCookies();
@@ -48,7 +47,7 @@ public class Session {
       	}
     	}
 		}catch(Exception e){
-			System.out.println();
+			System.out.println("エラー");
 		}
 		// 設定したユーザIDを戻り値に返します
 		return user_id;
