@@ -94,7 +94,7 @@
        </div>   -->
 
       <%-- フォームの検索ボタンを押したらSortAction.javaをフォルダ内から探索して遷移する --%>
-      <form action="Sort.action">
+      <form action="http://10.23.104.39:8080/book/sightseeing_swipe/Sort.action">
         <div id="actions">
           <%-- 検索ボタンを押したらjavascriptファイルを呼び出す処理 --%>
           <input type="submit" id="sendtojava" value="検索" onclick=send();>
