@@ -72,6 +72,29 @@ throws Exception{
         System.out.println(mailflag);
         return mailflag;
       }
+
+      public void updatehash(String hashpass,int user_id)
+  	 	throws Exception {
+  			//  入力されたメールアドレスを基に更新を行う
+  			// 	成功ならtrue,失敗ならfalseを返す
+  				boolean mailflag = false;
+
+  			  Connection con=getConnection();
+  				PreparedStatement st;
+  				st=con.prepareStatement(
+  				"update user set pass = ? where user_id=?");
+  				st.setString(1, hashpass);
+  				st.setInt(2, user_id);
+  				int line = st.executeUpdate();
+
+  				if(line > 0){
+  					mailflag = true;
+  				}
+
+          st.close();
+          con.close();
+        }
+
         public boolean updatepass(String pass,int user_id,String hashpass)
         throws Exception {
           //  入力されたパスワードを基に更新を行う
