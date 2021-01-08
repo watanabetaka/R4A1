@@ -12,12 +12,12 @@ $(document).ready(function() {
           $('#result').removeClass()
           $('#result').addClass('強いです！!')
           inputElement.prop('disabled', false);
-          return 'オッケー'
+          return '正しい入力方式です。送信ボタンが押せます。'
         } else {
           $('#result').removeClass()
           $('#result').addClass('弱いです〜')
           inputElement.prop('disabled', true);
-          return '不適切です'
+          return '誤った入力方式です'
         }
     }
 });
