@@ -9,6 +9,7 @@ import java.io.*;
 import javax.servlet.*;
 import session.Passwordutil;
 
+
 public class PassAction extends Action {
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
@@ -24,7 +25,7 @@ public class PassAction extends Action {
 			String email = (String)session.getAttribute("email");
 			/*パスワードとメールアドレスを連結してハッシュ化したものをパスワード
 			として格納*/
-			String hashpass = Passwordutil.getSafetyPassword("pass","email");
+			String hashpass = Passwordutil.getSafetyPassword(pass,email);
 			// 一般ユーザー登録用のdaoを呼び出し
 			RegistuserDAO dao=new RegistuserDAO();
 			// lineに更新された行が入る

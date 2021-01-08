@@ -6,11 +6,34 @@
   2.数字と記号を含めること
   </p>
 <form action="Pass.action" method="post">
-<label for="password"><b>パスワード : </b></label>
-<input name="pass" id="password" type="password" placeholder="Type Your Password here"/>
+<label for="password"><b>パスワード  </b></label><br>
+<input name="pass" id="password" type="password" placeholder="Type Your Password here" onKeyUp="confirm()"/>
 <span id="result"></span>
+<br>
+<input name="pass" id="password_confirm" type="password" placeholder="Type Your Password here" onKeyUp="confirm()"/>
+<span id="result_confirm"></span>
 <p><input type="submit" name = "send"id = "send" value="送信"  disabled ></p>
 </form>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="../js/passwordcheck.js"></script>
+<script>
+function confirm(){
+  var password = document.getElementById("password").value;
+  var password_confirm = document.getElementById("password_confirm").value;
+  var t1=document.getElementById("result");
+  var t2=document.getElementById("result_confirm");
+  var inputElement = $('input[name="send"]');
+  if(password==password_confirm){
+    t2.innerHTML = "適切です";
+  }else{
+    t2.innerHTML = "不適切です";
+  }
+
+  if(t1.innerHTML=="適切です"&&t2.innerHTML=="適切です"){
+    inputElement.prop('disabled', false);
+  }else{
+    inputElement.prop('disabled', true);
+  }
+}
+</script>
 <%@include file="../html/footer.html" %>
