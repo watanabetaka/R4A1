@@ -2,7 +2,7 @@
 <%@include file="../header.html" %>
 
 <h1>myaa</h1>
-<p id = newregist>< type="button" onclick="location.href='http://10.23.104.39:8080/book/login/userlogin.jsp'" value="新規会員登録"></p>
+<p id = newregist><input type="button" onclick="location.href='http://10.23.104.39:8080/book/login/userlogin.jsp'" value="新規会員登録"></p>
 
 <p id = login><input type="button" onclick="location.href='http://10.23.104.39:8080/book/login/userlogin.jsp'" value="ログイン"></p>
 
