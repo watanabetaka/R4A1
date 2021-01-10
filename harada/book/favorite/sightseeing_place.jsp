@@ -32,7 +32,7 @@
       }
       %>">
       <%-- エラーが生じた時は、下記のコードをコメントアウトして再度実行してください --%>
-      <%-- <input type="hidden" name="test" value="aa"> --%>
+      <%-- <input type="hidden" name="test" value="aaa"> --%>
       <input type="submit" value="CSSにて、他の要素とボタンが重なっており、現在、削除できません">
     </form>
   </div>
@@ -40,6 +40,15 @@
 </header>
 
 <%-- 観光地の表示 --%>
+
+<%-- ぱんくずリストの表示 --%>
+<div id="breadcrumb">
+  <a href="http://localhost:8080/book/favorite/Favoritesort.action?array_genre=<%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%></a>
+  >
+  <a href="http://localhost:8080/book/favorite/Favoritesort.action?array_city=<%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%></a>
+  >
+  <%for(Sightseeing_Place s: list){out.print(s.getSightseeing_Name());}%>
+</div>
 
 <%-- 観光地名の表示 --%>
 <div id="sightseeing_place">

@@ -30,6 +30,11 @@ let temp_hour;
 let temp_minute;
 let temp_second;
 
+// クーポンを獲得していなかった時の処理
+if(array_coupon_id.length == 0){
+  $('#coupon').append('<div id="no_coupon">まだクーポンを獲得していません<br>');
+  $('#coupon').append('観光地の感想をSNSでシェアして、クーポンをゲットしよう！</div>');
+}
 
 // 同じクーポンの場合、そのクーポンの枚数を表示する処理
 
