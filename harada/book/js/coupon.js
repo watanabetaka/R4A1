@@ -192,8 +192,6 @@ for(let i = 0 ; i < array_coupon_id.length ; i++){
 
         }
 
-
-
     }
 
     $('#coupon').append('</div>');
