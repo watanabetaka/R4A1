@@ -187,7 +187,11 @@ for(let i = 0 ; i < array_coupon_id.length ; i++){
           // reloadメソッドによりページをリロード
            window.location.reload();
         }else{
-          document.getElementById('insert_time' + i).innerHTML = 'あと' + temp_minute + '分' + temp_second + '秒 有効';
+          if(temp_minute === 0){
+            document.getElementById('insert_time' + i).innerHTML = '残り' + temp_second + '秒 有効';
+          }else{
+            document.getElementById('insert_time' + i).innerHTML = '残り' + temp_minute + '分' + temp_second + '秒 有効';
+          }
         }
 
         }
