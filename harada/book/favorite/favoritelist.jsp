@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%-- <%@include file="../html/header.html" %> --%>
+<%@include file="../html/header.html" %>
 <%@page import="bean.Favorite, java.util.List" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
