@@ -1,9 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/header.html" %>
 <!-- メールアドレス送信のJSPファイルです-->
-<P>メールアドレスに暗証番号を送ります<br>
-   正しくメールアドレスが入力できるまで送信ボタンは押せません。</p>
-<form action="MailSend.action" method="post">
+<form action="CpmailSend.action" method="post">
 <p>メールアドレス<input type="email" id = "email" name="email"  placeholder="info@example.com"></p>
 <span id="result"></span>
 <p><input type="submit" name = "send"id = "send" value="送信"  disabled ></p>

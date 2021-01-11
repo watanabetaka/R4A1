@@ -2,15 +2,14 @@
 <%@include file="../html/header.html" %>
 <body>
   <p> ＊パスワード入力の際の注意事項<br>
-  1.英字の大文字小文字とを含めること<br>
-  2.1の入力方式でパスワードを入力すれば、送信ボタンを押すことが可能になる。
+  1.英字の大文字小文字を含めること<br>
+  2.数字と記号を含めること
   </p>
 <form action="Pass.action" method="post">
 <label for="password"><b>パスワード  </b></label><br>
 <input name="pass" id="password" type="password" placeholder="Type Your Password here" onKeyUp="confirm()"/>
 <span id="result"></span>
 <br>
-  <label for="password"><b>確認用パスワード  </b></label><br>
 <input name="pass" id="password_confirm" type="password" placeholder="Type Your Password here" onKeyUp="confirm()"/>
 <span id="result_confirm"></span>
 <p><input type="submit" name = "send"id = "send" value="送信"  disabled ></p>
@@ -25,12 +24,12 @@ function confirm(){
   var t2=document.getElementById("result_confirm");
   var inputElement = $('input[name="send"]');
   if(password==password_confirm){
-    t2.innerHTML = "上記のパスワードと一致しています。";
+    t2.innerHTML = "適切です";
   }else{
-    t2.innerHTML = "上記のパスワードと一致出来ていません。";
+    t2.innerHTML = "不適切です";
   }
 
-  if(t1.innerHTML=="入力方式が正しいです。"&&t2.innerHTML=="上記のパスワードと一致しています。"){
+  if(t1.innerHTML=="適切です"&&t2.innerHTML=="適切です"){
     inputElement.prop('disabled', false);
   }else{
     inputElement.prop('disabled', true);

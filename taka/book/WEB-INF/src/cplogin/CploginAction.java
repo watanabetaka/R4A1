@@ -33,6 +33,8 @@ public class CploginAction extends Action {
 			String session_id = (String)session.getAttribute("user");
 			//ccokieにユーザIDを設定する。
 			Cookie cookie = new Cookie("user", session_id);
+			//企業情報を登録する際に使うcookieで、cookieに名前はcpinfoexaming,値にtrueを設定する
+			 			 cookie = new Cookie("cpinfoexamingflag", "false");
 			//cookie1の生存期間を２か月に設定
 			cookie.setMaxAge(60*60*24*60);
 			//cookieのpathを"/book"にする

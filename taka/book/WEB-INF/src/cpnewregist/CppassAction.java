@@ -39,6 +39,8 @@ public class CppassAction extends Action {
 				session.setAttribute("user", Integer.toString(user_id));
 				// cookieに名前はuserで値にユーザIDを入れたものを格納する
 				Cookie cookie = new Cookie("user", Integer.toString(user_id));
+				//企業情報を登録する際に使うcookieで、cookieに名前はcpinfoexaming,値にtrueを設定する
+				 cookie = new Cookie("cpinfoexamingflag", "false");
 				//cookie1の生存期間を２か月に設定
 				cookie.setMaxAge(60*60*24*60);
 				//cookieのpathを"/book"にする
