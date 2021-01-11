@@ -75,7 +75,7 @@ img{
   padding: 10%;
   font-size: 150%;
   border-radius: 4px;
-  position: absolute;
+  position: fixed;
   top: 25%;
   left: 0;
   right: 0;
@@ -86,4 +86,31 @@ img{
 
 #mask.hidden,#modal.hidden {
   display: none;
+}
+
+.picture{
+  margin:10px;
+}
+
+.sightseeing_name{
+  font-size: 50px;
+}
+
+.coupon_name{
+  font-size: 40px;
+}
+
+.valid{
+  text-align: right;
+  font-size: 30px;
+  margin-right: 20px;
+}
+
+.not_open{
+  background-color: pink;
+}
+
+.count{
+  text-align: right;
+  font-size: 100px;
 }

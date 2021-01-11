@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html" %>
+<%@include file="../html/header.html" %>
 <%@page import="bean.Sightseeing_Place, java.util.List" %>
 
 <%-- jqueryをインポート --%>
@@ -43,9 +43,9 @@
 
 <%-- ぱんくずリストの表示 --%>
 <div id="breadcrumb">
-  <a href="http://localhost:8080/book/favorite/Favoritesort.action?array_genre=<%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%></a>
+  <a href="http://192.168.68.103:8080/book/favorite/Favoritesort.action?array_genre=<%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%></a>
   >
-  <a href="http://localhost:8080/book/favorite/Favoritesort.action?array_city=<%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%></a>
+  <a href="http://192.168.68.103:8080/book/favorite/Favoritesort.action?array_city=<%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%></a>
   >
   <%for(Sightseeing_Place s: list){out.print(s.getSightseeing_Name());}%>
 </div>
@@ -165,6 +165,6 @@ for(Sightseeing_Place s: list){
 <%-- 観光地の体裁を整えるjavascriptファイルを読み込み --%>
 <script type="text/javascript" src="../js/sightseeing_detail.js"></script>
 
-<%@include file="../gamenhuta.html" %>
+<%@include file="../html/gamenhuta.html" %>
 
-<%@include file="../footer.html" %>
+<%@include file="../html/footer.html" %>

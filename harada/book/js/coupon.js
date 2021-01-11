@@ -57,10 +57,9 @@ for(let i = 0 ; i < array_coupon_id.length ; i++){
     }
 
     // HTML文の表示
-    $('#coupon').append('<img src="../image/' + array_picture_path[i] + '">');
-    $('#coupon').append('<div class="kanname">');
-    $('#coupon').append('<p class="name">' + array_sightseeing_name[i] + '</p>');
-    $('#coupon').append('<p class="name">' + array_coupon_name[i] + '</p>');
+    $('#coupon').append('<div id="deco_parent' + i + '" class="deco_parent"></div>');
+    $('#deco_parent' + i).append('<div class="deco"><img class="picture" src="../image/' + array_picture_path[i] + '"></div>');
+    $('#deco_parent' + i).append('<div class="deco"><p class="name sightseeing_name">' + array_sightseeing_name[i] + '</p><p class="name coupon_name">' + array_coupon_name[i] + '</p><font color="red"><p id="insert_time' + i + '" class="name valid"></p></font></div>');
 
     // 日付加工用の変数
     let array_count;
@@ -116,7 +115,6 @@ for(let i = 0 ; i < array_coupon_id.length ; i++){
         }
       }
 
-      $('#coupon').append('<p id="insert_time' + i + '" class="name"></p>');
 
       setInterval('showClock(' + i + ')',1000);
       // console.log(i);
@@ -203,19 +201,20 @@ for(let i = 0 ; i < array_coupon_id.length ; i++){
 
     }
 
-    $('#coupon').append('</div>');
+    $('#deco_parent' + i).append('</div>');
+
+    // 当該クーポンの重複枚数の表示
+    $('#deco_parent' + i).append('<div class="deco count">×' + count + '</div>');
 
     // クーポンの有効期限が設定されている場合、クーポンの発行ができないようにする
     if(array_get_coupon_etime[i] != 'null'){
-      $('#coupon').append('<input type="button" id="' + array_get_coupon_id[i] + '" class="btn" value="発行中" style="width: 20%; padding: 5%";>');
+      $('#deco_parent' + i).append('<div class="deco"><input type="button" id="' + array_get_coupon_id[i] + '" class="btn not_open" value="発行中" style="width: 100%; padding: 5%";></div>');
     }else{
-      $('#coupon').append('<input type="button" id="' + array_get_coupon_id[i] + '" class="btn open" value="発行" style="width: 20%; padding: 5%";>');
+      $('#deco_parent' + i).append('<div class="deco"><input type="button" id="' + array_get_coupon_id[i] + '" class="btn open" value="発行" style="width: 100%; padding: 5%";></div>');
     }
-    // 当該クーポンの重複枚数の表示
-    $('#coupon').append('×' + count);
-    $('#coupon').append('<br clear="all">');
-    $('#coupon').append('<p class="kasen">&nbsp;</p>');
-    $('#coupon').append('</div>');
+    $('#deco_parent' + i).append('<br clear="all">');
+    $('#deco_parent' + i).append('<p class="kasen">&nbsp;</p>');
+    $('#deco_parent' + i).append('</div>');
   }
 
   // クーポンの重複枚数の初期化
@@ -259,15 +258,12 @@ yes.addEventListener('click', function () {
     // 送信したいリクエストタイプを指定
     type : "GET",
     // 通信するサーブレットのURLを指定
-    url  : "http://localhost:8080/book/coupon/couponupdate",
+    url  : "http://192.168.68.103:8080/book/coupon/couponupdate",
     // 送信するデータを指定
     data : request,
     // 非同期通信であればtrue、同期通信であればfalseを指定
     async: true,
-    success:function(){
-      $('')
-    },
-    error:function(XMLHttpRequest,textStatus,errorThrown){
+    error:function(){
       alert("エラーが発生し、処理できませんでした。:　管理者にお問合せください"+textStatus+errorThrown);
     }
 
