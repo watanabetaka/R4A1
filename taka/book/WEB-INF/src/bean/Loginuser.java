@@ -7,7 +7,7 @@ public class Loginuser implements java.io.Serializable {
 	private String email;
 	private String  pass;
   private int user_id;
-	private int userkind_id
+	private int userkind_id;
 
 	public String getEmail() {
 		return email;
@@ -22,7 +22,7 @@ public class Loginuser implements java.io.Serializable {
   }
 
 	public int getUserkind_id() {
-		return userkind_id
+		return userkind_id;
 	}
 
 
@@ -41,10 +41,8 @@ public class Loginuser implements java.io.Serializable {
  	 this.user_id = user_id;
   }
 
-	public int setUserkind_id(int userkind_id) {
-		this.userkind_id = userkind_id
+	public void setUserkind_id(int userkind_id) {
+		this.userkind_id = userkind_id;
 	}
-
-
 
 }

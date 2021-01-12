@@ -7,6 +7,7 @@
   </p>
 <form action="Cppass.action" method="post">
   <label for="password"><b>パスワード  </b></label><br>
+  <p>現在のメールアドレス<input type='text' id='new_address' name='new_address' placeholder="info@example.com"></p>
   <input name="pass" id="password" type="password" placeholder="Type Your Password here" onKeyUp="confirm()"/>
   <span id="result"></span>
   <br>

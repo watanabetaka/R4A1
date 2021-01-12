@@ -1,4 +1,4 @@
-package cpinfo;
+package cpoperation;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -29,7 +29,7 @@ import javax.servlet.http.Cookie;
 public class CpinfoAction extends Action {
   public String execute(
 		HttpServletRequest request, HttpServletResponse response
-	) throws Exception {
+	)  throws Exception{
           //企業が送信した企業名を受け取り、cpnameに格納
           String cpname=request.getParameter("cpname");
           //企業が送信した観光地名を受け取る
@@ -43,8 +43,23 @@ public class CpinfoAction extends Action {
           if(!searchflag){
             //ユーザが送信した写真を受け取る
             Part part = request.getPart("file");
-            //部品化したImagesaveのafternameメソッドで画像のサイズと拡張子変更を行う
-            String picture_path = Imagesave.aftername(part);
+            // 写真ををファイル名に変換
+            String file = Setfilename.getFileName(part);
+            part.write("C:\\work\\tomcat\\webapps\\book\\image\\"+file);
+            //横
+            int resizeW = 300;
+            //縦
+            int resizeH = 300;
+            //変更前の写真をBufferedImageクラスのoriginal変数に読み込ませる
+            BufferedImage original = ImageIO.read(new File("C:\\work\\tomcat\\webapps\\book\\image\\"+file));
+            //変更後の写真をBufferedImageクラスのscaleImg変数に読み込ませる
+            BufferedImage scaleImg = new BufferedImage(resizeW, resizeH, BufferedImage.TYPE_3BYTE_BGR);
+            scaleImg.createGraphics().drawImage(
+            original.getScaledInstance(resizeW, resizeH, Image.SCALE_AREA_AVERAGING),
+            0, 0, resizeW, resizeH, null);
+            //afternameに指定した絶対パスに変更後の写真を上書きする
+            ImageIO.write(scaleImg, "",new File("C:\\work\\tomcat\\webapps\\book\\image\\"+file));
+            String picture_path = "../image/"+file;
             //企業が送信した市町村のidを受け取り、tmpに一時格納する
             String tmp =request.getParameter("city_id");
             //tmpをint型にキャストしてcity_idに格納
@@ -81,26 +96,10 @@ public class CpinfoAction extends Action {
             //企業が送信した予約URLを受け取る
             String bookurl=request.getParameter("bookurl");
             //企業が入力した情報を挿入する
-            System.out.println(1);
             boolean insertflag = dao.cpinfoinsert(user_id,sightname,city_id,genre_id,picture_path,postal_code,street_address,phone_number,business_hour,nearest_station,rank,bookurl);
-
-              // Cookieの取得
-            Cookie[] cookies=request.getCookies();
-              //拡張for文で配列に入っているcookieをすべて取り出す
-            for (Cookie cookie : cookies) {
-              //cookieの配列に入っているcookiename取得
-                String name=cookie.getName();
-                System.out.println(cookie.getValue());
-              //cookienameがcpinfoexamingflagか確認
-              if(name.equals("cpinfoexamingflag")){
-              //cpinfoexamingflagのvalueをtrueにする
-                System.out.println("a");
-                cookie.setValue("true");
-                // System.out.println(cookie.getValue());
-              }
-            }
-
-                return "cpexamination.jsp";
+                if(insertflag){
+                  return "cpexamination.jsp";
+                }
 
           }
           return "cpinfo-error.jsp";

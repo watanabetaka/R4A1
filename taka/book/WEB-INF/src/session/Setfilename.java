@@ -22,6 +22,7 @@ public class Setfilename{
              break;
          }
      }
+     System.out.println(name);
      return name;
    }
 }

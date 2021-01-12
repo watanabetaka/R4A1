@@ -14,7 +14,7 @@
 <input type="sightname" id="sightname" name="sightname"></p>
 <p id="file-null" style="display: none; color: red;"> fileを選択してください</p>
 <p>写真</p>
-<input type="file" name="file" id="file" accept="image/*"><br>
+<input type="file" name="file" id="file" accept=".png, .jpg, .jpeg"><br>
 <canvas id="canvas" width="0" height="0"></canvas>
 <br>
 <p>市町村選択*</p>

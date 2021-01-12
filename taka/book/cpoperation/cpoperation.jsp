@@ -11,6 +11,6 @@
 
 <p><input type="button" id = coupon onclick="location.href='http://localhost:8080/book/cplogin/Logout.action'" value="クーポン申請"></p>
 
-<p><input type="button" id = logout "location.href='http://localhost:8080/book/cplogin/Logout.action'"  value="ログアウト"></p>
+<p><input type="button" id = logout onclick ="location.href='http://localhost:8080/book/cplogin/Logout.action'"  value="ログアウト"></p>
 
 <%@include file="../html/footer.html" %>
