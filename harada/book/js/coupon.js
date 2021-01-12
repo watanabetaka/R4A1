@@ -258,7 +258,7 @@ yes.addEventListener('click', function () {
     // 送信したいリクエストタイプを指定
     type : "GET",
     // 通信するサーブレットのURLを指定
-    url  : "http://192.168.68.103:8080/book/coupon/couponupdate",
+    url  : "http://10.23.104.39:8080/book/coupon/couponupdate",
     // 送信するデータを指定
     data : request,
     // 非同期通信であればtrue、同期通信であればfalseを指定
