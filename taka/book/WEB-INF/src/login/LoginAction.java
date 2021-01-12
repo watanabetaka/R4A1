@@ -21,7 +21,7 @@ public class LoginAction extends Action {
 		//入力されたメールアドレスをString型のpass変数に格納する
 		String pass=request.getParameter("pass");
 		//emailをsaltととしてemailをハッシュ化する
-		String hashpass = Passwordutil.getSafetyPassword("pass","email");
+		String hashpass = Passwordutil.getSafetyPassword(pass,email);
 		//ログイン検査用のDAO
 		LoginuserDAO dao=new LoginuserDAO();
 		//emailとpassの検索結果をuserに格納
@@ -46,7 +46,7 @@ public class LoginAction extends Action {
 					//スワイプ画面へ遷移させる
 					RequestDispatcher dispatch = request.getRequestDispatcher("../sightseeing_swipe/Swipe.action");
 					dispatch.forward(request, response);
-				}else if((user.getUserkind_id() == 2){
+				}else if(user.getUserkind_id() == 2){
 					//企業top画面へ遷移させる
 					return "../cpoperation/cpoperation.jsp";
 				}
