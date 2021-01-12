@@ -18,6 +18,10 @@ input[type="submit"] {
     font-size: 2.5em;
 }
 
+a#modoru {
+    text-decoration: none;
+    color: black;
+}
 
 div#pankuzu {
     padding-top: 14%;
@@ -38,26 +42,3 @@ img#pictures {
 div#syousai {
     font-size: 3em;
 }
-a#modoru {
-    text-decoration: none;
-    color: black;
-}
-a#google {
-    text-decoration: none;
-    font-size: 3em;
-}
-a#google:visited {
-    color: gray;
-}
-
-a#jaran {
-    text-decoration: none;
-        font-size: 3em;
-}
-
-a#jaran :visited {
-    color: gray;
-}
-
-
-

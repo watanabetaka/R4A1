@@ -1,8 +1,13 @@
 package sightseeing_swipe;
 
 import bean.Sightseeing_Place;
+import bean.City;
+import bean.Genre;
 import dao.Sightseeing_PlaceDAO;
+import dao.CityDAO;
+import dao.GenreDAO;
 import tool.Action;
+import java.io.IOException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -31,11 +36,21 @@ public class SwipeAction extends Action {
 		Sightseeing_PlaceDAO dao=new Sightseeing_PlaceDAO();
 		List<Sightseeing_Place> list = dao.search(user_id);
 
+		CityDAO dao1=new CityDAO();
+		List<City> list1 = dao1.search();
+
+		GenreDAO dao2=new GenreDAO();
+		List<Genre> list2 = dao2.search();
+
 		// 取得した値をシャッフルする
 		Collections.shuffle(list);
 
 		// 値をjspへ送る為にセットする
 		request.setAttribute("list",list);
+
+		request.setAttribute("list1",list1);
+
+		request.setAttribute("list2",list2);
 
 		// jspへフォワードする
 		return "sightseeing_swipe.jsp";

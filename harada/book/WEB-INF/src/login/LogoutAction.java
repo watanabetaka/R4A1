@@ -1,4 +1,4 @@
-package cplogin;
+package login;
 
 import tool.Action;
 import javax.servlet.http.*;

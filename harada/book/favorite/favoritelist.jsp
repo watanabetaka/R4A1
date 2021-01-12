@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../html/header.html" %>
+<%@include file="../html/favoritelist_header.html" %>
 <%@page import="bean.Favorite, java.util.List" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -75,15 +75,7 @@
             <form name="ascsort_form">
     　　　　    <input type="checkbox" name="asc_name" id="asc_sort">
             </form>
-  　　　　    <%-- <span class="switch__content"></span>
-  　　　　    <span class="switch__circle"></span> --%>
-  　　　　 <%-- </label> --%>
-       <%-- </div> --%>
 
-     <!--  <div class="toggle-switch">
-         <input id="toggle" class="toggle-input" type='checkbox' />
-         <label for="toggle" class="toggle-label"/>
-       </div>   -->
 
       <%-- フォームの検索ボタンを押したらSortAction.javaをフォルダ内から探索して遷移する --%>
       <form action="Favoritesort.action">
@@ -97,32 +89,29 @@
     </div>
     <div id="favorite_title">お気に入り一覧</div>
 </header>
-
+<div id ="favoli">
 <% List<Favorite> list =(List<Favorite>)request.getAttribute("list"); %>
 
-<table>
-<br>
-<tr>
 
 <c:if test="${empty list}">
   <p>まだ観光地を登録していません!</p>
 </c:if>
 
 <% for(Favorite f: list){ %>
-
+  <div class ="favocon">
 <form action="Detail.action">
   <input type="hidden" name="sightseeing_id" value="<%= f.getSightseeing_Id() %>">
-    <button type="submit">
+
+    <button type="submit" class ="favoimg">
       <img src="../image/<%= f.getPicture_Path() %>"/><br>
-　　   <c:out value="<%= f.getSightseeing_Name() %>"/><br>
+      <c:out value="<%= f.getSightseeing_Name() %>"/>
     </button>
+  </div>
 </form>
 
 <% } %>
 
-</tr>
-</table>
-
+</div>
 
 <%@include file="../html/gamenhuta.html" %>
 
