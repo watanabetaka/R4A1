@@ -1,6 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/header.html" %>
 <body>
+<p>メールアドレスが間違っています</p>
   <p> ＊パスワード入力の際の注意事項<br>
   1.英字の大文字小文字を含めること<br>
   2.数字と記号を含めること

@@ -72,4 +72,27 @@ st.close();
 con.close();
 return user_id;
 }
+
+public boolean updatepass(String address,String hashpass)
+throws Exception {
+	//  入力されたパスワードを基に更新を行う
+	// 	成功ならtrue,失敗ならfalseを返す
+		boolean passflag = false;
+
+		Connection con=getConnection();
+
+		PreparedStatement st;
+		st=con.prepareStatement(
+		"update  user set pass = ? where mail=?");
+		st.setString(1, hashpass);
+		st.setString(2, address);
+		int line = st.executeUpdate();
+
+		if(line > 0){
+			passflag = true;
+		}
+st.close();
+con.close();
+return passflag;
+}
 }

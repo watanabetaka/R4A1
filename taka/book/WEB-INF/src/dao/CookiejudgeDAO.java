@@ -28,5 +28,5 @@ public class CookiejudgeDAO extends DAO {
   st.close();
   con.close();
   return userkind_id;
-  }
+  }  
   }

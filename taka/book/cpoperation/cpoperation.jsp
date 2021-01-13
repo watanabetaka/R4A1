@@ -9,8 +9,8 @@
 
 <p><input type="button" id = mailpass onclick="location.href='http://localhost:8080/book/cpmypage/mypage.jsp'" value="メアド・パスワード変更"></p>
 
-<p><input type="button" id = coupon onclick="location.href='http://localhost:8080/book/cplogin/Logout.action'" value="クーポン申請"></p>
+<p><input type="button" id = coupon onclick="location.href='http://localhost:8080/book/login/Logout.action'" value="クーポン申請"></p>
 
-<p><input type="button" id = logout onclick ="location.href='http://localhost:8080/book/cplogin/Logout.action'"  value="ログアウト"></p>
+<p><input type="button" id = logout onclick ="location.href='http://localhost:8080/book/login/Logout.action'"  value="ログアウト"></p>
 
 <%@include file="../html/footer.html" %>
