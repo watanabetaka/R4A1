@@ -89,10 +89,7 @@ public class SortAction extends Action {
 
 		GenreDAO dao2=new GenreDAO();
 		List<Genre> list2 = dao2.search();
-		request.setAttribute("list1",list1);
-
-		request.setAttribute("list2",list2);
-
+	
 
 		// 値をjspへ送る為にセットする
 		request.setAttribute("list",list);
