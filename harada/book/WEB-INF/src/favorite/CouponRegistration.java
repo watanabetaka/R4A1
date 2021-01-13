@@ -13,8 +13,9 @@ import javax.servlet.annotation.WebServlet;
 import java.util.List;
 import java.util.Random;
 import session.Session;
+import java.util.Date;
 
-@WebServlet(urlPatterns={"/coupon/couponregistration"})
+@WebServlet(urlPatterns={"/favorite/couponregistration"})
 public class CouponRegistration extends HttpServlet {
 
 	public void doGet (
@@ -24,16 +25,20 @@ public class CouponRegistration extends HttpServlet {
 		Page.header(out);
 		try {
 
-			//乱数生成
-			Random rand = new Random();
-			int random_id = rand.nextInt(3) + 1;
-
 			// cookie・sessionよりuser_idを取得
 			Session session = new Session();
 			int user_id = session.getUser_id(request,response);
 
+			// beanへ値をセット
+			Get_Coupon g=new Get_Coupon();
+			g.setUser_Id(user_id);
+
 			Get_CouponDAO dao=new Get_CouponDAO();
-			dao.insert(user_id,random_id);
+			dao.insert(g);
+			List<Get_Coupon> list=dao.search(user_id);
+
+			request.setAttribute("list", list);
+			request.getRequestDispatcher("/favorite/share_result.jsp").forward(request,response); //フォワードを行う
 
     } catch (Exception e) {
 			e.printStackTrace(out);

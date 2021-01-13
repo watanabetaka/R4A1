@@ -12,12 +12,6 @@ console.log(array_sightseeing_name);
 console.log(array_coupon_id);
 console.log(array_get_coupon_etime);
 
-const coupon = document.getElementById('coupon');
-const opens = document.getElementsByClassName('open');
-const close = document.getElementById('close');
-const modal = document.getElementById('modal');
-const mask = document.getElementById('mask');
-const yes = document.getElementById('YES');
 
 // クーポン表示・非表示の加工用変数
 let temp = [];
@@ -35,6 +29,13 @@ if(array_coupon_id.length == 0){
   $('#coupon').append('<div id="no_coupon">まだクーポンを獲得していません<br>');
   $('#coupon').append('観光地の感想をSNSでシェアして、クーポンをゲットしよう！</div>');
 }
+
+const coupon = document.getElementById('coupon');
+const opens = document.getElementsByClassName('open');
+const close = document.getElementById('close');
+const modal = document.getElementById('modal');
+const mask = document.getElementById('mask');
+const yes = document.getElementById('YES');
 
 // 同じクーポンの場合、そのクーポンの枚数を表示する処理
 
@@ -258,7 +259,7 @@ yes.addEventListener('click', function () {
     // 送信したいリクエストタイプを指定
     type : "GET",
     // 通信するサーブレットのURLを指定
-    url  : "http://10.23.104.39:8080/book/coupon/couponupdate",
+    url  : "http://localhost:8080/book/coupon/couponupdate",
     // 送信するデータを指定
     data : request,
     // 非同期通信であればtrue、同期通信であればfalseを指定

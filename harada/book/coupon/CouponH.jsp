@@ -53,28 +53,6 @@
 </script>
 <div class="coupon" id="coupon">
 
-  <%-- 原田 --%>
-  <%-- この位置の HTML は、JSファイルにて制御しているため、
-  この位置の HTML を参照したい場合は、JSファイルにて、
-  control + F を押し、
-  上の行に append と入力し、
-  find をクリックし、
-  表示された .append()の中の HTML文 を参照してください
-  ※急いで書いたので、インデント等が、やや見づらいかもしれません --%>
-
-
-  <%-- さかもとエリア（念のため、残しておきます） --%>
-  <%-- <c:forEach var="list" items="${list}">
-  <img src="../image/${list.picture_path}"/><!--データベースからの画像挿入-->
-  <div class="kanname"><!--データベースから情報取得、名前、値段、終了時間-->
-    <p class="name"><c:out value="${list.sightseeing_name}"/></p>
-    <p class="name"><c:out value="${list.coupon_name}"/></p>
-    <p class="name"><c:out value="${list.get_coupon_etime}"/></p><!--例時間-->
-  </div>
-  <input type="button" id="${list.get_coupon_id}" class="btn open" value="発行" style="width: 20%; padding: 5%";> <!--発行ボタン-->
-  <br clear="all"> <!--floatの解除-->
-  <p class="kasen">&nbsp;</p> <!--下線-->
-  </c:forEach> --%>
 </div>
 
 <div id="mask" class="hidden"></div> <!--モーダルウィンドウ背景-->

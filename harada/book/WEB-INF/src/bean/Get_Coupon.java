@@ -1,36 +1,38 @@
 package bean;
 
+import java.util.Date;
+
 public class Get_Coupon implements java.io.Serializable {
 
-  private int random_id;
-	private int coupon_id;
   private int user_id;
+	private String sightseeing_name;
+	private String coupon_name;
 
     // セッターの開始
 
-    public void random_Id(int random_id) {
-      this.random_id = random_id;
-    }
-
-    public void coupon_Id(int coupon_id) {
-      this.coupon_id = coupon_id;
-    }
-
-    public void user_Id(int user_id){
+      public void setUser_Id(int user_id){
       this.user_id = user_id;
     }
 
-    // ゲッターの開始
-
-	  public int getRandom_Id() {
-		    return random_id;
+		public void setSightseeing_Name(String sightseeing_name){
+	      this.sightseeing_name = sightseeing_name;
 	  }
 
-	  public int Coupon_Id() {
-		    return coupon_id;
+		public void setCoupon_Name(String coupon_name){
+	      this.coupon_name = coupon_name;
 	  }
 
-	  public int User_Id(){
-        return user_id;
-    }
+// ゲッターの開始
+
+		public int getUser_Id(){
+			return user_id;
+		}
+
+		public String getSightseeing_Name(){
+			return sightseeing_name;
+		}
+
+		public String getCoupon_Name(){
+			return coupon_name;
+		}
 }
