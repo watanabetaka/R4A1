@@ -83,7 +83,7 @@ throws Exception {
 
 		PreparedStatement st;
 		st=con.prepareStatement(
-		"update  user set pass = ? where mail=?");
+		"update  user set pass = ? where email=?");
 		st.setString(1, hashpass);
 		st.setString(2, address);
 		int line = st.executeUpdate();

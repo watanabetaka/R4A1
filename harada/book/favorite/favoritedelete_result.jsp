@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html" %>
+<%@include file="../html/header.html" %>
 
 <%-- お気に入りから観光地を削除した後の画面 --%>
 
@@ -28,6 +28,6 @@
 <%-- お気に入り一覧へ戻るボタン --%>
 <a href="favoritelist">お気に入り一覧へ戻る</a>
 
-<%@include file="../gamenhuta.html" %>
+<%@include file="../html/gamenhuta.html" %>
 
-<%@include file="../footer.html" %>
+<%@include file="../html/footer.html" %>
