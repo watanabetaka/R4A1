@@ -8,5 +8,6 @@
 <p>パスワード<input type="password" name="pass"></p>
 <p><input type="submit" value="ログイン"></p>
 </form>
+<a href="http://localhost:8080/book/reissuepass/reissuepassmail.jsp">パスワード再発行</a>
 
 <%@include file="../html/footer.html" %>

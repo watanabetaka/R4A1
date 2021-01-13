@@ -5,12 +5,13 @@
   1.英字の大文字小文字を含めること<br>
   2.数字と記号を含めること
   </p>
-<form action="Cppass.action" method="post">
-  <p>現在のメールアドレス<input type='text' id='address' name='address' placeholder="info@example.com"></p>
-  <label for="password"><b>パスワード  </b></label><br>
-  <input name="pass" id="password" type="password" placeholder="Type Your Password here" onKeyUp="confirm()"/>
+<form action="Repass.action" method="post">
+  <p>現在のメールアドレス<br>
+  <input type='text' id='address' name='address' placeholder="info@example.com"><br>
+  <label for="password"><b>パスワード</b></label><br>
+  <input name="pass" id="password" type="password" placeholder="Type Your Password here" onKeyUp="confirm()"/><br>
   <span id="result"></span>
-  <br>
+  <label for="password"><b>確認用パスワード</b></label><br>
   <input name="pass" id="password_confirm" type="password" placeholder="Type Your Password here" onKeyUp="confirm()"/>
   <span id="result_confirm"></span>
   <p><input type="submit" name = "send"id = "send" value="送信"  disabled ></p>

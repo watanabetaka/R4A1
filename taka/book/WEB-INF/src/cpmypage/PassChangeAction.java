@@ -17,6 +17,7 @@ public class PassChangeAction extends Action {
 		Session session = new Session();
 		// 入力されたメールアドレスを取得
 		boolean flag=false;
+		boolean flag_2=false;
 		String now_pass = request.getParameter("now_pass");
     String new_pass=request.getParameter("new_pass");
     String email = "";
@@ -33,13 +34,17 @@ public class PassChangeAction extends Action {
 		hashpass = 	Passwordutil.getSafetyPassword(now_pass,email);
 		new_hashpass = 	Passwordutil.getSafetyPassword(new_pass,email);
 
-		flag=dao.updatemail(email,user_id,hashpass);
+		flag=dao.updatepass(new_hashpass,user_id);
 
 		if(flag==true){
-			dao.updatehash(new_hashpass,user_id);
-			return "../mypage/success.jsp";
+			flag_2=dao.updatepass(new_hashpass,user_id);
+			if(flag_2==true){
+				return "../cpmypage/success.jsp";
+			}else{
+				return "../cpmypage/mailchangeerror.jsp";
+			}
 		}else{
-			return "../mypage/mailchangeerror.jsp";
+			return "../cpmypage/mailchangeerror.jsp";
 		}
 	}
 }

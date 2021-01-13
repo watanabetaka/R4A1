@@ -77,7 +77,7 @@ public class RepassmailAction extends  Action{
             // メールを送信する
             message.setContent(multipart);
               Transport.send(message);
-            return "newregistpin.jsp";
+            return "mailsendsuccess.jsp";
 
       }
         return "reissuepassmail-error.jsp";

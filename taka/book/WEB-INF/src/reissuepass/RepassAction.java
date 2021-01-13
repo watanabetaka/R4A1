@@ -31,7 +31,7 @@ public class RepassAction extends Action {
 			new_hashpass = 	Passwordutil.getSafetyPassword(pass,address);
 			passflag = dao.updatepass(address,new_hashpass);
 			if(passflag){
-				return "reissuepass-success.jsp";
+				return "repasssuccess.jsp";
 			}
 		}
 	return "reissuepass-error.jsp";
