@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html" %>
+<%@include file="../html/header.html" %>
 <%@page import="bean.Sightseeing_Place,bean.Get_Coupon,java.util.List" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -23,6 +23,6 @@
 
 <a class="page-close" href="http://localhost:8080/book/favorite/favoritelist">お気に入り一覧へ戻る</a>
 
-<%@include file="../gamenhuta.html" %>
+<%@include file="../html/gamenhuta.html" %>
 
-<%@include file="../footer.html" %>
+<%@include file="../html/footer.html" %>

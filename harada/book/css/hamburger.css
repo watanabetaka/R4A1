@@ -46,7 +46,7 @@ header {
 #nav-close {
     display: none;/*はじめは隠しておく*/
     position: fixed;
-    z-index: 99;
+    z-index: 1;
     top: 0;/*全体に広がるように*/
     left: 0;
     width: 100%;

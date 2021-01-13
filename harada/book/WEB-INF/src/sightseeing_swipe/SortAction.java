@@ -1,9 +1,9 @@
-package favorite;
+package sightseeing_swipe;
 
-import bean.Favorite;
+import bean.Sightseeing_Place;
 import bean.City;
 import bean.Genre;
-import dao.FavoriteDAO;
+import dao.Sightseeing_PlaceDAO;
 import dao.CityDAO;
 import dao.GenreDAO;
 import tool.Action;
@@ -20,7 +20,7 @@ import javax.servlet.*;
 import session.Session;
 import java.util.Arrays;
 
-public class FavoritesortAction extends Action {
+public class SortAction extends Action {
 	// ソート画面からソート情報の値を取得し、
 	// 表示させる値をDAOから取得し、
 	// 位置情報がONの場合は、位置情報が近い順に表示させ、
@@ -35,14 +35,14 @@ public class FavoritesortAction extends Action {
 		// 児玉君から送信されたデータの受け取り
 		 String array_city[] = request.getParameterValues("array_city");
 		 String array_genre[] = request.getParameterValues("array_genre");
-		 Boolean asc_sort = Boolean.valueOf(request.getParameter("asc_sort"));
-		 // System.out.println(Arrays.toString(array_city));
-		 // System.out.println(Arrays.toString(array_genre));
-		 // System.out.println(asc_sort);
+		 // String spot = request.getParameter("spot");
+		 System.out.println(Arrays.toString(array_city));
+		 System.out.println(Arrays.toString(array_genre));
+		 // System.out.println(spot);
 
 		// // テストデータを配列へ挿入
 		// String array_city[]={"大分市","竹田市"};
-		// String array_genre[]={};
+		// String array_genre[]={"ホテル・旅館","カフェ・スイーツ"};
 		// String spot = "false";
 
 		// cookie・sessionよりuser_idを取得
@@ -51,12 +51,11 @@ public class FavoritesortAction extends Action {
 		int user_id = session.getUser_id(request,response);
 
 		// DAOのインスタンス化
-		FavoriteDAO dao=new FavoriteDAO();
+		Sightseeing_PlaceDAO dao=new Sightseeing_PlaceDAO();
 
 		// DAOからの返却値の初期化
-		// listには、返却値として、beanに、 観光地ID・写真パス・観光地名 が挿入される
-		// DAOのsearchメソッドは、オーバーライドで記述しているため、int型で0を渡している
-		List<Favorite> list= dao.search(user_id , "dummy");
+		// listには、返却値として、beanに、 観光地ID・観光地名・市名・写真パス が挿入される
+		List<Sightseeing_Place> list= dao.search(user_id);
 
 		// 市名が入力されており、ジャンルが入力されていない場合の処理
 		if(array_city != null && array_genre == null ){
@@ -77,19 +76,20 @@ public class FavoritesortAction extends Action {
 			list = dao.search(user_id,array_city,array_genre);
 		}
 
-		// 古い順に並べ替え ボタンがONになっている場合は、観光地を追加順に表示する
-		if (asc_sort == true){
-			// 観光地を日時で昇順にソートする処理
-			Collections.reverse(list);
-		}
-
+		// 位置情報ボタンがONになっている場合は、位置情報が近い順に表示し、
+		// OFFの場合は、観光地をシャッフルする処理
+		// if (spot== "true"){
+		// 	// 位置情報で観光地をソートする処理
+		// }else{
+		// 	// 観光地をシャッフルする処理
+		// 	Collections.shuffle(list);
+		// }
 		CityDAO dao1=new CityDAO();
 		List<City> list1 = dao1.search();
 
 		GenreDAO dao2=new GenreDAO();
 		List<Genre> list2 = dao2.search();
-
-
+	
 
 		// 値をjspへ送る為にセットする
 		request.setAttribute("list",list);
@@ -97,8 +97,8 @@ public class FavoritesortAction extends Action {
 		request.setAttribute("list1",list1);
 
 		request.setAttribute("list2",list2);
-		
+
 		// jspへフォワードする
-		return "favoritelist.jsp";
+		return "sightseeing_swipe.jsp";
 	}
 }
