@@ -16,8 +16,9 @@ public class MailChangeAction extends Action {
 		//既存のsession取得
 		Session session = new Session();
 		// 入力されたメールアドレスを取得
-		boolean flag=false;
+		boolean flag=true;
 		boolean flag_2=false;
+		boolean flag_3=false;
 		String now_pass = request.getParameter("now_pass");
     String new_address=request.getParameter("new_address");
     String email = "";
@@ -34,12 +35,17 @@ public class MailChangeAction extends Action {
 		hashpass = 	Passwordutil.getSafetyPassword(now_pass,email);
 		new_hashpass = 	Passwordutil.getSafetyPassword(now_pass,new_address);
 
-		flag=dao.updatemail(new_address,user_id,hashpass);
+		flag=dao.checkmail(new_address);
 
-		if(flag==true){
-			flag_2=dao.updatepass(new_hashpass,user_id);
+		if(flag==false){
+			flag_2=dao.updatemail(new_address,user_id,hashpass);
 			if(flag_2==true){
-				return "../mypage/success.jsp";
+				flag_3=dao.updatepass(new_hashpass,user_id);
+				if(flag_3==true){
+					return "../mypage/success.jsp";
+				}else{
+					return "../mypage/mailchangeerror.jsp";
+				}
 			}else{
 				return "../mypage/mailchangeerror.jsp";
 			}
