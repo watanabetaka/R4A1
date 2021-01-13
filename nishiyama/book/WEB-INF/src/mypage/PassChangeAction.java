@@ -40,11 +40,8 @@ public class PassChangeAction extends Action {
 			flag_2=dao.updatepass(new_hashpass,user_id);
 			if(flag_2==true){
 				return "../mypage/success.jsp";
-			}else{
-				return "../mypage/mailchangeerror.jsp";
 			}
-		}else{
-			return "../mypage/mailchangeerror.jsp";
 		}
+		return "../mypage/mailchangeerror.jsp";
 	}
 }
