@@ -1,6 +1,6 @@
 package login;
 
-import bean.User;
+import bean.Loginuser;
 import dao.LoginuserDAO;
 import tool.Action;
 import javax.servlet.http.Cookie;
@@ -25,7 +25,7 @@ public class LoginAction extends Action {
 		//ログイン検査用のDAO
 		LoginuserDAO dao=new LoginuserDAO();
 		//emailとpassの検索結果をuserに格納
-		User user = dao.search(email, hashpass);
+		Loginuser user = dao.search(email, hashpass);
 
 		//userがnullでなければsessionへのユーザID格納とcookie生成を行う
 		if (user !=null) {
@@ -41,11 +41,16 @@ public class LoginAction extends Action {
 			cookie.setPath("/book");
 				// cookieを追加
 			response.addCookie(cookie);
-			//スワイプ画面へ遷移させる
-			RequestDispatcher dispatch = request.getRequestDispatcher("../sightseeing_swipe/Swipe.action");
-			dispatch.forward(request, response);
-		}
-		//
-		return "userlogin-error.jsp";
+			//ユーザ種別が一般か企業か判断させる
+				if(user.getUserkind_id() == 1){
+					//スワイプ画面へ遷移させる
+					RequestDispatcher dispatch = request.getRequestDispatcher("../sightseeing_swipe/Swipe.action");
+					dispatch.forward(request, response);
+				}else if(user.getUserkind_id() == 2){
+					//企業top画面へ遷移させる
+					return "../cpoperation/cpoperation.jsp";
+				}
+			}
+				return "userlogin-error.jsp";
 	}
 }

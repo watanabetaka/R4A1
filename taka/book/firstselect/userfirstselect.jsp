@@ -8,6 +8,6 @@
 
 <p><input type="button" onclick="location.href='http://localhost:8080/book/login/userlogin.jsp'" value="ログイン"></p>
 
- <a href="http://localhost:8080/book/login/userlogin.jsp">企業はこちらから</a>
+ <a href="http://localhost:8080/book/cpfirstselect/cpuserfirstselect.jsp">企業はこちらから</a>
 
 <%@include file="../html/footer.html" %>

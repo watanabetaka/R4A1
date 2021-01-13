@@ -12,6 +12,7 @@ import javax.servlet.http.Part;
 public class Setfilename{
 
   public static String getFileName(Part part) {
+    //ユーザから送信されたpart型の写真をファイル型に変換する処理
     //初期化
     String name = "";
      for (String dispotion : part.getHeader("Content-Disposition").split(";")) {
@@ -21,6 +22,7 @@ public class Setfilename{
              break;
          }
      }
+     System.out.println(name);
      return name;
    }
 }

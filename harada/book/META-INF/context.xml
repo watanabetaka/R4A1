@@ -1,5 +1,6 @@
 
-<Context reloadable="true">
+
+<Context  allowCasualMultipartParsing="true" reloadable="true">
 	<Resource
 		name="jdbc/book"
 		auth="Container"
@@ -9,4 +10,12 @@
 		username="sa"
 		password=""
 	/>
+<Resource
+name="mail/MySession" auth="Container"
+
+type="javax.mail.Session"
+
+mail.smtp.host = "smtp.mail.yahoo.co.jp"
+	/>
 </Context>
+

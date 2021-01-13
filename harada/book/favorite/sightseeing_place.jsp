@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html" %>
+<%@include file="../html/sightseeing_place_header.html" %>
 <%@page import="bean.Sightseeing_Place, java.util.List" %>
 
 <%-- jqueryをインポート --%>
@@ -14,7 +14,7 @@
 <header>
   <%-- お気に入り一覧画面へ戻るボタン --%>
   <div id="back">
-    <a href="favoritelist">＜</a>
+    <a id="modoru" href="favoritelist">＜</a>
   </div>
 
   <%-- タイトルの表示 --%>
@@ -33,7 +33,7 @@
       %>">
       <%-- エラーが生じた時は、下記のコードをコメントアウトして再度実行してください --%>
       <%-- <input type="hidden" name="test" value="aa"> --%>
-      <input type="submit" value="CSSにて、他の要素とボタンが重なっており、現在、削除できません">
+      <input type="submit" value="削除">
     </form>
   </div>
 
@@ -42,41 +42,26 @@
 <%-- 観光地の表示 --%>
 
 <%-- 観光地名の表示 --%>
-<div id="sightseeing_place">
-<%
-for(Sightseeing_Place s: list){
- out.print(s.getSightseeing_Name());
-}
-%>
-</div>
 
-<%-- 市名の表示 --%>
-<div id="city_name">
-<%
-for(Sightseeing_Place s: list){
- out.print(s.getCity_Name());
-}
-%>
-</div>
 
-<%-- ジャンルの表示 --%>
-<div id="genre_name">
-<%
-for(Sightseeing_Place s: list){
- out.print(s.getGenre_Name());
-}
-%>
+<div id="pankuzu">
+  <%-- ぱんくずリストの表示 --%>
+    <a id="city_name" href="http://10.23.104.39:8080/book/favorite/Favoritesort.action?array_genre=<%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%></a>
+    >
+    <a id="genre_name" href="http://10.23.104.39:8080/book/favorite/Favoritesort.action?array_city=<%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%></a>
+    ><div id="sightseeing_place"><%for(Sightseeing_Place s: list){out.print(s.getSightseeing_Name());}%></div>
 </div>
 
 <%-- 観光地の写真を表示 --%>
 <div id="picture">
-  <img src="<% for(Sightseeing_Place s: list){ out.print(s.getPicture_Path()); } %>">
+  <img src="<% for(Sightseeing_Place s: list){ out.print(s.getPicture_Path()); } %>" id ="pictures" >
 </div>
 
 <%-- 郵便番号の表示 javascriptにて加工--%>
-<div id="postal_code">〒
+<div  id="syousai">
+<div id="postal_code">〒</div>
   <div id="postal_code_insert"></div>
-</div>
+
 
 <%-- 住所の表示 --%>
 <div id="street_adress">
@@ -95,13 +80,13 @@ for(Sightseeing_Place s: list){
 
 <%-- 最寄り駅と最寄り駅からの時間を表示 javascriptにて加工--%>
 <div id="nearest_station_time"></div>
-
+</div>
 <%-- 観光地名をGoogle検索 --%>
 <%-- 下記のURLでは、iOSアプリでしか機能しない --%>
 <a target="_blank" href="google://search?q=<% for(Sightseeing_Place s: list){ out.print(s.getSightseeing_Name()); } %>" id="google">Googleで検索</a>
 <%-- <a target="_blank" href="https://www.google.co.jp" id="google">Googleで検索</a> --%>
 
-<div class="yajirushi"><img src="../image/yajirushi.jpg"></div>
+<%-- <div class="yajirushi"><img src="../image/yajirushi.jpg"></div> --%>
 
 <%-- 観光地の予約サイトURLの挿入 javascriptにて加工--%>
 <%-- もし企業が予約サイトURLを登録していなければ表示されない --%>
@@ -113,13 +98,11 @@ for(Sightseeing_Place s: list){
 <%-- SNSでシェアする機能（末松君実装） --%>
 <%-- 末松くんへ --%>
 <%-- 下記のaタグのフォーマットに従って作ってください --%>
-<%-- <a target="_blank" href="https://twitter.com/?lang=ja" id="twitter">Twitterでシェア</a> --%>
-<a target="_blank" href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="「」に行きました！" data-url=" " data-hashtags="まいらいずおおいた" id="twitter">twitterでシェア</a>
+<a target="_blank" href="https://twitter.com/?lang=ja" id="twitter">Twitterでシェア</a>
 <a target="_blank" href="https://www.instagram.com/?hl=ja" id="instagram">Instagramでシェア</a>
 <a target="_blank" href="https://ja-jp.facebook.com/" id="facebook">facebookでシェア</a>
 
-<%-- twitterのAPI --%>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 <%-- JAVAの値をJavascriptに変換 --%>
 <script>
@@ -156,6 +139,6 @@ for(Sightseeing_Place s: list){
 <%-- 観光地の体裁を整えるjavascriptファイルを読み込み --%>
 <script type="text/javascript" src="../js/sightseeing_detail.js"></script>
 
-<%@include file="../gamenhuta.html" %>
+<%@include file="../html/gamenhuta.html" %>
 
-<%@include file="../footer.html" %>
+<%@include file="../html/footer.html" %>
