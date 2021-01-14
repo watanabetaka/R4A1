@@ -2,7 +2,7 @@ div#back {
     font-size: 5em;
     float: left;
 }
-a#back_botton {
+a#back_button {
     text-decoration: none;
     color: black;
 }
@@ -17,7 +17,7 @@ div#mypage {
     padding-top: 30%;
     text-align: center;
 }
-div#mypage_botton_txt {
+div#mypage_button_txt {
     font-size: 3.5em;
 }
 div#mypage_logout {
