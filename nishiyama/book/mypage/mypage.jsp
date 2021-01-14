@@ -4,7 +4,7 @@
 <!-- ヘッダー部分 -->
 <header>
 <div id="mypage_title">
-会員情報変更
+マイページ
 </div>
 </header>
 
@@ -17,9 +17,10 @@
 
 <div class = mypage_button_txt>パスワード　　　
   <input type="button" id =passchange onclick="location.href='http://localhost:8080/book/mypage/passchange.jsp'" value="変更">
-</div>
+  </div>
 
-<div class=txt>設定したメールアドレス・パスワードは<br>忘れないようにしてください</div>
+
+<div class=txt>※設定したメールアドレス・パスワード<br>　は忘れないようにしてください</div>
 
 <!-- ログアウトボタン -->
 <div class=mypage_logout>

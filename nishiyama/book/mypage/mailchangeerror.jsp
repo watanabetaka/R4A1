@@ -7,7 +7,7 @@
     <a href="http://localhost:8080/book/mypage/mypage.jsp" id ="back_button">＜</a>
   </div>
   <div id="mypage_title">
-メールアドレス変更
+メールアドレス変更　　
   </div>
 </header>
 
@@ -64,7 +64,7 @@
 
   <!-- 登録ボタン -->
 <div class = "touroku">
-  <input type='submit' name='send' value="登録" disabled>
+  <input type='submit' id='send' name='send' value="登録" disabled>
   </div>
 
 </form>

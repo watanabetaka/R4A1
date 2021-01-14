@@ -28,7 +28,7 @@ div.mypage_button_txt {
 }
 div.mypage_logout {
   margin: 10%;
-    font-size: 0.75em;
+    font-size: 0.625em;
 }
 div.mypage_form_list {
     padding-top: 15%;
@@ -36,10 +36,13 @@ div.mypage_form_list {
 }
 
 input#mailchange {
-    font-size: 1em;
+    font-size: 0.75em;
 }
 input#passchange {
-    font-size: 1em;
+    font-size: 0.75em;
+}
+input#send {
+    font-size: 1.5em;
 }
 
 div.fade{
@@ -86,8 +89,9 @@ div.txt {
     margin-top: 7.5%;
 }
 div.touroku {
+  font-size: 1.5em;
   text-align:right;
-    position:relative; top:10px; right:70px;
+  position:relative; top:10px; right:70px;
 }
 div.success{
   text-align: center;
