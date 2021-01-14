@@ -12,11 +12,11 @@
 <div class=fade>
 <div class=mypage>
 <div class=mypage_button_txt>メールアドレス　
-  <input type="button" id =mailchange onclick="location.href='http://localhost:8080/book/mypage/mailchange.jsp'" value="変更">
+  <input type="button" id =mailchange onclick="location.href='http://localhost:8080/book/cpmypage/mailchange.jsp'" value="変更">
 </div>
 
 <div class = mypage_button_txt>パスワード　　　
-  <input type="button" id =passchange onclick="location.href='http://localhost:8080/book/mypage/passchange.jsp'" value="変更">
+  <input type="button" id =passchange onclick="location.href='http://localhost:8080/book/cpmypage/passchange.jsp'" value="変更">
   </div>
 
 
