@@ -39,6 +39,10 @@ div#mypage_form_list {
     font-size: 2em;
 }
 
+div.fade{
+  animation: fadeIn 0.5s ease 0s 1 normal;
+}
+
 div.all {
     display: flow-root;
 }
@@ -78,7 +82,16 @@ div#p_txt {
     margin-top: 7.5%;
 }
 div#touroku {
-    text-align: end;
+  text-align:right;
+    position:relative; top:10px; right:70px;
+}
+div.success{
+  text-align: center;
+  position:relative; top:750px;
+}
+div.success_txt{
+  font-size: 4em;
+  font-weight: 600;
 }
 
 input[type="button"] {
@@ -125,4 +138,12 @@ input[type="submit"]:disabled {
   text-decoration: none;
   color: #500;
   border-radius: 2rem;
+}
+
+@keyframes fadeIn { /*animetion-nameで設定した値を書く*/
+
+  0% {opacity: 0} /*アニメーション開始時は不透明度0%*/
+
+  100% {opacity: 1} /*アニメーション終了時は不透明度100%*/
+
 }

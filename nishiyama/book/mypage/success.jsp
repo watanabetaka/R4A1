@@ -1,7 +1,14 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/header.html" %>
 
-<div class=s_txt>成功しました！</div>
+<div class=fade>
 
-<p><input type="button" onclick="location.href='http://localhost:8080/book/mypage/mypage.jsp'" value="OK"></p>
+<div class=success>
+  <div class=success_txt>成功しました！</div>
+<br><br><br>
+<input type="button" onclick="location.href='http://localhost:8080/book/mypage/mypage.jsp'" value="OK">
+</div>
+
+</div>
+
 <%@include file="../html/footer.html" %>

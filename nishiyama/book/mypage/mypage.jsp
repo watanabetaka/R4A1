@@ -9,6 +9,7 @@
 </header>
 
 <!-- 会員情報変更ボタン -->
+<div class=fade>
 <div id=mypage>
 <div id=mypage_button_txt>メールアドレス　
   <input type="button" id =mailchange onclick="location.href='http://localhost:8080/book/mypage/mailchange.jsp'" value="変更">
@@ -25,5 +26,6 @@
   </div>
 </div>
 
+</div>
 <!-- ヘッダー部分 -->
 <%@include file="../html/footer.html" %>

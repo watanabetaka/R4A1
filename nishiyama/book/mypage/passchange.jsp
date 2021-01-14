@@ -11,6 +11,7 @@
   </div>
 </header>
 
+<div class=fade>
 <!-- 入力フォーム -->
 <div id=mypage_form_list>
 
@@ -64,6 +65,8 @@
 <div id = "touroku"><input type='submit' name='send' value="登録" disabled></div>
 
 </form>
+
+</div>
 
 <!-- サーブレット -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
