@@ -1,10 +1,10 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../html/header.html" %>
+<%@include file="../html/cpmypage_header.html" %>
 
 <!-- ヘッダー部分 -->
 <header>
 <div id="mypage_title">
-マイページ
+企業情報変更
 </div>
 </header>
 
@@ -21,12 +21,6 @@
 
 
 <div class=txt>※設定したメールアドレス・パスワード<br>　は忘れないようにしてください</div>
-
-<!-- ログアウトボタン -->
-<div class=mypage_logout>
-  <input type="button" id = logout onclick ="location.href='http://localhost:8080/book/login/Logout.action'"  value="ログアウト">
-  </div>
-  </div>
 
 </div>
 <!-- ヘッダー部分 -->

@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../html/header.html" %>
+<%@include file="../html/mypage_header.html" %>
 
 <!-- ヘッダー部分 -->
 <header>

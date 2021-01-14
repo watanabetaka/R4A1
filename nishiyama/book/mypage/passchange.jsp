@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../html/header.html" %>
+<%@include file="../html/mypage_header.html" %>
 
 <!-- ヘッダー部分 -->
 <header>
@@ -51,7 +51,7 @@
 <br>
 <div class=all>
   <div class = mypage_result>
-<div><span id='result_3' class=result_on value='false'>不適切です</span></div>
+<div><span id='result_3' class=result_off value='false'>不適切です</span></div>
 </div>
 </div>
 

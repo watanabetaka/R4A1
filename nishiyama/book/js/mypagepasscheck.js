@@ -31,40 +31,48 @@ $(document).ready(function() {
         if (strength > 2) {
           r1.value="true";
             r1.innerHTML = "入力方式が合致しています";
-            $("#result").removeClass("result_on");
+            $("#result").removeClass("result_off");
+            $("#result").addClass("result_on");
             if(r1.value=="true"&&r2.value=="true"){
               r3.value="true";
               r3.innerHTML=="適切です";
-              $("#result_3").removeClass("result_on");
+              $("#result_3").removeClass("result_off");
+              $("#result_3").addClass("result_on");
               inputElement.prop('disabled', false);
             }
         } else {
             r1.innerHTML = "入力方式と合致していません";
-            $("#result").addClass("result_on");
+            $("#result").removeClass("result_on");
+            $("#result").addClass("result_off");
             r1.value="false";
             r3.value="false";
             r3.innerHTML=="不適切です";
-            $("#result_3").addClass("result_on");
+            $("#result_3").removeClass("result_on");
+            $("#result_3").addClass("result_off");
             inputElement.prop('disabled', true);
         }
         if (t1.value==t2.value) {
           r2.value = "true";
           r2.innerHTML = "入力が一致しています";
-          $("#result_2").removeClass("result_on");
+          $("#result_2").removeClass("result_off");
+          $("#result_2").addClass("result_on");
           if(r1.value=="true"&&r2.value=="true"){
             inputElement.prop('disabled', false);
             r3.value="true";
             r3.innerHTML="適切です";
-            $("#result_3").removeClass("result_on");
+            $("#result_3").removeClass("result_off");
+            $("#result_3").addClass("result_on");
           }
         } else {
           r2.value = "false";
           r2.innerHTML = "上の入力と一致していません";
-          $("#result_2").addClass("result_on");
+          $("#result_2").removeClass("result_on");
+          $("#result_2").addClass("result_off");
           inputElement.prop('disabled',true);
           r3.value="false";
           r3.innerHTML="不適切です";
-          $("#result_3").addClass("result_on");
+          $("#result_3").removeClass("result_on");
+          $("#result_3").addClass("result_off");
         }
       }
 });
