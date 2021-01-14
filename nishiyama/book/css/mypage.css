@@ -106,7 +106,7 @@ input[type="button"] {
   text-align: center;
   vertical-align: middle;
   text-decoration: none;
-  color: #a00;
+  color: #500;
   border-radius: 2rem;
 }
 input[type="submit"] {
@@ -121,7 +121,7 @@ input[type="submit"] {
   text-align: center;
   vertical-align: middle;
   text-decoration: none;
-  color: #a00;
+  color: #500;
   border-radius: 2rem;
 }
 input[type="submit"]:disabled {
@@ -136,7 +136,7 @@ input[type="submit"]:disabled {
   text-align: center;
   vertical-align: middle;
   text-decoration: none;
-  color: #500;
+  color: #300;
   border-radius: 2rem;
 }
 
