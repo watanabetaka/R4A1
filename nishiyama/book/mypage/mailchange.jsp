@@ -3,7 +3,7 @@
 <!-- ヘッダー部分 -->
 <header>
   <div id="back">
-    <a href="http://localhost:8080/book/mypage/mypage.jsp" id ="modoru">＜</a>
+    <a href="http://localhost:8080/book/mypage/mypage.jsp" id ="back_botton">＜</a>
   </div>
   <div id="mypage_title">
 メールアドレス変更
@@ -11,11 +11,11 @@
 </header>
 
 <!-- 入力フォーム -->
-<div id=mypagemail_form>
+<div id=mypage_form>
 
 <form action='MailChange.action' method='post'>
   <div class =all>
-<div class = mypagemail>
+<div class = form_txt>
   <div>　現在の<br>　　パスワード　</div>
 </div>
 <div class = inputer>
@@ -24,7 +24,7 @@
 </div>
 
 <div class=all>
-<div class = mypagemail>
+<div class = form_txt>
   <div>　新しい<br>　メールアドレス</div>　　　　
 </div>
 <div class = inputer>
@@ -34,7 +34,7 @@
 </div>
 
 <div class=all>
-<div class = mypagemail>
+<div class = form_txt>
 <div>　新しい<br>　メールアドレス<br>　（確認）</div>
 </div>
 <div class = inputer>

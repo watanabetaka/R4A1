@@ -10,10 +10,11 @@
 
 <!-- 会員情報変更ボタン -->
 <div id=mypage>
-<div id=mymail>メールアドレス　
+<div id=botton_txt>メールアドレス　
   <input type="button" id =mailchange onclick="location.href='http://localhost:8080/book/mypage/mailchange.jsp'" value="変更">
 </div>
-<div id = mypass>パスワード　　　
+<br><br><br><br><br>
+<div id = botton_txt>パスワード　　　
   <input type="button" id =passchange onclick="location.href='http://localhost:8080/book/mypage/passchange.jsp'" value="変更">
 </div>
 <br><br><br><br><br><br><br><br>
