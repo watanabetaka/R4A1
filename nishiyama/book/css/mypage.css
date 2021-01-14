@@ -1,3 +1,7 @@
+body{
+  margin: 0px;
+}
+
 div#back {
     font-size: 5em;
     float: left;
