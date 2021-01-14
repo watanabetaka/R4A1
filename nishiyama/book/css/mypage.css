@@ -17,10 +17,10 @@ div#mypage {
     padding-top: 30%;
     text-align: center;
 }
-div#botton_txt {
+div#mypage_botton_txt {
     font-size: 3.5em;
 }
-div#logout {
+div#mypage_logout {
     font-size: 1em;
 }
 input#mailchange {
@@ -38,7 +38,7 @@ div.all {
     display: flow-root;
 }
 
-div.form_txt {
+div.mypage_form_txt {
     width: fit-content;
     text-align: center;
     float: left;
@@ -48,7 +48,7 @@ div.inputer {
     padding-left: 30%;
 }
 
-div.result{
+div.mypage_result{
   text-align: center;
 }
 

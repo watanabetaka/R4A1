@@ -16,7 +16,7 @@
 
 <form action='PassChange.action' method='post'>
   <div class =all>
-<div class = form_txt>
+<div class = mypage_form_txt>
   <div>　現在の<br>　　パスワード　</div>
 </div>
 <div class = inputer>
@@ -25,7 +25,7 @@
 </div>
 
 <div class=all>
-<div class = form_txt>
+<div class = mypage_form_txt>
 <div>　新しい<br>　　パスワード　</div>
 </div>
 <div class = inputer>
@@ -35,7 +35,7 @@
 </div>
 
 <div class=all>
-<div class = form_txt>
+<div class = mypage_form_txt>
 <div>　新しい<br>　　パスワード　<br>　（確認）</div>
 </div>
 <div class = inputer>
@@ -47,7 +47,7 @@
 <!-- 検証結果を表示 -->
 <br>
 <div class=all>
-  <div class = result>
+  <div class = mypage_result>
 <div><span id='result_3' class=result_on value='false'>不適切です</span></div>
 </div>
 </div>
