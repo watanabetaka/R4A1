@@ -1,10 +1,9 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/header.html" %>
-
 <!-- ヘッダー部分 -->
 <header>
   <div id="back">
-    <a href="" id ="modoru">＜</a>
+    <a href="http://localhost:8080/book/mypage/mypage.jsp" id ="modoru">＜</a>
   </div>
   <div id="mypage_title">
 メールアドレス変更
@@ -62,7 +61,6 @@
 
 <!-- 登録ボタン -->
 <div id = "touroku"><input type='submit' name='send' value="登録" disabled></div>
-
 </form>
 
 <!-- サーブレット -->

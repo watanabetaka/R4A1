@@ -4,7 +4,7 @@
 <!-- ヘッダー部分 -->
 <header>
   <div id="back">
-    <a href="" id ="modoru">＜</a>
+    <a href="http://localhost:8080/book/mypage/mypage.jsp" id ="modoru">＜</a>
   </div>
   <div id="mypage_title">
 メールアドレス変更
