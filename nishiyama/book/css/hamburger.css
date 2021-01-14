@@ -1,6 +1,6 @@
 /*ヘッダーまわりはご自由に*/
 header {
-  padding:10px;
+  padding:30px;
   background: #f5deb3;
 }
 
@@ -16,26 +16,30 @@ header {
 /*アイコンのスペース*/
 #nav-open {
     display: inline-block;
-    width: 30px;
-    height: 22px;
+    width: 20%;
+    /* width: 30px; */
+    height: 100px;
     vertical-align: middle;
 }
 /*ハンバーガーアイコンをCSSだけで表現*/
 #nav-open span, #nav-open span:before, #nav-open span:after {
     position: absolute;
-    height: 3px;
-    width: 25px;
-    border-radius: 3px;
+    height: 15px;
+    width: 10%;
+    /* width: 25px; */
+    border-radius: 20px;
     background: #a0522d;
     display: block;
     content: '';/*beforeとafter*/
     cursor: pointer;
 }
 #nav-open span:before {
-    bottom: -8px;
+    bottom: -30px;
+    width: 100%;
 }
 #nav-open span:after {
-    bottom: -16px;
+    bottom: -60px;
+    width: 100%;
 }
 
 /*閉じる用の薄黒カバー*/
@@ -58,9 +62,9 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999;/*最前面に*/
-    width: 90%;/*右側に隙間を作る*/
-    max-width: 330px;/*最大幅*/
+    z-index: 10;/*最前面に*/
+    width: 80%;/*右側に隙間を作る*/
+    /* max-width: 330px;/*最大幅*/
     height: 100%;
     background: #f5deb3;/*背景色*/
     transition: .3s ease-in-out;/*滑らかに表示*/
@@ -81,25 +85,38 @@ header {
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
 
+#space{
+    padding-top: 200px;
+}
+
+/* エリア選択>のスペース */
+#areaselect-range{
+  padding-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #333333;
+  background-color: white;
+}
+
 /*AreaDrawer*/
 #area-drawer {
-  /* position: relative; */
+  display: inline;
+  position: relative;
 }
 
 /*アイコン(<)のスペース*/
 #area-open {
-  display: block;
+  display: inline-block;
   width: 30px;
   height: 22px;
   vertical-align: middle;
 }
 /*<を表現*/
 #area-open {
-  left: 3px;
-  width: 4px;
-  height: 4px;
-  border-top: 2px solid #7a0;
-  border-right: 2px solid #7a0;
+  left: 300px;
+  width: 20px;
+  height: 20px;
+  border-top: 10px solid #a0522d;
+  border-right: 10px solid #a0522d;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
@@ -124,10 +141,10 @@ header {
     top: 0;
     left: 0;
     z-index: 9999;/*最前面に*/
-    width: 90%;/*右側に隙間を作る*/
-    max-width: 330px;/*最大幅*/
+    width: 80%;/*右側に隙間を作る*/
+    /* max-width: 330px;/*最大幅*/
     height: 100%;
-    background: #f5deb3;/*背景色*/
+    background: white;/*背景色*/
     transition: .3s ease-in-out;/*滑らかに表示*/
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/
@@ -135,7 +152,7 @@ header {
 
 /*チェックが入ったらもろもろ表示*/
 #area-input:checked ~ #area-close {/*チェックが入ったら黒幕を表示*/
-    display: block;/*カバーを表示*/
+    display: inline-block;;/*カバーを表示*/
     opacity: .5;
 }
 
@@ -144,10 +161,27 @@ header {
     transform: translateX(0%);/*中身を表示*/
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
+#areaselect-range2{
+  padding-top: 1px;
+  margin-bottom: 1px;
+  border: 1px solid #333333;
+  background: #f5deb3;
+}
+#area_list{
+  padding-left: 50px;
+}
 
 /*GenreDrawer*/
 #genre-drawer {
   position: relative;
+}
+
+/* ジャンル選択>のスペース */
+#genreselect-range{
+  padding-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #333333;
+  background-color: white;
 }
 
 /*アイコン(<)のスペース*/
@@ -159,11 +193,11 @@ header {
 }
 
 #genre-open {
-  left: 3px;
-  width: 4px;
-  height: 4px;
-  border-top: 2px solid #7a0;
-  border-right: 2px solid #7a0;
+  left: 30px;
+  width: 20px;
+  height: 20px;
+  border-top: 10px solid #a0522d;
+  border-right: 10px solid #a0522d;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
@@ -188,10 +222,10 @@ header {
     top: 0;
     left: 0;
     z-index: 9999;/*最前面に*/
-    width: 90%;/*右側に隙間を作る*/
-    max-width: 330px;/*最大幅*/
+    width: 80%;/*右側に隙間を作る*/
+    /* max-width: 330px;/*最大幅*/
     height: 100%;
-    background: #f5deb3;/*背景色*/
+    background: white;/*背景色*/
     transition: .3s ease-in-out;/*滑らかに表示*/
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/
@@ -208,77 +242,33 @@ header {
     transform: translateX(0%);/*中身を表示*/
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
+#genreselect-range2{
+  padding-top: 1px;
+  margin-bottom: 1px;
+  border: 1px solid #333333;
+  background: #f5deb3;
+}
+#genre_list{
+  padding-left: 50px;
+}
+#actions{
+  padding-left: 600px;
+}
+#sendtojava{
+  font-size: 24px;
+  width:100px;
+  height:60px
+}
+/* 文字サイズ */
+.p_size{
+  font-size:20pt
+}
 
-/*トグルスイッチ*/
-.switch__label {
-    width: 50px;
-    position: relative;
-    display: inline-block;
+.button-position{
+  padding-left: 200px;
 }
-.switch__content {
-    display: block;
-    cursor: pointer;
-    position: relative;
-    border-radius: 30px;
-    height: 31px;
-    overflow: hidden;
-}
-.switch__content:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: calc(100% - 3px);
-    height: calc(100% - 3px);
-    top: 0;
-    left: 0;
-    border: 1.5px solid #E5E5EA;
-    border-radius: 30px;
-    background-color: #fff;
-}
-.switch__content:after {
-    content: "";
-    display: block;
-    position: absolute;
-    background-color: transparent;
-    width: 0;
-    height: 0;
-    top: 50%;
-    left: 50%;
-    border-radius: 30px;
-    -webkit-transition: all .5s;
-       -moz-transition: all .5s;
-        -ms-transition: all .5s;
-         -o-transition: all .5s;
-            transition: all .5s;
-}
-.switch__input {
-    display: none;
-}
-.switch__circle {
-    display: block;
-    top: 49px;
-    left: 2px;
-    position: absolute;
-    -webkit-box-shadow: 0 2px 6px #999;
-            box-shadow: 0 2px 6px #999;
-    width: 27px;
-    height: 27px;
-    -webkit-border-radius: 20px;
-            border-radius: 20px;
-    background-color: #fff;
-    -webkit-transition: all .5s;
-       -moz-transition: all .5s;
-        -ms-transition: all .5s;
-         -o-transition: all .5s;
-            transition: all .5s;
-}
-.switch__input:checked ~ .switch__circle {
-    left: 21px;
-}
-.switch__input:checked ~ .switch__content:after {
-    background-color: #00c4cc;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.decision-buttom{
+  font-size: 24px;
+  width:100px;
+  height:60px
 }

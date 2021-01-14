@@ -1,14 +1,11 @@
-/* 基準 */
-html {
-    height: 100%;
-}
 
-body {
-    height: 100%;
-}
 
 div#i{
-  height:4.5%;
+  position: fixed;
+  left: 0;
+  top: 93%;
+  width: 100%;
+  height: 7.5%;
 }
 /* メニューバー 範囲*/
 div#menu-gazou {
@@ -52,8 +49,3 @@ ul.topng li {
   height:75%;
   position: relative;
 }
-/* 画像（元）の画像があってないもの合わせ */
-/* img[src$="okiniiri.png"] { */
-    /* height: 80.25px; */
-    /* width: 80.25px */
-/* } */
