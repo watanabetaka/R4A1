@@ -6,12 +6,6 @@ a#modoru {
     text-decoration: none;
     color: black;
 }
-div#mypage_title {
-  position: fixed;
-  left: 38%;
-  top: 2%;
-  font-size: 300%;
-}
 /* ここまでヘッダ
 ここからボディ */
 div#mypagemail_form {
@@ -32,7 +26,7 @@ div.mypagemail {
     text-align: center;
     float: left;
 }
-div.now {
+div.inputer {
     padding-top: 2%;
     padding-left: 30%;
 }

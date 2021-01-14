@@ -9,7 +9,6 @@ import java.io.*;
 import javax.servlet.*;
 import session.Passwordutil;
 
-
 public class PassAction extends Action {
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response

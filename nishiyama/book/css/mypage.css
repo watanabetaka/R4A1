@@ -1,0 +1,26 @@
+div#mypage_title {
+    text-align: center;
+    font-size: 3em;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+div#mypage {
+    padding-top: 30%;
+    text-align: center;
+}
+div#mymail {
+    font-size: 3.5em;
+}
+div#mypass {
+    font-size: 3.5em;
+    margin-top: 16%;
+}
+div#logout {
+    font-size: 1em;
+}
+input#mailchange {
+    font-size: 1em;
+}
+input#passchange {
+    font-size: 1em;
+}

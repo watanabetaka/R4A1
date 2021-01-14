@@ -1,14 +1,17 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/header.html" %>
+
+<!-- ヘッダー部分 -->
 <header>
   <div id="back">
     <a href="" id ="modoru">＜</a>
   </div>
   <div id="mypage_title">
-    会員情報変更
+メールアドレス変更
   </div>
 </header>
 
+<!-- 入力フォーム -->
 <div id=mypagemail_form>
 
 <form action='MailChange.action' method='post'>
@@ -41,6 +44,7 @@
 </div>
 </div>
 
+<!-- 検証結果を表示 -->
 <br>
 <div class=all>
   <div class = result>
@@ -50,15 +54,22 @@
 
 </div>
 
+<!-- 注意書き -->
 <div id="p_txt">パスワードは
   <br>※アルファベット大文字・数字を含める
   <br>※8文字以上
   <br><br>
   <div class=attention>メールアドレスまたは<br>パスワードが間違っています。<br>再入力してください。</div>
   </div>
+
+  <!-- 登録ボタン -->
 <div id = "touroku"><input type='submit' name='send' value="登録" disabled></div>
+
 </form>
+
+<!-- サーブレット -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="../js/mypagemailcheck.js"></script>
-<script>
+
+<!-- フッター部分 -->
 <%@include file="../html/footer.html" %>

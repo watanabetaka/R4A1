@@ -15,13 +15,14 @@ import javax.imageio.ImageWriteParam;
 import javax.imageio.ImageWriter;
 import javax.imageio.plugins.jpeg.JPEGImageWriteParam;
 import javax.imageio.stream.ImageOutputStream;
+import javax.servlet.ServletConfig;
+
 
 public class Imagesave{
-  public static String aftername(Part part){
-    String file = "";
-    try{
-    // 写真ををファイル名に変換
-    file = Setfilename.getFileName(part);
+  public static String aftername( String file){
+        try{
+    // // 写真ををファイル名に変換
+    // file = Setfilename.getFileName(part);
     //以下のコードで写真のサイズと拡張子の変更を行う
     //変更したい縦と横の長さを指定する
     //横
@@ -29,7 +30,9 @@ public class Imagesave{
     //縦
     int resizeH = 300;
     //変更前の写真をBufferedImageクラスのoriginal変数に読み込ませる
+     // part.write(servletContext.getServletContext().getRealPath("C:\\work\\tomcat\\webapps\\book\\image\\"+ file));
     BufferedImage original = ImageIO.read(new File(file));
+    System.out.println(111);
     //変更後の写真をBufferedImageクラスのscaleImg変数に読み込ませる
     BufferedImage scaleImg = new BufferedImage(resizeW, resizeH, BufferedImage.TYPE_3BYTE_BGR);
     scaleImg.createGraphics().drawImage(
@@ -41,6 +44,7 @@ public class Imagesave{
     //写真の絶対パスを指定したものをafternameに入れる
     String aftername = "C:\\work\\tomcat\\webapps\\book\\image\\"+file;
     //afternameに格納している絶対パスに写真を保存する
+    Part part = new ;
     part.write(aftername);
     }catch(IOException e){
       System.out.println("error");
