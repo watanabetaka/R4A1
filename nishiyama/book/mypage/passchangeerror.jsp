@@ -44,14 +44,14 @@
 </div>
 </div>
 
+</div>
+
 <!-- 検証結果を表示 -->
 <br>
 <div class=all>
   <div class = mypage_result>
 <div><span id='result_3' class=result_on value='false'>不適切です</span></div>
 </div>
-</div>
-
 </div>
 
 <!-- 注意書き -->

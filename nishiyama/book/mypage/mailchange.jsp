@@ -1,4 +1,4 @@
-<%@page contentType="text/html; charset=UTF-8" %>
+<%@page contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@include file="../html/header.html" %>
 <!-- ヘッダー部分 -->
 <header>
@@ -44,6 +44,8 @@
 </div>
 </div>
 
+</div>
+
 <!-- 検証結果を表示 -->
 <br>
 <div class=all>
@@ -52,7 +54,7 @@
 </div>
 </div>
 
-</div>
+
 
 <!-- 注意書き -->
 <div id="p_txt">パスワードは
@@ -64,7 +66,7 @@
 <div id = "touroku">
   <input type='submit' name='send' value="登録" disabled>
   </div>
-  
+
 </form>
 
 </div>
