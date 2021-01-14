@@ -13,7 +13,7 @@
 
 <div class=fade>
 <!-- 入力フォーム -->
-<div id=mypage_form_list>
+<div class=mypage_form_list>
 
 <form action='PassChange.action' method='post'>
   <div class =all>
@@ -56,13 +56,15 @@
 </div>
 
 <!-- 注意書き -->
-<div id="p_txt">パスワードは
+<div class=txt>パスワードは
   <br>※アルファベット大文字・数字を含める
   <br>※8文字以上
 </div>
 
 <!-- 登録ボタン -->
-<div id = "touroku"><input type='submit' name='send' value="登録" disabled></div>
+<div class = "touroku">
+  <input type='submit' name='send' value="登録" disabled>
+  </div>
 
 </form>
 

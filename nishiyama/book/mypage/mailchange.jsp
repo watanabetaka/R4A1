@@ -12,7 +12,7 @@
 
 <div class=fade>
 <!-- 入力フォーム -->
-<div id=mypage_form_list>
+<div class=mypage_form_list>
 
 <form action='MailChange.action' method='post'>
   <div class =all>
@@ -57,13 +57,13 @@
 
 
 <!-- 注意書き -->
-<div id="p_txt">パスワードは
+<div class=txt>パスワードは
   <br>※アルファベット大文字・数字を含める
   <br>※8文字以上
 </div>
 
 <!-- 登録ボタン -->
-<div id = "touroku">
+<div class = "touroku">
   <input type='submit' name='send' value="登録" disabled>
   </div>
 

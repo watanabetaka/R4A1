@@ -10,17 +10,19 @@
 
 <!-- 会員情報変更ボタン -->
 <div class=fade>
-<div id=mypage>
-<div id=mypage_button_txt>メールアドレス　
+<div class=mypage>
+<div class=mypage_button_txt>メールアドレス　
   <input type="button" id =mailchange onclick="location.href='http://localhost:8080/book/mypage/mailchange.jsp'" value="変更">
 </div>
 
-<div id = mypage_button_txt>パスワード　　　
+<div class = mypage_button_txt>パスワード　　　
   <input type="button" id =passchange onclick="location.href='http://localhost:8080/book/mypage/passchange.jsp'" value="変更">
 </div>
 
+<div class=txt>設定したメールアドレス・パスワードは<br>忘れないようにしてください</div>
+
 <!-- ログアウトボタン -->
-<div id=mypage_logout>
+<div class=mypage_logout>
   <input type="button" id = logout onclick ="location.href='http://localhost:8080/book/login/Logout.action'"  value="ログアウト">
   </div>
   </div>
