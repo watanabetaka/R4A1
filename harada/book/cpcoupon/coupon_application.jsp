@@ -11,7 +11,7 @@
 <header>
 
   <%-- 戻り先のURLを指定 --%>
-  <a href="">＜</a>
+  <a href="http://10.23.104.39:8080/book/cpoperation/cpoperation.jsp">＜</a>
 
   <%-- ヘッダータイトル --%>
   <div class="company_title">クーポン申請</div>

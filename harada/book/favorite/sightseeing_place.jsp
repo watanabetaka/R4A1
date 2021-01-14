@@ -46,9 +46,9 @@
 
 <div id="pankuzu">
   <%-- ぱんくずリストの表示 --%>
-    <a id="city_name" href="http://localhost:8080/book/favorite/Favoritesort.action?array_genre=<%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%></a>
+    <a id="city_name" href="http://10.23.104.39:8080/book/favorite/Favoritesort.action?array_genre=<%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%></a>
     >
-    <a id="genre_name" href="http://localhost:8080/book/favorite/Favoritesort.action?array_city=<%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%></a>
+    <a id="genre_name" href="http://10.23.104.39:8080/book/favorite/Favoritesort.action?array_city=<%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%></a>
     ><div id="sightseeing_place"><%for(Sightseeing_Place s: list){out.print(s.getSightseeing_Name());}%></div>
 </div>
 
@@ -59,54 +59,62 @@
 
 <%-- 郵便番号の表示 javascriptにて加工--%>
 <div  id="syousai">
-<div id="postal_code">〒</div>
-  <div id="postal_code_insert"></div>
+  <div class="adress_container">
+    <div class="adress"><img class="adress_image" src="../image/map.png"></div>
+  </div>
+
+  <div class="adress_container">
+    <div class="adress" id="postal_code">〒</div>
+    <div class="adress" id="postal_code_insert"></div>
+
+    <%-- 住所の表示 --%>
+    <div class="adress" id="street_adress">
+      <%
+      for(Sightseeing_Place s: list){
+        out.print(s.getStreet_Adress());
+      }
+      %>
+    </div>
+  </div>
+
+  <div class="nothing"></div>
+
+  <%-- 電話番号の表示 javascriptにて加工 --%>
+  <div class="phone"><img class="phone_image" src="../image/call.png"></div>
+  <div class="phone" id="phone_number"></div>
+
+  <%-- 営業時間の表示 javascriptにて加工--%>
+  <div id="business_hour"></div>
+
+  <%-- 最寄り駅と最寄り駅からの時間を表示 javascriptにて加工--%>
+  <div id="nearest_station_time"></div>
+  <%-- 観光地名をGoogle検索 --%>
+  <%-- 下記のURLでは、iOSアプリでしか機能しない --%>
+  <a target="_blank" href="google://search?q=<% for(Sightseeing_Place s: list){ out.print(s.getSightseeing_Name()); } %>" id="google"><div class="google">Googleで検索</div></a>
+  <%-- <a target="_blank" href="https://www.google.co.jp" id="google">Googleで検索</a> --%>
+
+  <%-- <div class="yajirushi"><img src="../image/yajirushi.jpg"></div> --%>
+
+  <%-- 観光地の予約サイトURLの挿入 javascriptにて加工--%>
+  <%-- もし企業が予約サイトURLを登録していなければ表示されない --%>
+  <div id="reservation_url"></div>
 
 
-<%-- 住所の表示 --%>
-<div id="street_adress">
-  <%
-  for(Sightseeing_Place s: list){
-    out.print(s.getStreet_Adress());
-  }
-  %>
+
+
+  <%-- SNSでシェアする機能（末松君実装） --%>
+  <%-- 末松くんへ --%>
+  <%-- 下記のaタグのフォーマットに従って作ってください --%>
+  <%-- <a target="_blank" href="https://twitter.com/?lang=ja" id="twitter">Twitterでシェア</a> --%>
+
+  <%--twitterでレビューする際の処理--%>
+  <div class="content">
+    <%-- Twitterボタン --%>
+    <a class="twitter btn" href="http://twitter.com/share?url= &text=%0a%20%23まいらいずおおいた" target="_blank" id="twitter"><div class="share">Twitterでシェア</div><img class="share" id="twitter_image" src="../image/twitter.jpg"></a>
+  </div>
 </div>
-
-<%-- 電話番号の表示 javascriptにて加工 --%>
-<div id="phone_number"></div>
-
-<%-- 営業時間の表示 javascriptにて加工--%>
-<div id="business_hour"></div>
-
-<%-- 最寄り駅と最寄り駅からの時間を表示 javascriptにて加工--%>
-<div id="nearest_station_time"></div>
-</div>
-<%-- 観光地名をGoogle検索 --%>
-<%-- 下記のURLでは、iOSアプリでしか機能しない --%>
-<a target="_blank" href="google://search?q=<% for(Sightseeing_Place s: list){ out.print(s.getSightseeing_Name()); } %>" id="google">Googleで検索</a>
-<%-- <a target="_blank" href="https://www.google.co.jp" id="google">Googleで検索</a> --%>
-
-<%-- <div class="yajirushi"><img src="../image/yajirushi.jpg"></div> --%>
-
-<%-- 観光地の予約サイトURLの挿入 javascriptにて加工--%>
-<%-- もし企業が予約サイトURLを登録していなければ表示されない --%>
-<div id="reservation_url"></div>
-
-
-
-
-<%-- SNSでシェアする機能（末松君実装） --%>
-<%-- 末松くんへ --%>
-<%-- 下記のaタグのフォーマットに従って作ってください --%>
-<%-- <a target="_blank" href="https://twitter.com/?lang=ja" id="twitter">Twitterでシェア</a> --%>
-
-<%--twitterでレビューする際の処理--%>
-<div class="content">
-  <%-- Twitterボタン --%>
-  <a class="twitter btn" href="http://twitter.com/share?url= &text=%0a%20%23まいらいずおおいた" target="_blank" id="twitter" ><img src="../image/twitter.jpg"></a>
-</div>
-<a target="_blank" href="https://www.instagram.com/?hl=ja" id="instagram">Instagramでシェア</a>
-<a target="_blank" href="https://ja-jp.facebook.com/" id="facebook">facebookでシェア</a>
+<%-- <a target="_blank" href="https://www.instagram.com/?hl=ja" id="instagram">Instagramでシェア</a>
+<a target="_blank" href="https://ja-jp.facebook.com/" id="facebook">facebookでシェア</a> --%>
 
 <%-- SNSでシェアした際のJavascriptファイルを読み込み --%>
 <script type="text/javascript" src="../js/Couponpresent.js"></script>

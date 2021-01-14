@@ -25,7 +25,7 @@
     $('#application_view').append('<div id="application_result">クーポン情報が送信できませんでした。<br>管理者にお問合せください。</div>');
   }
   // OKをクリックしたら、企業画面に戻る
-  $('#application_view').append('<form action=""><input type="submit" value="OK"></form>');
+  $('#application_view').append('<a href="http://10.23.104.39:8080/book/cpoperation/cpoperation.jsp">ホームへ戻る</a>');
 
 </script>
 

@@ -5,6 +5,6 @@
 okボタンを押して企業トップ画面にお戻りください。
 </p>
 
-<p><input type="button" onclick="location.href='http://localhost:8080/book/cpoperation/cpoperation.jsp'" value="ok"></p>
+<p><input type="button" onclick="location.href='http://10.23.104.39:8080/book/cpoperation/cpoperation.jsp'" value="ok"></p>
 
 <%@include file="../html/footer.html" %>

@@ -24,7 +24,7 @@ a#modoru {
 }
 
 div#pankuzu {
-    padding-top: 14%;
+    padding-top: 4%;
     font-size: 2em;
 }
 div#city_name {
@@ -35,10 +35,67 @@ div#city_name {
 div#genre_name {
     float: left;
 }
+div#sightseeing_place{
+  font-size: 200%;
+  padding-top: 2%;
+}
+
 img#pictures {
     width: -webkit-fill-available;
     border-radius: 35px;
 }
+
 div#syousai {
     font-size: 3em;
+    padding-bottom: 13%;
+}
+
+div#syousai > *{
+  padding-top: 1%;
+}
+
+div.google{
+  padding-top:6%;
+}
+
+img.adress_image{
+  width: 43%;
+}
+
+div.adress_container{
+  display:inline-block;
+  vertical-align:middle;
+  padding-left: 1%;
+}
+
+div#postal_code {
+    float: left;
+}
+
+div.adress{
+   font-size: 85%;
+}
+
+/* div.adress{
+  display:inline-block;
+} */
+
+
+div.phone{
+  display: inline-block;
+}
+
+img.phone_image{
+  width: 43%;
+}
+
+img#twitter_image{
+  width: 10%;
+}
+
+.share{
+  display: inline-block;
+  padding-right: 3%;
+  padding-top: 3%;
+  vertical-align:middle;
 }
