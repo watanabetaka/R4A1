@@ -12,7 +12,7 @@
 </header>
 
 <!-- 入力フォーム -->
-<div id=mypage_form>
+<div id=mypage_form_list>
 
 <form action='MailChange.action' method='post'>
   <div class =all>
@@ -20,7 +20,7 @@
   <div>　現在の<br>　　パスワード　</div>
 </div>
 <div class = inputer>
-<input type='text' id='now_pass' name='now_pass' placeholder="Type Your Password here"><br>
+<input type='text' class=mypage_form id='now_pass' name='now_pass' placeholder="Type Your Password here"><br>
 </div>　
 </div>
 
@@ -29,7 +29,7 @@
   <div>　新しい<br>　メールアドレス</div>　　　　
 </div>
 <div class = inputer>
-<input type='text' id='new_address' name='new_address' placeholder="info@example.com">
+<input type='text' class=mypage_form id='new_address' name='new_address' placeholder="info@example.com">
   <div><span id='result' value='false'>　</span></div>
 </div>
 </div>
@@ -39,7 +39,7 @@
 <div>　新しい<br>　メールアドレス<br>　（確認）</div>
 </div>
 <div class = inputer>
-<input type='text' id='new_address_2' placeholder="info@example.com">
+<input type='text' class=mypage_form id='new_address_2' placeholder="info@example.com">
   <div><span id='result_2' value='false'>　</span></div>
 </div>
 </div>

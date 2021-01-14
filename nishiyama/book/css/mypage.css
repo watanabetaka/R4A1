@@ -10,6 +10,7 @@ a#back_button {
 div#mypage_title {
     text-align: center;
     font-size: 3em;
+    font-weight: 550;
     margin-top: 1%;
     margin-bottom: 1%;
 }
@@ -18,10 +19,10 @@ div#mypage {
     text-align: center;
 }
 div#mypage_button_txt {
-    font-size: 3.5em;
+    font-size: 3em;
 }
 div#mypage_logout {
-    font-size: 1em;
+    font-size: 0.75em;
 }
 input#mailchange {
     font-size: 1em;
@@ -29,7 +30,7 @@ input#mailchange {
 input#passchange {
     font-size: 1em;
 }
-div#mypage_form {
+div#mypage_form_list {
     padding-top: 15%;
     font-size: 2em;
 }
@@ -61,21 +62,10 @@ div.mypage_result{
   color:red;
 }
 
-input#now_pass {
-    font-size: 1.5em;
+.mypage_form{
+  font-size: 1.5em;
 }
-input#new_address {
-    font-size: 1.5em;
-}
-input#new_address_2 {
-    font-size: 1.5em;
-}
-input#new_pass {
-    font-size: 1.5em;
-}
-input#new_pass_2 {
-    font-size: 1.5em;
-}
+
 div#p_txt {
     font-size: 2.6em;
     display: inline-block;
@@ -86,9 +76,49 @@ div#p_txt {
 div#touroku {
     text-align: end;
 }
+
 input[type="button"] {
-    font-size: 3.5em;
+  background-color: #f5deb3;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #a00;
+  border-radius: 2rem;
 }
 input[type="submit"] {
-    font-size: 3.5em;
+  background-color: #f5deb3;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #a00;
+  border-radius: 2rem;
+}
+input[type="submit"]:disabled {
+  background-color: #d3bc91;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #500;
+  border-radius: 2rem;
 }
