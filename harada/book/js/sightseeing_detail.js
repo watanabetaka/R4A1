@@ -89,5 +89,5 @@ $('#nearest_station_time').append(insert);
 
 // 予約サイトURLが登録されていたら、予約サイトのURLと挿入画像を表示する処理
 if(reservation_url.length !== 0){
-  $('#reservation_url').html('<a target="_blank" href="' + reservation_url + '" id="jaran">予約サイトで表示</a>');
+  $('#reservation_url').html('<a target="_blank" href="' + reservation_url + '" id="jaran">外部サイトで表示</a>');
 }

@@ -46,9 +46,9 @@
 
 <div id="pankuzu">
   <%-- ぱんくずリストの表示 --%>
-    <a id="city_name" href="http://10.23.104.39:8080/book/favorite/Favoritesort.action?array_genre=<%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%></a>
+    <a id="city_name" href="http://<%@include file="../ipadress/ipadress.jsp" %>:8080/book/favorite/Favoritesort.action?array_genre=<%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%></a>
     >
-    <a id="genre_name" href="http://10.23.104.39:8080/book/favorite/Favoritesort.action?array_city=<%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%></a>
+    <a id="genre_name" href="http://<%@include file="../ipadress/ipadress.jsp" %>:8080/book/favorite/Favoritesort.action?array_city=<%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%></a>
     ><div id="sightseeing_place"><%for(Sightseeing_Place s: list){out.print(s.getSightseeing_Name());}%></div>
 </div>
 
@@ -57,11 +57,12 @@
   <img src="<% for(Sightseeing_Place s: list){ out.print(s.getPicture_Path()); } %>" id ="pictures" >
 </div>
 
-<%-- 下線を表示 --%>
-<p class="kasenfirst">&nbsp;</p>
-
 <%-- 郵便番号の表示 javascriptにて加工--%>
 <div  id="syousai">
+
+  <%-- 下線を表示 --%>
+  <p class="kasenfirst">&nbsp;</p>
+
   <div class="image_class adress_container">
     <div class="adress"><img class="adress_image" src="../image/map.png"></div>
   </div>
@@ -99,6 +100,7 @@
   <div class="neareststation" id="nearest_station_time"></div>
 
   <%-- 下線を表示 --%>
+  <div class="nothing_kasen"></div>
   <p class="kasen">&nbsp;</p>
 
   <div class="external">

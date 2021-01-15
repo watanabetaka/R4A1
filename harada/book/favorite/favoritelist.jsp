@@ -12,6 +12,7 @@
 <% List<Genre> list2=(List<Genre>)request.getAttribute("list2"); %>
 
 
+
 <%-- 児玉くん --%>
 <%-- 左上のソートバーのボタン --%>
 <script type="text/javascript" src="../js/hamburger.js"></script>

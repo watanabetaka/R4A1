@@ -41,18 +41,15 @@ public class FavoritedeleteAction extends Action {
 		// sightseeing_idをもとに、DBから必要な値を取得
 		int line=dao.delete(f);
 
-		String message;
-
-		if(line > 0){
-			message = "観光地を削除しました";
-		}else{
-			message = "観光地を削除するのに失敗しました";
-		}
-
-		// 値をjspへ送る為にセットする
-		request.setAttribute("message",message);
+		// String message;
+		//
+		// if(line > 0){
+		// 	message = "観光地を削除しました";
+		// }else{
+		// 	message = "観光地を削除するのに失敗しました";
+		// }
 
 		// jspへフォワードする
-		return "favoritedelete_result.jsp";
+		return "favoritelist";
 	}
 }

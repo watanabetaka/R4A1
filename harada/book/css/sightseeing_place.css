@@ -50,6 +50,7 @@ img#pictures {
 
 div#syousai {
     font-size: 3em;
+    padding-top: 10%;
     padding-bottom: 13%;
 }
 
@@ -149,11 +150,15 @@ div#reservation_url{
 
 .kasen{
   border-top: solid 3px orange;
+  padding-top: 10%;
 }
 
 .kasenfirst{
-  padding-top: 10%;
   border-top: solid 4px orange;
+}
+
+.nothing_kasen{
+  padding-bottom: : 10%;
 }
 
 p{

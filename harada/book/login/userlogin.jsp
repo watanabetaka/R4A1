@@ -2,7 +2,7 @@
 <%@include file="../html/userlogin_header.html" %>
 <header>
   <div id="back">
-    <a href="http://10.23.104.39:8080/book/firstselect/userfirstselect.jsp" id ="modoru">＜</a>
+    <a href="http://<%@include file="../ipadress/ipadress.jsp" %>:8080/book/firstselect/userfirstselect.jsp" id ="modoru">＜</a>
   </div>
   <div id="login_title">
     ログイン
