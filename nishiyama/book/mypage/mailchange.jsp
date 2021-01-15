@@ -77,4 +77,5 @@
 <script src="../js/mypagemailcheck.js"></script>
 
 <!-- フッター部分 -->
+<%@include file="../html/gamenhuta.html" %>
 <%@include file="../html/footer.html" %>

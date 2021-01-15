@@ -3,7 +3,7 @@ body{
 }
 
 div#back {
-    font-size: 5em;
+    font-size: 4.5em;
     float: left;
 }
 a#back_button {
@@ -23,6 +23,9 @@ div.mypage {
     padding-top: 15%;
     text-align: center;
 }
+.cpoperation {
+    padding-top: 20%;
+}
 div.mypage_button_txt {
     font-size: 3em;
     margin: 10%;
@@ -31,9 +34,24 @@ div.mypage_logout {
   margin: 10%;
     font-size: 0.625em;
 }
+div.cpmypage_logout {
+  padding-top: 20%;
+  text-align: center;
+}
 div.mypage_form_list {
     padding-top: 15%;
     font-size: 2em;
+}
+.cpoperation_list{
+  padding-top: 25px;
+  border-top: 2px solid #333333;
+  border-bottom: 2px solid #333333;
+  font-size: 4em;
+  font-weight: 550;
+  background-color: #fff;
+}
+.cpoperation_list_arrow{
+  color:#500;
 }
 
 input#mailchange {
