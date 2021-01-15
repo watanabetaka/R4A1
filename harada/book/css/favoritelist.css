@@ -1,7 +1,9 @@
 div#favorite_title {
-    padding-top: 3%;
+    width: 100%;
+    position: fixed;
+    top: 2%;
     text-align: center;
-    font-size: 3em;
+    font-size: 363%;
 }
 div#favoli {
     display: flex;
@@ -9,6 +11,7 @@ div#favoli {
     padding-top: 13%;
     flex-wrap: wrap;
 }
+
 .favocon {
     width: 50%;
     text-align: center;

@@ -1,3 +1,5 @@
+
+
 div#back {
     font-size: 5em;
     float: left;
@@ -24,7 +26,7 @@ a#modoru {
 }
 
 div#pankuzu {
-    padding-top: 4%;
+    padding-top: 15%;
     font-size: 2em;
 }
 div#city_name {
@@ -35,6 +37,7 @@ div#city_name {
 div#genre_name {
     float: left;
 }
+
 div#sightseeing_place{
   font-size: 200%;
   padding-top: 2%;
@@ -54,8 +57,13 @@ div#syousai > *{
   padding-top: 1%;
 }
 
-div.google{
+div.external{
   padding-top:6%;
+  padding-left: 3%;
+}
+
+div.content{
+  padding-left: 3%;
 }
 
 img.adress_image{
@@ -65,6 +73,9 @@ img.adress_image{
 div.adress_container{
   display:inline-block;
   vertical-align:middle;
+}
+
+div#adress_container{
   padding-left: 1%;
 }
 
@@ -76,6 +87,15 @@ div.adress{
    font-size: 85%;
 }
 
+div#street_adress{
+  font-size: 100%;
+}
+
+div.image_class{
+  padding-left: 3%;
+  width: 10%;
+}
+
 /* div.adress{
   display:inline-block;
 } */
@@ -83,14 +103,62 @@ div.adress{
 
 div.phone{
   display: inline-block;
+  vertical-align:middle;
 }
 
 img.phone_image{
-  width: 43%;
+  width: 43px;
+}
+
+div#phone_number{
+  padding-left: :100%;
 }
 
 img#twitter_image{
   width: 10%;
+}
+
+div.business_hour{
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 0;
+}
+
+img.businesshour_image{
+  width: 60%;
+}
+
+div.neareststation{
+  display: inline-block;
+  vertical-align:middle;
+}
+
+img.neareststation_image{
+  width: 81%;
+  text-align: center;
+}
+
+div.neareststation_container{
+  padding-left: 0.1%;
+  width: 13%;
+}
+
+div#reservation_url{
+  padding-top: 3%;
+}
+
+.kasen{
+  border-top: solid 3px orange;
+}
+
+.kasenfirst{
+  padding-top: 10%;
+  border-top: solid 4px orange;
+}
+
+p{
+  margin:0;
+  height: 1%;
 }
 
 .share{

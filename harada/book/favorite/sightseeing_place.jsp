@@ -57,9 +57,12 @@
   <img src="<% for(Sightseeing_Place s: list){ out.print(s.getPicture_Path()); } %>" id ="pictures" >
 </div>
 
+<%-- 下線を表示 --%>
+<p class="kasenfirst">&nbsp;</p>
+
 <%-- 郵便番号の表示 javascriptにて加工--%>
 <div  id="syousai">
-  <div class="adress_container">
+  <div class="image_class adress_container">
     <div class="adress"><img class="adress_image" src="../image/map.png"></div>
   </div>
 
@@ -80,24 +83,35 @@
   <div class="nothing"></div>
 
   <%-- 電話番号の表示 javascriptにて加工 --%>
-  <div class="phone"><img class="phone_image" src="../image/call.png"></div>
+  <div class="phone image_class"><img class="phone_image" src="../image/call.png"></div>
   <div class="phone" id="phone_number"></div>
 
+  <div class="nothing"></div>
+
   <%-- 営業時間の表示 javascriptにて加工--%>
-  <div id="business_hour"></div>
+  <div class="business_hour image_class"><img class="businesshour_image" src="../image/business_hour.jpg"></div>
+  <div class="business_hour" id="business_hour"></div>
+
+  <div class="nothing"></div>
 
   <%-- 最寄り駅と最寄り駅からの時間を表示 javascriptにて加工--%>
-  <div id="nearest_station_time"></div>
-  <%-- 観光地名をGoogle検索 --%>
-  <%-- 下記のURLでは、iOSアプリでしか機能しない --%>
-  <a target="_blank" href="google://search?q=<% for(Sightseeing_Place s: list){ out.print(s.getSightseeing_Name()); } %>" id="google"><div class="google">Googleで検索</div></a>
-  <%-- <a target="_blank" href="https://www.google.co.jp" id="google">Googleで検索</a> --%>
+  <div class="neareststation neareststation_container"><img class="neareststation_image" src="../image/walk.jpg"></div>
+  <div class="neareststation" id="nearest_station_time"></div>
 
-  <%-- <div class="yajirushi"><img src="../image/yajirushi.jpg"></div> --%>
+  <%-- 下線を表示 --%>
+  <p class="kasen">&nbsp;</p>
 
-  <%-- 観光地の予約サイトURLの挿入 javascriptにて加工--%>
-  <%-- もし企業が予約サイトURLを登録していなければ表示されない --%>
-  <div id="reservation_url"></div>
+  <div class="external">
+    <%-- 観光地名をGoogle検索 --%>
+    <%-- 下記のURLでは、iOSアプリでしか機能しない --%>
+    <a target="_blank" href="google://search?q=<% for(Sightseeing_Place s: list){ out.print(s.getSightseeing_Name()); } %>" id="google"><div class="google">Googleで検索</div></a>
+    <%-- <a target="_blank" href="https://www.google.co.jp" id="google">Googleで検索</a> --%>
+
+    <%-- 観光地の予約サイトURLの挿入 javascriptにて加工--%>
+    <%-- もし企業が予約サイトURLを登録していなければ表示されない --%>
+    <div id="reservation_url"></div>
+  </div>
+
 
 
 
