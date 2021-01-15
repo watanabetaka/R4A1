@@ -1,7 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/header.html" %>
 
-ログイン名またはパスワードが違います。
+メールアドレスまたはパスワードが違います。
 
 <form action="Login.action" method="post">
 <p>メールアドレス<input type="mailaddress" name="email"></p>
