@@ -3,7 +3,7 @@ body{
 }
 
 div#back {
-    font-size: 5em;
+    font-size: 4.55em;
     float: left;
 }
 a#back_button {
@@ -100,7 +100,7 @@ div.touroku {
 }
 div.success{
   text-align: center;
-  position:relative; top:750px;
+  position:relative; top:650px;
 }
 div.success_txt{
   font-size: 4em;

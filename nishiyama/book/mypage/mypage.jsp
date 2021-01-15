@@ -1,6 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/mypage_header.html" %>
 
+
 <!-- ヘッダー部分 -->
 <header>
 <div id="mypage_title">
@@ -29,5 +30,7 @@
   </div>
 
 </div>
+
 <!-- ヘッダー部分 -->
+<%@include file="../html/gamenhuta.html" %>
 <%@include file="../html/footer.html" %>

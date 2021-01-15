@@ -11,4 +11,5 @@
 
 </div>
 
+<%@include file="../html/gamenhuta.html" %>
 <%@include file="../html/footer.html" %>

@@ -3,8 +3,11 @@
 
 <!-- ヘッダー部分 -->
 <header>
+  <div id="back">
+    <a href="http://localhost:8080/book/cpoperation/cpoperation.jsp" id ="back_button">＜</a>
+  </div>
 <div id="mypage_title">
-企業情報変更
+企業情報変更　　
 </div>
 </header>
 
