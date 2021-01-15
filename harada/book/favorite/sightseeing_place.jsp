@@ -1,6 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/sightseeing_place_header.html" %>
 <%@page import="bean.Sightseeing_Place, java.util.List" %>
+<%@include file="../ipadress/ipadress.jsp" %>
 
 <%-- jqueryをインポート --%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -46,9 +47,9 @@
 
 <div id="pankuzu">
   <%-- ぱんくずリストの表示 --%>
-    <a id="city_name" href="http://<%@include file="../ipadress/ipadress.jsp" %>:8080/book/favorite/Favoritesort.action?array_genre=<%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%></a>
+    <a id="city_name" href="http://<%= ipadress%>:8080/book/favorite/Favoritesort.action?array_genre=<%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%></a>
     >
-    <a id="genre_name" href="http://<%@include file="../ipadress/ipadress.jsp" %>:8080/book/favorite/Favoritesort.action?array_city=<%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%></a>
+    <a id="genre_name" href="http://<%= ipadress%>:8080/book/favorite/Favoritesort.action?array_city=<%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%></a>
     ><div id="sightseeing_place"><%for(Sightseeing_Place s: list){out.print(s.getSightseeing_Name());}%></div>
 </div>
 
@@ -132,8 +133,6 @@
 <%-- <a target="_blank" href="https://www.instagram.com/?hl=ja" id="instagram">Instagramでシェア</a>
 <a target="_blank" href="https://ja-jp.facebook.com/" id="facebook">facebookでシェア</a> --%>
 
-<%-- SNSでシェアした際のJavascriptファイルを読み込み --%>
-<script type="text/javascript" src="../js/Couponpresent.js"></script>
 <%-- <script type="text/javascript" src="../js/CouponRegistration.js"></script> --%>
 
 <%-- JAVAの値をJavascriptに変換 --%>
@@ -166,10 +165,15 @@ let reservation_url='<%
 for(Sightseeing_Place s: list){
   out.print(s.getUrl());
 } %>';
+
+// IPアドレスをjavascriptに変換
+ let ipadress = '<%= ipadress%>';
 </script>
 
 <%-- 観光地の体裁を整えるjavascriptファイルを読み込み --%>
 <script type="text/javascript" src="../js/sightseeing_detail.js"></script>
+<%-- SNSでシェアした際のJavascriptファイルを読み込み --%>
+<script type="text/javascript" src="../js/Couponpresent.js"></script>
 
 
 <%@include file="../html/gamenhuta.html" %>

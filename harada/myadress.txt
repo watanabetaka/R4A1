@@ -1,3 +1,5 @@
+1/15
+
 favoritedeleteAction.javaを改修、
 
 IPadressの共通部品を作る

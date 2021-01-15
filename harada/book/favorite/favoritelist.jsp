@@ -2,6 +2,7 @@
 <%@include file="../html/favoritelist_header.html" %>
 <%@page import="bean.Favorite, java.util.List , java.util.List,bean.City,bean.Genre" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@include file="../ipadress/ipadress.jsp" %>
 
 <%-- jqueryをインポート --%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

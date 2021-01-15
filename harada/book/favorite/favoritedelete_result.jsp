@@ -1,5 +1,6 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/header.html" %>
+<%@include file="../ipadress/ipadress.jsp" %>
 
 <%-- お気に入りから観光地を削除した後の画面 --%>
 
