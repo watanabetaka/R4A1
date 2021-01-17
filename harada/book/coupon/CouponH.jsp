@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../html/header.html" %>
+<%@include file="../html/coupon_header.html" %>
 <%@page import="bean.Coupon, java.util.List" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="../ipadress/ipadress.jsp" %>
@@ -7,7 +7,7 @@
 <%-- jqueryをインポート --%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<header>クーポン</header>
+<header><div class="coupon_title">クーポン</div></header>
 <h5>使用可能クーポン</h5>
 
 <% List<Coupon> list =(List<Coupon>)request.getAttribute("list");%>

@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
+import javax.servlet.annotation.WebServlet;
 import java.util.List;
 import tool.Page;
 import java.util.Collections;
@@ -15,16 +16,19 @@ import java.io.*;
 import javax.servlet.*;
 import session.Session;
 
-public class FavoritedeleteAction extends Action {
-	// 表示させる値を取得し、シャッフルするメソッド
-	public String execute(
+@WebServlet(urlPatterns={"/favorite/favoritedelete"})
+public class Favoritedelete extends HttpServlet {
+
+	public void doGet (
 		HttpServletRequest request, HttpServletResponse response
-	) throws Exception {
+	) throws ServletException, IOException {
 		PrintWriter out=response.getWriter();
 		Page.header(out);
+		try {
 
 		// 削除するsightseeing_idを取得
 		int sightseeing_id=Integer.parseInt(request.getParameter("sightseeing_id"));
+		Boolean ajax_trust = Boolean.valueOf(request.getParameter("ajax_trust"));
 
 		// cookie・sessionよりuser_idを取得
 		// 取得できなければログイン画面へ
@@ -49,7 +53,16 @@ public class FavoritedeleteAction extends Action {
 		// 	message = "観光地を削除するのに失敗しました";
 		// }
 
-		// jspへフォワードする
-		return "favoritelist";
+		if(ajax_trust == false){
+			// jspへフォワードする
+			request.getRequestDispatcher("favoritelist").forward(request,response);
+		}
+
+    } catch (Exception e) {
+			e.printStackTrace(out);
+		}
+
+	Page.footer(out);
+
 	}
 }

@@ -17,7 +17,7 @@ for(let i = 0 ; i < postal_code.length ; i++){
     insert = insert + temp;
   }
 }
-$('#postal_code_insert').html(insert);
+$('#postal_code_insert').html('〒' + insert);
 
 
 // 電話番号が10桁の場合の、電話番号に - を挿入する処理

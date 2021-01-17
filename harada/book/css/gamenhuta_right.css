@@ -28,7 +28,7 @@ img.menu-icon {
     width: 25%;
     position: absolute;
     top:8%;
-    left:36%;
+    left:33%;
     height:70%;
     max-height:100%;
 }
@@ -50,7 +50,6 @@ ul.topng li {
   height:75%;
   position: relative;
 }
-
 
 div.footer_font{
   font-size: 170%;

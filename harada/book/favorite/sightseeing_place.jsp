@@ -26,14 +26,14 @@
   <%-- 現在、削除ボタンが他のCSSで加工されている要素と重なってしまっており、ボタンとしての機能を持っていません--%>
   <div id="delete">
     <%-- Favoritedelete.actionへ sightseeing_id の値を受け渡す --%>
-    <form action="Favoritedelete.action" id="delete_button">
+    <form action="favoritedelete" id="delete_button">
       <input type="hidden" name="sightseeing_id" value="<%
       for(Sightseeing_Place s: list){
         out.print(s.getSightseeing_Id());
       }
       %>">
       <%-- エラーが生じた時は、下記のコードをコメントアウトして再度実行してください --%>
-      <%-- <input type="hidden" name="test" value="aa"> --%>
+      <input type="hidden" name="ajax_trust" value="false">
       <input type="submit" value="削除">
     </form>
   </div>
@@ -69,7 +69,6 @@
   </div>
 
   <div class="adress_container">
-    <div class="adress" id="postal_code">〒</div>
     <div class="adress" id="postal_code_insert"></div>
 
     <%-- 住所の表示 --%>
@@ -91,7 +90,7 @@
   <div class="nothing"></div>
 
   <%-- 営業時間の表示 javascriptにて加工--%>
-  <div class="business_hour image_class"><img class="businesshour_image" src="../image/business_hour.jpg"></div>
+  <div class="business_hour image_class image_business"><img class="businesshour_image" src="../image/business_hour.jpg"></div>
   <div class="business_hour" id="business_hour"></div>
 
   <div class="nothing"></div>
