@@ -1,0 +1,91 @@
+div#newregpass_title {
+    text-align: center;
+    font-size: 3em;
+    margin-top: 3.5%;
+    margin-bottom: 3.5%;
+}
+
+div#newregpass_form {
+    padding-top: 15%;
+    text-align: center;
+}
+div#newrwg_pass {
+    font-size: 2.2em;
+    display: inline-block;
+    text-align: left;
+    margin: 10%;
+}
+
+div#newregpass_messe {
+    font-size: 2.2em;
+    display: inline-block;
+    text-align: left;
+    margin: 10%;
+    padding-top: 15%;
+    /* text-align: center; */
+    margin-bottom: 3%;
+}
+
+input[type="password"] {
+    font-size: 4em;
+    padding: 11px;
+    background-color: gainsboro;
+    border-radius: 25px;
+}
+
+div#messeg1 {
+    font-size: 2.6em;
+    display: inline-block;
+    text-align: left;
+    margin: 10%;
+
+}
+
+div#messeg {
+    font-size: 2.6em;
+    display: inline-block;
+    text-align: left;
+    margin: 10%;
+    margin-top: 20.8%;
+}
+
+input[type="submit"] {
+    font-size: 3.5em;
+    background-color: #f5deb3;
+    border-radius: 30px;
+    padding-top: 0.5%;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-bottom: 0.5%;
+    color: saddlebrown;
+    /* text-align: center; */
+}
+
+div#newrwg_pass1 {
+    font-size: 2.2em;
+    display: inline-block;
+    text-align: left;
+    margin: 10%;
+    color: red;
+}
+
+div#pass_error {
+    font-size: 3em;
+    display: inline-block;
+    text-align: left;
+    margin: 10%;
+    margin-bottom: 5%;
+    color: red;
+}
+
+div#sendpass {
+    text-align: end;
+    padding-top: 40%;
+}
+
+div#sendpass_error {
+    text-align: end;
+    padding-top: 10%;
+}
+
+
