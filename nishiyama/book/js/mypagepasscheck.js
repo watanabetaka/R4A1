@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+//フォームに入力される度に実行
     $('#new_pass').keyup(function() {
         $('#result').html(checkStrength())
     })
@@ -9,6 +10,7 @@ $(document).ready(function() {
 
     function checkStrength() {
 
+//パスワードの入力チェック
         var strength = 0 ;//強さ
         let inputElement = $('input[name="send"]');
         var t1=document.getElementById("new_pass");

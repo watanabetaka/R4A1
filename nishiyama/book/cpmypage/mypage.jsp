@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../html/cpmypage_header.html" %>
+<%@include file="../html/cpoperation_header.html" %>
 
 <!-- ヘッダー部分 -->
 <header>
@@ -25,6 +25,7 @@
 
 <div class=txt>※設定したメールアドレス・パスワード<br>　は忘れないようにしてください</div>
 
+</div>
 </div>
 <!-- ヘッダー部分 -->
 <%@include file="../html/footer.html" %>

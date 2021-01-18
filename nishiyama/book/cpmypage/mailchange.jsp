@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-<%@include file="../html/cpmypage_header.html" %>
+<%@include file="../html/cpoperation_header.html" %>
 
 <!-- ヘッダー部分 -->
 <header>

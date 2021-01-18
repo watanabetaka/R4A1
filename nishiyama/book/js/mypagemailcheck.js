@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+//フォームに入力される度に実行
 $('#new_address').keyup(function() {
   $('#result').html(checkemail())
 })
@@ -8,6 +9,7 @@ $('#new_address_2').keyup(function() {
   $('#result_2').html(checkemail())
 })
 
+//メールアドレスの入力チェック
 function checkemail() {
   let inputElement = $('input[name="send"]');
   var t1=document.getElementById("new_address");

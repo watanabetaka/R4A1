@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../html/cpmypage_header.html" %>
+<%@include file="../html/cpoperation_header.html" %>
 
 <div class=fade>
 
