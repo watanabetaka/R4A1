@@ -41,6 +41,27 @@ input#mailchange {
 input#passchange {
     font-size: 0.75em;
 }
+input#now_pass {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+input#new_address {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+input#new_address_2 {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+input#new_pass {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+input#new_pass_2 {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+
 input#send {
     font-size: 1.5em;
 }

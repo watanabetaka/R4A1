@@ -91,9 +91,13 @@ input#send {
 }
 
 input#cpname {
+  border-radius: 1rem;
+  background-color:#ddd;
     font-size: 3em;
 }
 input#sightname {
+  border-radius: 1rem;
+  background-color:#ddd;
     font-size: 3em;
 }
 input#file {
@@ -114,21 +118,51 @@ option{
   font-size: 0.25em;
 }
 input#postal_code {
+  border-radius: 1rem;
+  background-color:#ddd;
     font-size: 3em;
 }
 input#address {
+  border-radius: 1rem;
+  background-color:#ddd;
     font-size: 3em;
 }
 input#tel {
+  border-radius: 1rem;
+  background-color:#ddd;
     font-size: 3em;
 }
 textarea{
+  border-radius: 1rem;
+  background-color:#ddd;
   font-size: 3em;
 }
 input#bookurl {
+  border-radius: 1rem;
+  background-color:#ddd;
     font-size: 3em;
 }
 
+input#now_pass {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+input#new_address {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+input#new_address_2 {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+input#new_pass {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+input#new_pass_2 {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
 
 
 div.fade{
