@@ -240,6 +240,15 @@ div.bookurl_txt{
   font-weight: 300;
   font-style: oblique;
 }
+div.cpexamination {
+    text-align: center;
+    font-size: 3em;
+    padding-top: 40%;
+}
+div.cpinfo_button {
+    text-align: center;
+    padding-top: 10%;
+}
 
 input[type="button"] {
   background-color: #0b0;
