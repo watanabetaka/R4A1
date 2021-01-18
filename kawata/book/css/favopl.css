@@ -1,0 +1,40 @@
+div#back {
+    font-size: 5em;
+    float: left;
+}
+div#favorite_title {
+  position: fixed;
+  left: 38%;
+  top: 2%;
+  font-size: 300%;
+}
+div#delete {
+    text-align: end;
+    padding-right: 5%;
+    margin-top: 3%;
+}
+
+input[type="submit"] {
+    font-size: 2.5em;
+}
+
+
+div#pankuzu {
+    padding-top: 14%;
+    font-size: 2em;
+}
+div#city_name {
+    float: left;
+}
+
+
+div#genre_name {
+    float: left;
+}
+img#pictures {
+    width: -webkit-fill-available;
+    border-radius: 35px;
+}
+div#syousai {
+    font-size: 3em;
+}

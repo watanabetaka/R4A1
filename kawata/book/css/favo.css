@@ -1,0 +1,26 @@
+div#favorite_title {
+    padding-top: 3%;
+    text-align: center;
+    font-size: 3em;
+}
+div#favoli {
+    display: flex;
+    width: 100%;
+    padding-top: 13%;
+    flex-wrap: wrap;
+}
+.favocon {
+    width: 50%;
+    text-align: center;
+    padding-top: 5%;
+}
+button.favoimg {
+    border-color: white;
+    border-block-style: none;
+    border-right-style: none;
+    background: none;
+}
+
+img {
+    border-radius: 35px;
+}
