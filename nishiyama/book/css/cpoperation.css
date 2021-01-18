@@ -70,10 +70,12 @@ div.mypage_form_list {
 
 div.caution {
   padding-top: 25%;
+  padding-left: 5%;
   font-size: 3em;
 }
 
 div.application_check {
+  text-align: center;
   padding-top: 15%;
   font-size: 3em;
 }
