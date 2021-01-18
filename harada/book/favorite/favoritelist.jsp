@@ -2,6 +2,7 @@
 <%@include file="../html/favoritelist_header.html" %>
 <%@page import="bean.Favorite, java.util.List , java.util.List,bean.City,bean.Genre" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@include file="../ipadress/ipadress.jsp" %>
 
 <%-- jqueryをインポート --%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -10,6 +11,7 @@
 <% List<Favorite> list =(List<Favorite>)request.getAttribute("list"); %>
 <% List<City> list1=(List<City>)request.getAttribute("list1"); %>
 <% List<Genre> list2=(List<Genre>)request.getAttribute("list2"); %>
+
 
 
 <%-- 児玉くん --%>
@@ -116,31 +118,48 @@
             </div>
           </div>
           <div id="favorite_title">お気に入り一覧</div>
+          <div id="delete_button"><button type="button" name="delete_button" class="update_button" id="not_delete"><font size=5>削除</font></button></div>
 </header>
 
+<script>
+  let dummy_sightseeing_id= '<%
+  for(Favorite f: list){
+    out.print(f.getSightseeing_Id());
+  }
+  %>';
+
+  // array型に変換
+  let array_sightseeing_id=Array.from(dummy_sightseeing_id);
+
+ // IPアドレスをjavascriptに変換
+ let ipadress = '<%= ipadress%>';
+</script>
 
 <div id ="favoli">
 
+  <c:if test="${empty list}">
+    <p>まだ観光地を登録していません!</p>
+  </c:if>
 
-<c:if test="${empty list}">
-  <p>まだ観光地を登録していません!</p>
-</c:if>
+  <% for(Favorite f: list){ %>
+    <div class ="favocon" id="<%=f.getSightseeing_Id()%>">
 
-<% for(Favorite f: list){ %>
-  <div class ="favocon">
-<form action="Detail.action">
-  <input type="hidden" name="sightseeing_id" value="<%= f.getSightseeing_Id() %>">
+      <form action="Detail.action">
+        <input type="hidden" name="sightseeing_id" value="<%= f.getSightseeing_Id() %>">
 
-    <button type="submit" class ="favoimg">
-      <img src="../image/<%= f.getPicture_Path() %>"/><br>
-      <c:out value="<%= f.getSightseeing_Name() %>"/>
-    </button>
-  </div>
-</form>
+          <button type="submit" class="favoimg">
+            <img class="imagelist" src="../image/<%= f.getPicture_Path() %>"/><br>
+            <c:out value="<%= f.getSightseeing_Name() %>"/>
+          </button>
+        </form>
 
-<% } %>
+      </div>
+
+  <% } %>
 
 </div>
+
+<script type="text/javascript" src="../js/favoritelist.js"></script>
 
 <%@include file="../html/gamenhuta.html" %>
 

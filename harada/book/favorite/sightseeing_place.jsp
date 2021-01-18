@@ -1,6 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/sightseeing_place_header.html" %>
 <%@page import="bean.Sightseeing_Place, java.util.List" %>
+<%@include file="../ipadress/ipadress.jsp" %>
 
 <%-- jqueryをインポート --%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -25,14 +26,14 @@
   <%-- 現在、削除ボタンが他のCSSで加工されている要素と重なってしまっており、ボタンとしての機能を持っていません--%>
   <div id="delete">
     <%-- Favoritedelete.actionへ sightseeing_id の値を受け渡す --%>
-    <form action="Favoritedelete.action" id="delete_button">
+    <form action="favoritedelete" id="delete_button">
       <input type="hidden" name="sightseeing_id" value="<%
       for(Sightseeing_Place s: list){
         out.print(s.getSightseeing_Id());
       }
       %>">
       <%-- エラーが生じた時は、下記のコードをコメントアウトして再度実行してください --%>
-      <%-- <input type="hidden" name="test" value="aa"> --%>
+      <input type="hidden" name="ajax_trust" value="false">
       <input type="submit" value="削除">
     </form>
   </div>
@@ -46,9 +47,9 @@
 
 <div id="pankuzu">
   <%-- ぱんくずリストの表示 --%>
-    <a id="city_name" href="http://10.23.104.39:8080/book/favorite/Favoritesort.action?array_genre=<%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%></a>
+    <a id="city_name" href="http://<%= ipadress%>:8080/book/favorite/Favoritesort.action?array_genre=<%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%></a>
     >
-    <a id="genre_name" href="http://10.23.104.39:8080/book/favorite/Favoritesort.action?array_city=<%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%></a>
+    <a id="genre_name" href="http://<%= ipadress%>:8080/book/favorite/Favoritesort.action?array_city=<%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%></a>
     ><div id="sightseeing_place"><%for(Sightseeing_Place s: list){out.print(s.getSightseeing_Name());}%></div>
 </div>
 
@@ -57,17 +58,17 @@
   <img src="<% for(Sightseeing_Place s: list){ out.print(s.getPicture_Path()); } %>" id ="pictures" >
 </div>
 
-<%-- 下線を表示 --%>
-<p class="kasenfirst">&nbsp;</p>
-
 <%-- 郵便番号の表示 javascriptにて加工--%>
 <div  id="syousai">
+
+  <%-- 下線を表示 --%>
+  <p class="kasenfirst">&nbsp;</p>
+
   <div class="image_class adress_container">
     <div class="adress"><img class="adress_image" src="../image/map.png"></div>
   </div>
 
   <div class="adress_container">
-    <div class="adress" id="postal_code">〒</div>
     <div class="adress" id="postal_code_insert"></div>
 
     <%-- 住所の表示 --%>
@@ -89,7 +90,7 @@
   <div class="nothing"></div>
 
   <%-- 営業時間の表示 javascriptにて加工--%>
-  <div class="business_hour image_class"><img class="businesshour_image" src="../image/business_hour.jpg"></div>
+  <div class="business_hour image_class image_business"><img class="businesshour_image" src="../image/business_hour.jpg"></div>
   <div class="business_hour" id="business_hour"></div>
 
   <div class="nothing"></div>
@@ -99,6 +100,7 @@
   <div class="neareststation" id="nearest_station_time"></div>
 
   <%-- 下線を表示 --%>
+  <div class="nothing_kasen"></div>
   <p class="kasen">&nbsp;</p>
 
   <div class="external">
@@ -130,8 +132,6 @@
 <%-- <a target="_blank" href="https://www.instagram.com/?hl=ja" id="instagram">Instagramでシェア</a>
 <a target="_blank" href="https://ja-jp.facebook.com/" id="facebook">facebookでシェア</a> --%>
 
-<%-- SNSでシェアした際のJavascriptファイルを読み込み --%>
-<script type="text/javascript" src="../js/Couponpresent.js"></script>
 <%-- <script type="text/javascript" src="../js/CouponRegistration.js"></script> --%>
 
 <%-- JAVAの値をJavascriptに変換 --%>
@@ -164,10 +164,15 @@ let reservation_url='<%
 for(Sightseeing_Place s: list){
   out.print(s.getUrl());
 } %>';
+
+// IPアドレスをjavascriptに変換
+ let ipadress = '<%= ipadress%>';
 </script>
 
 <%-- 観光地の体裁を整えるjavascriptファイルを読み込み --%>
 <script type="text/javascript" src="../js/sightseeing_detail.js"></script>
+<%-- SNSでシェアした際のJavascriptファイルを読み込み --%>
+<script type="text/javascript" src="../js/Couponpresent.js"></script>
 
 
 <%@include file="../html/gamenhuta.html" %>

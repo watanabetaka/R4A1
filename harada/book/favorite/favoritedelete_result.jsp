@@ -1,5 +1,6 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/header.html" %>
+<%@include file="../ipadress/ipadress.jsp" %>
 
 <%-- お気に入りから観光地を削除した後の画面 --%>
 
@@ -26,7 +27,7 @@
 <%= message %>
 
 <%-- お気に入り一覧へ戻るボタン --%>
-<a href="http://10.23.104.39:8080/book/favorite/favoritelist">お気に入り一覧へ戻る</a>
+<a href="http://<%@include file="../ipadress/ipadress.jsp" %>:8080/book/favorite/favoritelist">お気に入り一覧へ戻る</a>
 
 <%@include file="../html/gamenhuta.html" %>
 

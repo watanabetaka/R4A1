@@ -2,6 +2,6 @@
 document.getElementById("twitter").onclick = function() {
   // ここに#buttonをクリックしたら発生させる処理を記述する
   $(function(){
-     location.href = "http://10.23.104.39:8080/book/favorite/couponregistration";
+     location.href = "http://" + ipadress + ":8080/book/favorite/couponregistration";
   });
 };

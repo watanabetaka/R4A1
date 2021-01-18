@@ -41,15 +41,17 @@ div#genre_name {
 div#sightseeing_place{
   font-size: 200%;
   padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 img#pictures {
-    width: -webkit-fill-available;
-    border-radius: 35px;
+  width: -webkit-fill-available;
+  border-radius: 35px;
 }
 
 div#syousai {
     font-size: 3em;
+    padding-top: 10%;
     padding-bottom: 13%;
 }
 
@@ -124,6 +126,11 @@ div.business_hour{
   padding-top: 0;
 }
 
+div.image_business{
+  margin-left: -0.5%;
+  margin-top: 1%;
+}
+
 img.businesshour_image{
   width: 60%;
 }
@@ -149,11 +156,15 @@ div#reservation_url{
 
 .kasen{
   border-top: solid 3px orange;
+  padding-top: 10%;
 }
 
 .kasenfirst{
-  padding-top: 10%;
   border-top: solid 4px orange;
+}
+
+.nothing_kasen{
+  margin-top: 6%;
 }
 
 p{
