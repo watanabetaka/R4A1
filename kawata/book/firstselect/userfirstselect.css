@@ -1,14 +1,16 @@
 h1 {
     color: white;
-    font-size: 86px;
+    /* font-size: 86px; */
+    font-size: 230%;
     text-align: center;
-    padding-top: 200px;
+    padding-top: 160px;
     /* position: fixed; */
 }
 
 
 body {
     /*background-image: url(02_鉄輪湯けむりライトアップ.jpg);*/
+    -webkit-text-size-adjust: 100%;
     background-image: url(../image/01-1.jpg);
     background-position: center center;
     background-repeat: no-repeat;
@@ -17,28 +19,29 @@ body {
 }
 
 
-input[type="button"]{
-
-    width: 320px;
-    font-size: 40px;
+input[type="button"] {
+    -webkit-appearance: none;
+    /* width: 340px; */
+    width: 50%;
+    font-size: 100%;
     font-weight: bold;
     text-decoration: none;
     display: block;
     text-align: center;
-    padding: 25px 10px;
+    padding: 17px 12px;
     color: #333;
-    background: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.7);
     /* background-color: #fff; */
     /* border: 1px solid #333; */
-    border-radius: 55px;
+    border-radius: 60px;
     margin: 0 auto;
 }
 
 
 a {
     color: white;
-    font-size: 53px;
+    font-size: 150%;
     position: fixed;
-    bottom: 70px;
-    right: 60px;
+    bottom: 35px;
+    right: 30px;
 }
