@@ -1,6 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/userlogin_header.html" %>
 <%@include file="../ipadress/ipadress.jsp" %>
+
 <header>
   <div id="back">
     <a href="http://<%= ipadress%>:8080/book/firstselect/userfirstselect.jsp" id ="modoru">＜</a>
@@ -16,4 +17,6 @@
 <div id = login><input type="submit" value="ログイン"></div>
 </form>
 </div>
+<a class="reissuepass" href="http://<%= ipadress%>:8080/book/reissuepass/reissuepassmail.jsp">パスワード再発行</a>
+
 <%@include file="../html/footer.html" %>

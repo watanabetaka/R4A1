@@ -1,0 +1,183 @@
+body{
+  margin: 0px;
+}
+
+div#back {
+    font-size: 4.5em;
+    float: left;
+}
+a#back_button {
+    text-decoration: none;
+    color: black;
+}
+
+div#mypage_title {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 550;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+div.mypage {
+    padding-top: 30%;
+    text-align: center;
+}
+div.mypage_button_txt {
+    font-size: 3em;
+    margin: 10%;
+}
+div.mypage_logout {
+  margin: 10%;
+    font-size: 0.625em;
+}
+div.mypage_form_list {
+    padding-top: 30%;
+    font-size: 2em;
+}
+
+input#mailchange {
+    font-size: 0.75em;
+}
+input#passchange {
+    font-size: 0.75em;
+}
+input#now_pass {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+input#new_address {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+input#new_address_2 {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+input#new_pass {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+input#new_pass_2 {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+
+input#send {
+    font-size: 1.5em;
+}
+
+div.fade{
+  animation: fadeIn 0.5s ease 0s 1 normal;
+}
+
+div.all {
+    display: flow-root;
+}
+
+div.mypage_form_txt {
+    width: fit-content;
+    text-align: center;
+    float: left;
+}
+div.inputer {
+    padding-top: 2%;
+    padding-left: 30%;
+}
+
+div.mypage_result{
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.result_on{
+  color:white;
+  background-color:#77f;
+}
+
+.result_off{
+  color:red;
+  background-color:yellow;
+}
+
+.attention{
+  color:red;
+}
+
+.mypage_form{
+  font-size: 1.5em;
+}
+
+div.txt {
+    font-size: 2.6em;
+    display: inline-block;
+    text-align: left;
+    margin: 10%;
+    margin-top: 7.5%;
+}
+div.touroku {
+  font-size: 1.5em;
+  text-align:right;
+  position:relative; top:10px; right:70px;
+}
+div.success{
+  text-align: center;
+  position:relative; top:650px;
+}
+div.success_txt{
+  font-size: 4em;
+  font-weight: 600;
+}
+
+input[type="button"] {
+  background-color: #f5deb3;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #500;
+  border-radius: 2rem;
+}
+input[type="submit"] {
+  background-color: #f5deb3;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #500;
+  border-radius: 2rem;
+}
+input[type="submit"]:disabled {
+  background-color: #d3bc91;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #300;
+  border-radius: 2rem;
+}
+
+@keyframes fadeIn { /*animetion-nameで設定した値を書く*/
+
+  0% {opacity: 0} /*アニメーション開始時は不透明度0%*/
+
+  100% {opacity: 1} /*アニメーション終了時は不透明度100%*/
+
+}

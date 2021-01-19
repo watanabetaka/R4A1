@@ -1,30 +1,32 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%-- <%@include file="../html/header.html" %> --%>
 <%@page import="bean.Sightseeing_Place, java.util.List" %>
-
+<%@include file="../html/cpoperation_header.html" %>
+<%@include file="../ipadress/ipadress.jsp" %>
 
 <%-- jqueryをインポート --%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-
-<%-- 原田 --%>
 <header>
-
-  <%-- 戻り先のURLを指定 --%>
-  <a href="http://10.23.104.39:8080/book/cpoperation/cpoperation.jsp">＜</a>
-
-  <%-- ヘッダータイトル --%>
-  <div class="company_title">クーポン申請</div>
+  <div id="back">
+    <a href="http://<%= ipadress%>:8080/book/cpoperation/cpoperation.jsp" id ="back_button">＜</a>
+  </div>
+<div id="mypage_title">
+企業情報変更　　
+</div>
 </header>
 
-<div id="caution">
-  クーポン申請は、1ユーザにつき、1つまでです。<br>
-  ご注意ください
+<div class=fade>
+
+<div class=caution>
+  クーポン申請は、1ユーザにつき1つまで<br>
+  です。<br>
+  ご注意ください。
 </div>
 
 <%-- 観光地名の選択とクーポン情報の入力をサーブレットに転送する処理  --%>
 <%-- ユーザーがクーポン申請できる観光地をプルダウンにて表示 --%>
-<div id="application_check">
+<div class=application_check>
 
   <%-- ユーザーがクーポン申請中の場合のメッセージを取得 --%>
   <% String message = String.valueOf(request.getAttribute("message")); %>
@@ -53,6 +55,8 @@
   </script>
 
   <div id="view"></div>
+
+</div>
 
 </div>
 
