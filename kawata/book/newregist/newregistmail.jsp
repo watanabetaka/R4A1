@@ -20,7 +20,7 @@
 登録するメールアドレスを入力してください。パスワード入力用メールをお送りします。
   </div>
 <p id = email><input type="mailaddress" name="email"  placeholder="info@example.com"></div>
-<div id = sendmail><input type="submit" value="送信"></p>
+<div id = sendmail><input type="submit" value="送信"></div>
 </form>
 
 <%@include file="../html/footer.html" %>

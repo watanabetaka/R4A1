@@ -23,7 +23,7 @@
 パスワードが注意事項を満たしていません。
 再入力してください。
 </div>
-<div id = sendpass_error><input type="submit" value="送信"></div>
+<div id = sendpass_error><input type="submit" value="登録"></div>
 </form>
 
 <%@include file="../html/footer.html" %>

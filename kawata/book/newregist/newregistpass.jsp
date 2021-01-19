@@ -22,7 +22,7 @@
 <form action="Login.action" method="post">
 <p id = pass><input type="password" name="pass"  placeholder="パスワード"></p>
 
-<div id = sendpass><input type="submit" value="送信"></div>
+<div id = sendpass><input type="submit" value="登録"></div>
 </form>
 
 <%@include file="../html/footer.html" %>
