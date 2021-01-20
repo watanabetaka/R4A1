@@ -21,7 +21,7 @@ div#newreg_form {
 }
 
 div#newregmail_messe {
-    font-size: 2.2em;
+    font-size: 3.2em;
     display: inline-block;
     text-align: left;
     margin: 10%;
@@ -64,6 +64,15 @@ div#email_touroku {
     display: inline-block;
     text-align: left;
     margin: 10%;
+}
+
+div#email{
+  margin-left: 8%;
+}
+
+span#result{
+  margin-left: 8%;
+  font-size: 40px;
 }
 
 div#mail_error {

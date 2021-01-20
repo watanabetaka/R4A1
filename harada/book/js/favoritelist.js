@@ -4,7 +4,6 @@ delete_button();
 function delete_button(){
 
   $('#not_delete').on('click' , function(){
-    console.log(array_sightseeing_id);
 
     $('button[name="delete_button"]').html('<font size=5>終了</font>');
     $('#not_delete').attr('id', 'while_delete');
