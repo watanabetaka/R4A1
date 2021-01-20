@@ -3,6 +3,7 @@ body{
 }
 
 div#back {
+    margin-top: 0.2%;
     font-size: 4.5em;
     float: left;
 }
@@ -16,7 +17,7 @@ div#mypage_title {
     text-align: center;
     font-size: 3em;
     font-weight: 550;
-    margin-top: 1%;
+    margin-top: 1.5%;
     margin-bottom: 1%;
 }
 
@@ -49,6 +50,7 @@ div.mypage_form_list {
 }
 .cpoperation_list{
   padding-top: 25px;
+  padding-left: 30px;
   border-top: 2px solid #333333;
   border-bottom: 2px solid #333333;
   font-size: 4em;
@@ -89,6 +91,9 @@ input#passchange {
 input#send {
     font-size: 1.5em;
 }
+input#application_submit {
+    font-size: 1em;
+}
 
 input#cpname {
   border-radius: 1rem;
@@ -113,6 +118,9 @@ select.genre_select {
 }
 select.rank_select {
     font-size: 3em;
+}
+select.sightseeing_select {
+    font-size: 1em;
 }
 option{
   font-size: 0.25em;
@@ -161,6 +169,11 @@ input#new_pass {
 }
 input#new_pass_2 {
   border-radius: 1rem;
+  background-color:#ddd;
+}
+
+input#coupon_name {
+    font-size: 1em;
   background-color:#ddd;
 }
 

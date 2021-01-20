@@ -1,7 +1,11 @@
 package favorite;
 
 import bean.Favorite;
+import bean.City;
+import bean.Genre;
 import dao.FavoriteDAO;
+import dao.CityDAO;
+import dao.GenreDAO;
 import tool.Action;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -32,9 +36,9 @@ public class FavoritesortAction extends Action {
 		 String array_city[] = request.getParameterValues("array_city");
 		 String array_genre[] = request.getParameterValues("array_genre");
 		 Boolean asc_sort = Boolean.valueOf(request.getParameter("asc_sort"));
-		 System.out.println(Arrays.toString(array_city));
-		 System.out.println(Arrays.toString(array_genre));
-		 System.out.println(asc_sort);
+		 // System.out.println(Arrays.toString(array_city));
+		 // System.out.println(Arrays.toString(array_genre));
+		 // System.out.println(asc_sort);
 
 		// // テストデータを配列へ挿入
 		// String array_city[]={"大分市","竹田市"};
@@ -77,13 +81,23 @@ public class FavoritesortAction extends Action {
 		if (asc_sort == true){
 			// 観光地を日時で昇順にソートする処理
 			Collections.reverse(list);
-		}else{
 		}
+
+		CityDAO dao1=new CityDAO();
+		List<City> list1 = dao1.search();
+
+		GenreDAO dao2=new GenreDAO();
+		List<Genre> list2 = dao2.search();
+
 
 
 		// 値をjspへ送る為にセットする
 		request.setAttribute("list",list);
 
+		request.setAttribute("list1",list1);
+
+		request.setAttribute("list2",list2);
+		
 		// jspへフォワードする
 		return "favoritelist.jsp";
 	}

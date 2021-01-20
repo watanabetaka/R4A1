@@ -31,7 +31,18 @@ public class FavoriteList extends HttpServlet {
 			FavoriteDAO dao=new FavoriteDAO();
 			List<Favorite> list=dao.search(user_id);
 
+			CityDAO dao1=new CityDAO();
+			List<City> list1 = dao1.search();
+
+			GenreDAO dao2=new GenreDAO();
+			List<Genre> list2 = dao2.search();
+
 			request.setAttribute("list", list);
+
+			request.setAttribute("list1",list1);
+
+			request.setAttribute("list2",list2);
+			
 			request.getRequestDispatcher("/favorite/favoritelist.jsp").forward(request,response); //フォワードを行う
 
 		} catch (Exception e) {

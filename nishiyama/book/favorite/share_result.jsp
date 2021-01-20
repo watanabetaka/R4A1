@@ -1,14 +1,14 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html" %>
+<%@include file="../html/sightseeing_place_header.html" %>
 <%@page import="bean.Sightseeing_Place,bean.Get_Coupon,java.util.List" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@include file="../ipadress/ipadress.jsp" %>
 
 <%-- jqueryをインポート --%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 <% List<Get_Coupon> list =(List<Get_Coupon>)request.getAttribute("list");%>
-<% out.println(list); %>
   <c:if test="${empty list}">
     <p>クーポンの取得に失敗しました</p>
   </c:if>
@@ -21,8 +21,8 @@
     <%}%>
   </c:if>
 
-<a class="page-close" href="http://localhost:8080/book/favorite/favoritelist">お気に入り一覧へ戻る</a>
+<a class="page-close" href="http://<%=ipadress%>:8080/book/favorite/favoritelist">お気に入り一覧へ戻る</a>
 
-<%@include file="../gamenhuta.html" %>
+<%@include file="../html/gamenhuta.html" %>
 
-<%@include file="../footer.html" %>
+<%@include file="../html/footer.html" %>

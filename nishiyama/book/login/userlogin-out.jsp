@@ -1,12 +1,11 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../html/header.html" %>
+<%@include file="../html/userlogin_header.html" %>
+
 
 <%@ page import = "javax.servlet.http.Cookie"%>
 <%@ page import = "javax.servlet.http.*"%>
 
 <%
-
-
 //ログインか新規会員登録からメニュー画面へ遷移したばあい
 if(session.getAttribute("user") != null){
         String session_id = (String)session.getAttribute("user");
@@ -20,11 +19,10 @@ if(session.getAttribute("user") != null){
      int user_id;
      for (Cookie cookie : cookies) {
         String name=cookie.getName();
+        out.println(name);
         if(name.equals("user")){
-          out.print("クッキーから取得したよ");
           String value=cookie.getValue();
-          //ここにセッションのユーザIDが入ってます
-          user_id = Integer.parseInt(value);
+          user_id = Integer.parseInt(value);//ここにセッションのユーザIDが入ってます
           out.println(user_id);
         }
       }

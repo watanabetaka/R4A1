@@ -1,5 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/cpoperation_header.html" %>
+<%@include file="../ipadress/ipadress.jsp" %>
+
 
 <header>
 <div id="mypage_title">
@@ -15,7 +17,7 @@
 okボタンを押して企業トップ画面に<br>お戻りください。
 </div>
 
-<div class=cpinfo_button><input type="button" onclick="location.href='http://localhost:8080/book/cpoperation/cpoperation.jsp'" value="ok"></p>
+<div class=cpinfo_button><input type="button" onclick="location.href='http://<%= ipadress%>:8080/book/cpoperation/cpoperation.jsp'" value="ok"></p>
 </div>
 </div>
 
