@@ -34,7 +34,7 @@
       %>">
       <%-- エラーが生じた時は、下記のコードをコメントアウトして再度実行してください --%>
       <input type="hidden" name="ajax_trust" value="false">
-      <input type="submit" value="削除">
+      <div id="delete_button"><button type="submit" class="delete_button"><font size=6>削除</font></button></div>
     </form>
   </div>
 
@@ -44,15 +44,17 @@
 
 <%-- 観光地名の表示 --%>
 
+<div class=fade>
 
 <div id="pankuzu">
   <%-- ぱんくずリストの表示 --%>
     <a id="city_name" href="http://<%= ipadress%>:8080/book/favorite/Favoritesort.action?array_genre=<%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getGenre_Name());}%></a>
     >
     <a id="genre_name" href="http://<%= ipadress%>:8080/book/favorite/Favoritesort.action?array_city=<%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%>"><%for(Sightseeing_Place s: list){out.print(s.getCity_Name());}%></a>
-    ><div id="sightseeing_place"><%for(Sightseeing_Place s: list){out.print(s.getSightseeing_Name());}%></div>
+    >
+    <div id="sightseeing_place"><%for(Sightseeing_Place s: list){out.print(s.getSightseeing_Name());}%></div>
 </div>
-
+<br>
 <%-- 観光地の写真を表示 --%>
 <div id="picture">
   <img src="<% for(Sightseeing_Place s: list){ out.print(s.getPicture_Path()); } %>" id ="pictures" >
@@ -83,6 +85,7 @@
 
   <div class="nothing"></div>
 
+  <br>
   <%-- 電話番号の表示 javascriptにて加工 --%>
   <div class="phone image_class"><img class="phone_image" src="../image/call.png"></div>
   <div class="phone" id="phone_number"></div>
@@ -128,6 +131,8 @@
     <%-- Twitterボタン --%>
     <a class="twitter btn" href="http://twitter.com/share?url= &text=%0a%20%23まいらいずおおいた" target="_blank" id="twitter"><div class="share">Twitterでシェア</div><img class="share" id="twitter_image" src="../image/twitter.jpg"></a>
   </div>
+</div>
+
 </div>
 <%-- <a target="_blank" href="https://www.instagram.com/?hl=ja" id="instagram">Instagramでシェア</a>
 <a target="_blank" href="https://ja-jp.facebook.com/" id="facebook">facebookでシェア</a> --%>

@@ -118,8 +118,10 @@
             </div>
           </div>
           <div id="favorite_title">お気に入り一覧</div>
-          <div id="delete_button"><button type="button" name="delete_button" class="update_button" id="not_delete"><font size=5>削除</font></button></div>
+          <div id="delete_button"><button type="button" name="delete_button" class="update_button" id="not_delete"><font size=6>削除</font></button></div>
 </header>
+
+<div class=fade>
 
 <script>
   let dummy_sightseeing_id= '<%
@@ -148,14 +150,16 @@
         <input type="hidden" name="sightseeing_id" value="<%= f.getSightseeing_Id() %>">
 
           <button type="submit" class="favoimg">
-            <img class="imagelist" src="../image/<%= f.getPicture_Path() %>"/><br>
-            <c:out value="<%= f.getSightseeing_Name() %>"/>
+            <img class="imagelist" src="<%= f.getPicture_Path() %>"/><br>
+            <span class=sightseeing_name><c:out value="<%= f.getSightseeing_Name() %>"/></span>
           </button>
         </form>
 
       </div>
 
   <% } %>
+
+</div>
 
 </div>
 

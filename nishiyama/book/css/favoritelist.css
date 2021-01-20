@@ -1,7 +1,18 @@
+div.fade{
+  animation: fadeIn 0.5s ease 0s 1 normal;
+}
+@keyframes fadeIn { /*animetion-nameで設定した値を書く*/
+
+  0% {opacity: 0} /*アニメーション開始時は不透明度0%*/
+
+  100% {opacity: 1} /*アニメーション終了時は不透明度100%*/
+
+}
+
 div#favorite_title {
     width: 42%;
     position: fixed;
-    top: 2%;
+    top: 2.4%;
     text-align: center;
     font-size: 363%;
     left: 27%;
@@ -11,6 +22,7 @@ div#favoli {
     display: flex;
     width: 100%;
     padding-top: 13%;
+    padding-bottom: 15%;
     flex-wrap: wrap;
 }
 
@@ -21,11 +33,16 @@ div#delete_button {
     font-size: 10%;
     position: fixed;
     right: 1%;
-    top: 3%;
+    top: 2.5%;
+}
+button[type="button"] {
+  font-weight: 600;
+  color: #500;
+  border-radius: 1rem;
+  font-size: 15px;
 }
 
 button.delete_button {
-  border-radius: 100%;
   border-color: red;
   background-color: red;
   color: white;
@@ -57,4 +74,8 @@ button.favoimg {
 
 img.imagelist {
     border-radius: 35px;
+    width: 100%;
+}
+.sightseeing_name{
+  font-size: 300%;
 }

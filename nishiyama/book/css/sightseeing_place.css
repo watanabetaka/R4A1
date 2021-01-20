@@ -1,23 +1,42 @@
+div.fade{
+  animation: fadeIn 0.5s ease 0s 1 normal;
+}
+@keyframes fadeIn { /*animetion-nameで設定した値を書く*/
 
+  0% {opacity: 0} /*アニメーション開始時は不透明度0%*/
+
+  100% {opacity: 1} /*アニメーション終了時は不透明度100%*/
+
+}
 
 div#back {
     font-size: 5em;
+    padding-top:30px;
     float: left;
 }
 div#favorite_title {
   position: fixed;
-  left: 38%;
-  top: 2%;
-  font-size: 300%;
+  left: 35%;
+  top: 2.4%;
+  font-size: 363%;
 }
-div#delete {
-    text-align: end;
-    padding-right: 5%;
-    margin-top: 3%;
+div#delete_button {
+  text-align: end;
+  margin-right: 5%;
+  font-size: 10%;
+  position: fixed;
+  right: 1%;
+  top: 2.5%;
 }
-
-input[type="submit"] {
-    font-size: 2.5em;
+button[type="submit"] {
+  font-weight: 600;
+  color: #500;
+  border-radius: 1rem;
+  font-size: 15px;
+}
+button.delete_button{
+  width: 9.5em;
+  height: 5.5em;
 }
 
 a#modoru {
@@ -26,7 +45,7 @@ a#modoru {
 }
 
 div#pankuzu {
-    padding-top: 15%;
+    padding-top: 20%;
     font-size: 2em;
 }
 div#city_name {
@@ -40,8 +59,7 @@ div#genre_name {
 
 div#sightseeing_place{
   font-size: 200%;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  padding-top: 4%;
 }
 
 img#pictures {

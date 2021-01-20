@@ -3,7 +3,7 @@ body{
 }
 
 div#back {
-    margin-top: 0.35%;
+    margin-top: 0.2%;
     font-size: 4.5em;
     float: left;
 }
@@ -90,6 +90,9 @@ input#passchange {
 }
 input#send {
     font-size: 1.5em;
+}
+input#application_submit {
+    font-size: 1em;
 }
 
 input#cpname {

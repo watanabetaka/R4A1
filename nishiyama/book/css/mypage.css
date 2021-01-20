@@ -3,7 +3,7 @@ body{
 }
 
 div#back {
-    margin-top: 2.8%;
+    margin-top: 3.5%;
     font-size: 4.5em;
     float: left;
 }
@@ -16,7 +16,7 @@ div#mypage_title {
     text-align: center;
     font-size: 3em;
     font-weight: 550;
-    margin-top: 4%;
+    margin-top: 5%;
     margin-bottom: 1%;
 }
 div.mypage {
