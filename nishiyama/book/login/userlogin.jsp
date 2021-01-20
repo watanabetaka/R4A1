@@ -12,7 +12,7 @@
 </header>
 <div id=login_form>
 <form action="Login.action" method="post">
-<div id = email><input type="mailaddress" name="email" placeholder="メールアドレス"></div>
+<div id = email><input type="email" name="email" placeholder="メールアドレス"></div>
 <div id = pass><input type="password" name="pass"placeholder="パスワード"></div>
 <div id = login><input type="submit" value="ログイン"></div>
 </form>

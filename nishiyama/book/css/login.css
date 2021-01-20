@@ -1,4 +1,5 @@
 div#back {
+    margin-top: 1.8%;
     font-size: 5em;
     float: left;
 }
@@ -53,4 +54,7 @@ div#login_error {
 
 div#login1 {
     text-align: end;
+}
+a.reissuepass{
+    font-size: 3em;
 }
