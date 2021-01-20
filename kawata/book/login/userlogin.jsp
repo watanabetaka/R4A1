@@ -1,8 +1,9 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../html/header.html" %>
+<%@include file="../html/userlogin_header.html" %>
+<%@include file="../ipadress/ipadress.jsp" %>
 <header>
   <div id="back">
-    <a href="" id ="modoru">＜</a>
+    <a href="http://<%= ipadress%>:8080/book/firstselect/userfirstselect.jsp" id ="modoru">＜</a>
   </div>
   <div id="login_title">
     ログイン

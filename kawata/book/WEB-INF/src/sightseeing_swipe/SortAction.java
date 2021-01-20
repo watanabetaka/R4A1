@@ -1,7 +1,11 @@
 package sightseeing_swipe;
 
 import bean.Sightseeing_Place;
+import bean.City;
+import bean.Genre;
 import dao.Sightseeing_PlaceDAO;
+import dao.CityDAO;
+import dao.GenreDAO;
 import tool.Action;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -80,10 +84,19 @@ public class SortAction extends Action {
 		// 	// 観光地をシャッフルする処理
 		// 	Collections.shuffle(list);
 		// }
+		CityDAO dao1=new CityDAO();
+		List<City> list1 = dao1.search();
 
+		GenreDAO dao2=new GenreDAO();
+		List<Genre> list2 = dao2.search();
+	
 
 		// 値をjspへ送る為にセットする
 		request.setAttribute("list",list);
+
+		request.setAttribute("list1",list1);
+
+		request.setAttribute("list2",list2);
 
 		// jspへフォワードする
 		return "sightseeing_swipe.jsp";

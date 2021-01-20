@@ -1,7 +1,6 @@
 /*ヘッダーまわりはご自由に*/
-
 header {
-    background: #e6c8a1;
+    background: #f8fbaf;
     width: 100%;
     height: 8%;
     position: fixed;
@@ -10,8 +9,9 @@ header {
 }
 
 #nav-drawer {
-    float: left;
+  position: relative;
 }
+
 /*チェックボックス等は非表示に*/
 .nav-unshown {
   display:none;
@@ -70,7 +70,7 @@ header {
     width: 80%;/*右側に隙間を作る*/
     /* max-width: 330px;/*最大幅*/
     height: 100%;
-    background: #f5deb3;/*背景色*/
+    background: #ead995;/*背景色*/
     transition: .3s ease-in-out;/*滑らかに表示*/
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/
@@ -89,25 +89,38 @@ header {
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
 
+#space{
+    padding-top: 200px;
+}
+
+/* エリア選択>のスペース */
+#areaselect-range{
+  padding-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #333333;
+  background-color: white;
+}
+
 /*AreaDrawer*/
 #area-drawer {
-  /* position: relative; */
+  display: inline;
+  position: relative;
 }
 
 /*アイコン(<)のスペース*/
 #area-open {
-  display: block;
+  display: inline-block;
   width: 30px;
   height: 22px;
   vertical-align: middle;
 }
 /*<を表現*/
 #area-open {
-  left: 3px;
-  width: 4px;
-  height: 4px;
-  border-top: 2px solid #7a0;
-  border-right: 2px solid #7a0;
+  left: 300px;
+  width: 20px;
+  height: 20px;
+  border-top: 10px solid #a0522d;
+  border-right: 10px solid #a0522d;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
@@ -135,7 +148,7 @@ header {
     width: 80%;/*右側に隙間を作る*/
     /* max-width: 330px;/*最大幅*/
     height: 100%;
-    background: #f5deb3;/*背景色*/
+    background: white;/*背景色*/
     transition: .3s ease-in-out;/*滑らかに表示*/
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/
@@ -143,7 +156,7 @@ header {
 
 /*チェックが入ったらもろもろ表示*/
 #area-input:checked ~ #area-close {/*チェックが入ったら黒幕を表示*/
-    display: block;/*カバーを表示*/
+    display: inline-block;;/*カバーを表示*/
     opacity: .5;
 }
 
@@ -153,9 +166,30 @@ header {
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
 
+#areaselect-range2 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 1px;
+    border: 1px solid #333333;
+    background: #f8fbaf;
+}
+
+#area_list {
+    padding-left: 120px;
+    padding-top: 40px;
+}
+
 /*GenreDrawer*/
 #genre-drawer {
   position: relative;
+}
+
+/* ジャンル選択>のスペース */
+#genreselect-range{
+  padding-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #333333;
+  background-color: white;
 }
 
 /*アイコン(<)のスペース*/
@@ -167,11 +201,11 @@ header {
 }
 
 #genre-open {
-  left: 3px;
-  width: 4px;
-  height: 4px;
-  border-top: 2px solid #7a0;
-  border-right: 2px solid #7a0;
+  left: 30px;
+  width: 20px;
+  height: 20px;
+  border-top: 10px solid #a0522d;
+  border-right: 10px solid #a0522d;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
@@ -199,7 +233,7 @@ header {
     width: 80%;/*右側に隙間を作る*/
     /* max-width: 330px;/*最大幅*/
     height: 100%;
-    background: #f5deb3;/*背景色*/
+    background: white;/*背景色*/
     transition: .3s ease-in-out;/*滑らかに表示*/
     -webkit-transform: translateX(-105%);
     transform: translateX(-105%);/*左に隠しておく*/
@@ -215,6 +249,52 @@ header {
     -webkit-transform: translateX(0%);
     transform: translateX(0%);/*中身を表示*/
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+
+#genreselect-range2 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 1px;
+    border: 1px solid #333333;
+    background: #f8fbaf;
+}
+
+#genre_list {
+    padding-left: 110px;
+    padding-top: 40px;
+}
+
+#actions {
+    padding-left: 870px;
+    padding-top: 110px;
+}
+
+#sendtojava {
+    font-size: 35px;
+    width: 152px;
+    height: 85px;
+    background-color: white;
+    color: #a0522d;
+    border-radius: 20px;
+}
+
+/* 文字サイズ */
+.p_size{
+  font-size:20pt
+}
+
+.button-position {
+    padding-left: 660px;
+    padding-top: 70px;
+}
+
+.decision-buttom {
+    font-size: 36px;
+    width: 152px;
+    height: 85px;
+    border-radius: 20px;
+    background-color: #f8fbaf;
+    color: #a0522d;
 }
 
 /*トグルスイッチ*/
@@ -290,7 +370,7 @@ header {
     width: 100%;
     height: 100%;
 }
-.toggle-input {
+/*.toggle-input {
   position: absolute;
   left: 0;
   top: 0;
@@ -341,10 +421,24 @@ p {
   font-weight: bold;
 }
 
+div {
+  margin: auto;
+}
 
 .toggle-switch {
   position: relative;
   width: 75px;
   height: 42px;
   margin: auto;
+}
+
+
+div#area_list {
+    font-size: 37px;
+}
+
+input.area {
+    height: 43px;
+    width: 43px;
+    vertical-align: middle;
 }
