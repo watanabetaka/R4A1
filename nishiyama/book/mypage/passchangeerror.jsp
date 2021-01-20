@@ -21,7 +21,7 @@
   <div>　現在の<br>　　パスワード　</div>
 </div>
 <div class = inputer>
-<input type='text' class=mypage_form id='now_pass' name='now_pass' placeholder="Type Your Password here"><br>
+<input type='password' class=mypage_form id='now_pass' name='now_pass' placeholder="Type Your Password here"><br>
 </div>　
 </div>
 
@@ -30,7 +30,7 @@
 <div>　新しい<br>　　パスワード　</div>
 </div>
 <div class = inputer>
-<input type='text' class=mypage_form id='new_pass' name='new_pass' placeholder="Type Your Password here">
+<input type='password' class=mypage_form id='new_pass' name='new_pass' placeholder="Type Your Password here">
 <div><span id='result' value='false'>　</span></div>
 </div>
 </div>
@@ -40,7 +40,7 @@
 <div>　新しい<br>　　パスワード　<br>　（確認）</div>
 </div>
 <div class = inputer>
-<input type='text' class=mypage_form id='new_pass_2' placeholder="Type Your Password here">
+<input type='password' class=mypage_form id='new_pass_2' placeholder="Type Your Password here">
 <div><span id='result_2' value='false'>　</span></div>
 </div>
 </div>
