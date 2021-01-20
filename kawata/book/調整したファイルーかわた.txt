@@ -22,3 +22,5 @@
 ●gamenhuta.css
 
 ●swipe.css
+
+●gamenhuta_right.css
