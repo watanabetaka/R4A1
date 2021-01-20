@@ -20,3 +20,5 @@
 ●hamburger.css
 
 ●gamenhuta.css
+
+●swipe.css
