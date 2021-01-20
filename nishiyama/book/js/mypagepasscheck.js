@@ -1,16 +1,14 @@
 $(document).ready(function() {
 
-//フォームに入力される度に実行
     $('#new_pass').keyup(function() {
         $('#result').html(checkStrength())
     })
     $('#new_pass_2').keyup(function() {
-        $('#result_2').html(checkStrength())
+        $('#result').html(checkStrength())
     })
 
     function checkStrength() {
 
-//パスワードの入力チェック
         var strength = 0 ;//強さ
         let inputElement = $('input[name="send"]');
         var t1=document.getElementById("new_pass");
@@ -31,50 +29,34 @@ $(document).ready(function() {
 
         // 点数を元に強さを計測
         if (strength > 2) {
-          r1.value="true";
+            $('#result').removeClass();
             r1.innerHTML = "入力方式が合致しています";
-            $("#result").removeClass("result_off");
-            $("#result").addClass("result_on");
+            r1.value="true";
             if(r1.value=="true"&&r2.value=="true"){
-              r3.value="true";
               r3.innerHTML=="適切です";
-              $("#result_3").removeClass("result_off");
-              $("#result_3").addClass("result_on");
               inputElement.prop('disabled', false);
             }
         } else {
+            $('#result').removeClass();
             r1.innerHTML = "入力方式と合致していません";
-            $("#result").removeClass("result_on");
-            $("#result").addClass("result_off");
             r1.value="false";
-            r3.value="false";
             r3.innerHTML=="不適切です";
-            $("#result_3").removeClass("result_on");
-            $("#result_3").addClass("result_off");
             inputElement.prop('disabled', true);
         }
         if (t1.value==t2.value) {
+          $('#result').removeClass()
           r2.value = "true";
           r2.innerHTML = "入力が一致しています";
-          $("#result_2").removeClass("result_off");
-          $("#result_2").addClass("result_on");
           if(r1.value=="true"&&r2.value=="true"){
             inputElement.prop('disabled', false);
-            r3.value="true";
             r3.innerHTML="適切です";
-            $("#result_3").removeClass("result_off");
-            $("#result_3").addClass("result_on");
           }
         } else {
+          $('#result').removeClass()
           r2.value = "false";
           r2.innerHTML = "上の入力と一致していません";
-          $("#result_2").removeClass("result_on");
-          $("#result_2").addClass("result_off");
           inputElement.prop('disabled',true);
-          r3.value="false";
           r3.innerHTML="不適切です";
-          $("#result_3").removeClass("result_on");
-          $("#result_3").addClass("result_off");
         }
       }
 });

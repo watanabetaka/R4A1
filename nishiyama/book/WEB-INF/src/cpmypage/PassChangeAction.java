@@ -34,14 +34,17 @@ public class PassChangeAction extends Action {
 		hashpass = 	Passwordutil.getSafetyPassword(now_pass,email);
 		new_hashpass = 	Passwordutil.getSafetyPassword(new_pass,email);
 
-		flag=dao.checkpass(hashpass);
+		flag=dao.updatepass(new_hashpass,user_id);
 
 		if(flag==true){
 			flag_2=dao.updatepass(new_hashpass,user_id);
 			if(flag_2==true){
 				return "../cpmypage/success.jsp";
+			}else{
+				return "../cpmypage/mailchangeerror.jsp";
 			}
+		}else{
+			return "../cpmypage/mailchangeerror.jsp";
 		}
-		return "../cpmypage/passchangeerror.jsp";
 	}
 }

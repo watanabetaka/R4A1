@@ -1,10 +1,11 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/cpoperation_header.html" %>
+<%@include file="../ipadress/ipadress.jsp" %>
 
 <!-- ヘッダー部分 -->
 <header>
   <div id="back">
-    <a href="http://localhost:8080/book/cpoperation/cpoperation.jsp" id ="back_button">＜</a>
+    <a href="http://<%= ipadress%>:8080/book/cpoperation/cpoperation.jsp" id ="back_button">＜</a>
   </div>
 <div id="mypage_title">
 企業情報入力　　

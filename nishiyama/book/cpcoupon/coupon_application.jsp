@@ -2,16 +2,17 @@
 <%-- <%@include file="../html/header.html" %> --%>
 <%@page import="bean.Sightseeing_Place, java.util.List" %>
 <%@include file="../html/cpoperation_header.html" %>
+<%@include file="../ipadress/ipadress.jsp" %>
 
 <%-- jqueryをインポート --%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <header>
   <div id="back">
-    <a href="http://localhost:8080/book/cpoperation/cpoperation.jsp" id ="back_button">＜</a>
+    <a href="http://<%= ipadress%>:8080/book/cpoperation/cpoperation.jsp" id ="back_button">＜</a>
   </div>
 <div id="mypage_title">
-企業情報変更　　
+クーポン申請　　
 </div>
 </header>
 

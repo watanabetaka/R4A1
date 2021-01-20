@@ -73,28 +73,6 @@ public class MypageDAO extends DAO {
     return checkflag;
   }
 
-  public boolean checkpass(String hashpass)
-  throws Exception{
-    //入力されたメールアドレスが既に存在していないかどうかチェック
-    //存在していればtrue,存在していなければfalseを返す
-    boolean checkflag = false;
-
-    Connection con=getConnection();
-    PreparedStatement st;
-    st=con.prepareStatement(
-    "update user set pass = ? where pass=? ");
-    st.setString(1, hashpass);
-    st.setString(2, hashpass);
-    int line = st.executeUpdate();
-
-    if(line > 0){
-      checkflag = true;
-    }
-    st.close();
-    con.close();
-    return checkflag;
-  }
-
   public boolean updatemail(String email,int user_id,String hashpass) //メールアドレス変更
   throws Exception {
     //  入力されたメールアドレスを基に更新を行う

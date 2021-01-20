@@ -2,6 +2,7 @@
 <%@include file="../html/sightseeing_swipe_header.html" %>
 <%-- javaで利用するクラスをインポート --%>
 <%@page import="bean.Sightseeing_Place, java.util.List,bean.City,bean.Genre" %>
+<%@include file="../ipadress/ipadress.jsp" %>
 
 <%-- jqueryで利用するAPIをインポート --%>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
@@ -119,7 +120,7 @@
        </div> --%>
 
 
-      <form action="Sort.action">
+      <form action="http://<%= ipadress%>:8080/book/sightseeing_swipe/Sort.action">
         <div id="actions">
           <input type="submit" id="sendtojava" value="検索" onclick=send();>
         </div>
@@ -155,6 +156,9 @@
          out.print("\""+s.getPicture_Path()+"\",");
        }
        %>];
+
+    // IPアドレスをjavascriptに変換
+     let ipadress = '<%= ipadress%>';
      </script>
 
      <%-- スワイプ機能関連のjavascriptファイルを読み込み --%>
