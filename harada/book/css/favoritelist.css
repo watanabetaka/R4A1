@@ -34,6 +34,7 @@ button.delete_button {
   float: left;
   margin-left: 10%;
   margin-top: -2%;
+  height: 4%;
 }
 
 button.update_button{

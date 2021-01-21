@@ -48,7 +48,6 @@
                          out.print("\""+c.getCity_Name()+"\",");
                        }
                        %>];
-                       console.log(array_city_name1);
 
                        for(let id in array_city_id){
                          $('#area_list').append('<input type="checkbox" class="area" name="area_name"><label class="city_kind area1">' + array_city_name1[id] +'</label><br>');
@@ -122,13 +121,13 @@
 </header>
 
 <script>
-  let dummy_sightseeing_id= '<%
-  for(Favorite f: list){
-    out.print(f.getSightseeing_Id());
-  }
-  %>';
+  let dummy_sightseeing_id= [<%
+    for(Favorite f: list){
+      out.print("\""+f.getSightseeing_Id()+"\",");
+    }
+    %>];
 
-  // array型に変換
+  // array型に変換する
   let array_sightseeing_id=Array.from(dummy_sightseeing_id);
 
  // IPアドレスをjavascriptに変換
@@ -148,7 +147,7 @@
         <input type="hidden" name="sightseeing_id" value="<%= f.getSightseeing_Id() %>">
 
           <button type="submit" class="favoimg">
-            <img class="imagelist" src="../image/<%= f.getPicture_Path() %>"/><br>
+            <img class="imagelist" src="<%= f.getPicture_Path() %>"><br>
             <c:out value="<%= f.getSightseeing_Name() %>"/>
           </button>
         </form>

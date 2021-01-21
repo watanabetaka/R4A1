@@ -1,10 +1,12 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/userlogin_header.html" %>
+<%@include file="../ipadress/ipadress.jsp" %>
+
 
 <header>
 
   <div id="back">
-    <a href="" id="modoru">＜</a>
+    <a href="http://<%= ipadress%>:8080/book/firstselect/userfirstselect.jsp" id="modoru">＜</a>
   </div>
 
   <div id="newregpin_title">
@@ -19,7 +21,7 @@
   <div id="newregmail_messe">
     メールアドレス
   </div>
-  <div id = "email"><input type="email" id = "email" name="email"  placeholder="info@example.com"></div>
+  <div id = "email"><input type="email" id = "mail" name="email"  placeholder="info@example.com"></div>
   <span id="result"></span>
   <div id ="sendmail"><input type="submit" name = "send" id = "send" value="送信"  disabled ></div>
 </form>
@@ -27,13 +29,13 @@
 <script src="../js/emailcheck.js"></script>
 
 <!-- メールアドレス送信のJSPファイルです-->
-<form action="Login.action" method="post">
+<%-- <form action="Login.action" method="post">
   <div id="newregmail_messe">
 登録するメールアドレスを入力してください。パスワード入力用メールをお送りします。
   </div>
 <div id = "email"><input type="mailaddress" name="email"  placeholder="info@example.com"></div>
 <div id = "sendmail"><input type="submit" value="送信"></div>
-</form>
+</form> --%>
 
 <!-- メールアドレス送信のJSPファイルです-->
 <%-- <form action="MailSend.action" method="post">

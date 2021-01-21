@@ -1,5 +1,6 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../html/header.html" %>
+<%@include file="../html/userlogin_header.html" %>
+
 <!-- メールアドレス送信のJSPファイルです-->
 <p>暗証番号が違います</p>
 <form action="Pin.action" method="post">
