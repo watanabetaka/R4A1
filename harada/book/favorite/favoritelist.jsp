@@ -48,7 +48,6 @@
                          out.print("\""+c.getCity_Name()+"\",");
                        }
                        %>];
-                       console.log(array_city_name1);
 
                        for(let id in array_city_id){
                          $('#area_list').append('<input type="checkbox" class="area" name="area_name"><label class="city_kind area1">' + array_city_name1[id] +'</label><br>');
@@ -127,7 +126,6 @@
       out.print("\""+f.getSightseeing_Id()+"\",");
     }
     %>];
-  console.log(dummy_sightseeing_id);
 
   // array型に変換する
   let array_sightseeing_id=Array.from(dummy_sightseeing_id);

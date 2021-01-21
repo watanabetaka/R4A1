@@ -2,7 +2,6 @@
 delete_button();
 
 function delete_button(){
-  console.log(array_sightseeing_id);
 
   $('#not_delete').on('click' , function(){
 
@@ -10,7 +9,6 @@ function delete_button(){
     $('#not_delete').attr('id', 'while_delete');
 
     for(sightseeing_id of array_sightseeing_id){
-      console.log(sightseeing_id+'id');
       $('#' + sightseeing_id).prepend('<button type="button" id="button_id' + sightseeing_id + '" class="delete_button" name="sightseeing_id" value="' + sightseeing_id + '">―</button>');
     }
 
