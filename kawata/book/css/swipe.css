@@ -3,7 +3,7 @@ html, body,#picture  {
 overflow-x: hidden;
 　　}
 #picture {
-    padding-top: 15%;
+    padding-top: 20%;
     padding-bottom: 1%;
     display: inline-block;
     width: 100%;
@@ -30,7 +30,7 @@ header {
     width: 98vw;
     height: 141vw;
     border: 1px solid #a6a9aa;
-    border-radius: 77px;
+    border-radius: 40px;
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: 0px 1px 7px 0px #cfcfcf;
@@ -41,7 +41,7 @@ div#sightseeing_place {
   position: fixed;
   top: 2%;
   text-align: center;
-  font-size: 363%;
+  font-size: 320%;
 }
 
 div#city_name {
@@ -61,4 +61,26 @@ div#city_name {
   width:265px;
   height:315px;
   background-repeat: no-repeat;
+}
+
+
+input.area {
+    height: 43px;
+    width: 43px;
+    vertical-align: middle;
+}
+
+label.city_kind.area1 {
+    font-size: 37px;
+}
+
+input.genre {
+    height: 43px;
+    width: 43px;
+    vertical-align: middle;
+}
+
+
+label.genre_kind.genre1 {
+    font-size: 37px;
 }

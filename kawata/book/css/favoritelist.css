@@ -1,23 +1,24 @@
 div#favorite_title {
-    width: 42%;
+    width: 43%;
     position: fixed;
     top: 2%;
     text-align: center;
-    font-size: 363%;
+    font-size: 320%;
     left: 27%;
 }
 
 div#favoli {
     display: flex;
     width: 100%;
-    padding-top: 13%;
+    /* padding-top: 13%; */
+    padding-top: 18%;
     flex-wrap: wrap;
+    padding-bottom: 25%;
 }
-
 
 div#delete_button {
     text-align: end;
-    margin-right: 5%;
+    margin-right: 3%;
     font-size: 10%;
     position: fixed;
     right: 1%;
@@ -39,15 +40,19 @@ button.delete_button {
 button.update_button {
     width: 9.5em;
     height: 5.5em;
-    background-color: white;
-    color: #a0522d;
+    background-color: #a0522d;
+    color: white;
     border-radius: 20px;
+    font-weight: bold;
+    /* font-size: 15px; */
 }
+
+
 
 .favocon {
     width: 50%;
     text-align: center;
-    padding-top: 5%;
+    padding-top: 1%;
     position: static;
 }
 
@@ -56,12 +61,13 @@ button.favoimg {
     border-block-style: none;
     border-right-style: none;
     background: none;
-    font-size: 50px;
+    font-size: 27px;
 }
 
 img.imagelist {
     border-radius: 35px;
     width: 100%;
+    height: 390px;
 }
 
 
@@ -98,4 +104,3 @@ input.genre {
     padding-left: 47px;
     padding-top: 40px;
 }
-
