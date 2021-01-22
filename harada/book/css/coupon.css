@@ -1,7 +1,6 @@
 header{
   text-align: center;
   position: fixed;
-
 }
 
 div.coupon_title {
@@ -14,8 +13,12 @@ div.coupon_title {
 h5{
   font-size: 300%;
   padding-top:11%;
-  border-bottom: 10%;
 }
+
+div#coupon_header{
+  border-bottom: solid;
+}
+
 img{
   width: 30%;
   height: 10%;

@@ -101,7 +101,21 @@ $(document).ready(function(event) {
     let city_name = array_city_name[count];
     let picture_path = array_picture_path[count];
     if(count !== array_sightseeing_name.length){
-      $('#sightseeing_place').html(sightseeing_name);
+      if(sightseeing_name.match(/^[^\x01-\x7E\xA1-\xDF]+$/)){//観光地が全角なら
+        $('#sightseeing_place').html(sightseeing_name);
+        if(sightseeing_name.length >= 10){
+          document.getElementById("sightseeing_place").style.fontSize = "34pt";
+        }else if(sightseeing_name.length >= 18){
+          document.getElementById("sightseeing_place").style.fontSize = "24pt";
+        }
+      }else{                                                 //半角なら
+        $('#sightseeing_place').html(sightseeing_name);
+        if(sightseeing_name.length >= 20){
+          document.getElementById("sightseeing_place").style.fontSize = "34pt";
+        }else if(sightseeing_name.length >= 38){
+          document.getElementById("sightseeing_place").style.fontSize = "24pt";
+        }
+      }
       $('#city_name').html(city_name);
       $("#picture").prepend('<img id="picture_path" src="'+picture_path+ '">');
     }else{

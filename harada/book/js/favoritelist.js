@@ -9,7 +9,7 @@ function delete_button(){
     $('#not_delete').attr('id', 'while_delete');
 
     for(sightseeing_id of array_sightseeing_id){
-      $('#' + sightseeing_id).prepend('<button type="button" id="button_id' + sightseeing_id + '" class="delete_button" name="sightseeing_id" value="' + sightseeing_id + '">―</button>');
+      $('#' + sightseeing_id).prepend('<button type="button" id="button_id' + sightseeing_id + '" class="delete_button" name="sightseeing_id" value="' + sightseeing_id + '"><b class="minus">―</b></button>');
     }
 
     $('.favoimg').attr('type','button');

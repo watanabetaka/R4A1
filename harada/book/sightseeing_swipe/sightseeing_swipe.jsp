@@ -171,8 +171,10 @@
 
 </header>
 
-<%-- 観光地の写真を表示 --%>
-<div id="picture"></div>
+<div class="fade">
+  <%-- 観光地の写真を表示 --%>
+  <div id="picture"></div>
+</div>
 
 <%@include file="../html/gamenhuta.html" %>
 

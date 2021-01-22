@@ -1,5 +1,6 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../html/userlogin_header.html" %>
+<%@include file="../html/newregist_header.html" %>
+<%@include file="../ipadress/ipadress.jsp" %>
 
 <!-- メールアドレス送信のJSPファイルです-->
 <p>暗証番号が違います</p>

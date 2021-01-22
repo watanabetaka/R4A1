@@ -14,24 +14,25 @@
 </header>
 <%-- jqueryをインポート --%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<div class="fade">
 
+  <% List<Get_Coupon> list =(List<Get_Coupon>)request.getAttribute("list");%>
+    <c:if test="${empty list}">
+      <p>クーポンの取得に失敗しました</p>
+    </c:if>
 
-<% List<Get_Coupon> list =(List<Get_Coupon>)request.getAttribute("list");%>
-  <c:if test="${empty list}">
-    <p>クーポンの取得に失敗しました</p>
-  </c:if>
-
-  <c:if test="${!empty list}">
-    <% for(Get_Coupon c: list){ %>
-<div id = Ktm>
-    <div class = "KTm"> レビュー投稿ありがとうございます！<br>
-      【<c:out value="<%= c.getSightseeing_Name() %>"/>】で使える<br>
-      【<c:out value="<%= c.getCoupon_Name() %>"/>】のクーポンをプレゼント！</div><br>
-    <%}%>
-  </c:if>
-<div id="KtM">
-<a class="page-close" href="http://<%=ipadress%>:8080/book/favorite/favoritelist">お気に入り一覧へ戻る</a>
-</div>
+    <c:if test="${!empty list}">
+      <% for(Get_Coupon c: list){ %>
+  <div id = Ktm>
+      <div class = "KTm"> レビュー投稿ありがとうございます！<br>
+        【<c:out value="<%= c.getSightseeing_Name() %>"/>】で使える<br>
+        【<c:out value="<%= c.getCoupon_Name() %>"/>】のクーポンをプレゼント！</div><br>
+      <%}%>
+    </c:if>
+  <div id="KtM">
+  <a class="page-close" href="http://<%=ipadress%>:8080/book/favorite/favoritelist">お気に入り一覧へ戻る</a>
+  </div>
+  </div>
 </div>
 <%@include file="../html/gamenhuta.html" %>
 
