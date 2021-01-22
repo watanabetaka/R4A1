@@ -51,6 +51,7 @@ div#sightseeing_place{
 img#pictures {
   width: -webkit-fill-available;
   border-radius: 35px;
+  height: 1000px; 　/*付け加え*/
 }
 
 div#syousai {
@@ -193,4 +194,8 @@ button#not_delete0 {
     /* font-size: 15px; */
     /* padding-top: 22px; */
     margin-top: 30px;
-}s
+}
+
+.external:active{
+  color : #a0522d;
+}

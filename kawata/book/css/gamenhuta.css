@@ -50,15 +50,6 @@ ul.topng li {
   position: relative;
 }
 
-
 div.footer_font{
   font-size: 170%;
 }
-
-
-
-
-ul.topng {
-    padding-bottom: env(safe-area-inset-bottom);
-}
-
