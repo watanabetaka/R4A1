@@ -105,10 +105,10 @@
             	</label>
             </div> --%>
 
-            <div class="cp_ipcheck">
+            <div class="asc_name">
               <ul>
                 <li class="list_item">
-                  <label><input type="checkbox" class="option-input05">古い順に並び替え</label>
+                  <label><input type="checkbox" name="asc_name"  class="asc_sort">古い順に並び替え</label>
                 </li>
               </ul>
             </div>
@@ -146,9 +146,7 @@
 
   <div id ="favoli">
 
-    <c:if test="${empty list}">
-      <p>まだ観光地を登録していません!</p>
-    </c:if>
+    <div id = "mada"><c:if test="${empty list}">まだ観光地を登録していません！</c:if></div>
 
     <% for(Favorite f: list){ %>
       <div class ="favocon" id="<%=f.getSightseeing_Id()%>">

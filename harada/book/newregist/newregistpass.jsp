@@ -4,30 +4,35 @@
 
 
 <header>
-  <div id="back">
-    <a href="http://<%= ipadress%>:8080/book/firstselect/userfirstselect.jsp" id="modoru">＜</a>
-  </div>
+
   <div id="newregpin_title">
     新規会員登録
   </div>
 </header>
-<div id ="newregpass_messe">
-  <p> ＊パスワード入力の際の注意事項<br>
-  1.英字の大文字小文字を含めること<br>
-  2.数字と記号を含めること
-  </p>
+  <div id="newregmail_messe">
+
+ ＊パスワード入力の際の注意事項＊<br>
+<div id=mase>   1.英字の大文字小文字と数字を含めること<br>
+2.８文字以上入力すること</div>
+
 </div>
 
 <form action="Pass.action" method="post">
-<div id = pass><label for="password"><b id="pass_font">パスワード  </b></label><br>
-  <input name="pass" id="password" type="password" placeholder="Type Your Password here" onKeyUp="confirm()"/>
-  <span id="result"></span>
+
+  <%-- <label for="password"><b id="pass_font"></b></label><br> --%>
+    <div class = "pass"><input name="pass" id="password" type="password" placeholder="パスワード" onKeyUp="confirm()"/><br>
+  <span id="result"></span></div>
   <br>
-  <input name="pass" id="password_confirm" type="password" placeholder="Type Your Password here" onKeyUp="confirm()"/>
-  <span id="result_confirm"></span>
-</div>
-<div id = sendpass><p><input type="submit" name = "send"id = "send" value="送信"  disabled ></p></div>
+  <div class = "pass"><input name="pass" id="password_confirm" type="password" placeholder="確認用パスワード" onKeyUp="confirm()"/><br>
+  <span id="result_confirm"></span></div>
+
+  <div id ="sendmail"><input type="submit" name = "send"id = "send" value="送信"  disabled ></div>
 </form>
+
+
+
+
+
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="../js/passwordcheck.js"></script>
 <script>
@@ -37,13 +42,13 @@ var password_confirm = document.getElementById("password_confirm").value;
 var t1=document.getElementById("result");
 var t2=document.getElementById("result_confirm");
 var inputElement = $('input[name="send"]');
-if(password==password_confirm){
-  t2.innerHTML = "適切です";
+if(password==password_confirm &&  password_confirm.length > 0){
+  t2.innerHTML = "上記のパスワードと一致しています";
 }else{
-  t2.innerHTML = "不適切です";
+  t2.innerHTML = "上記のパスワードと異なっています";
 }
 
-if(t1.innerHTML=="適切です"&&t2.innerHTML=="適切です"){
+if(t1.innerHTML=="正しい入力です"&&t2.innerHTML=="上記のパスワードと一致しています"){
   inputElement.prop('disabled', false);
 }else{
   inputElement.prop('disabled', true);

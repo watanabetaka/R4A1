@@ -30,7 +30,7 @@ function send() {
     }
   }
 
-  if ($("#asc_sort:checked").val() == "on"){
+  if ($(".asc_sort:checked").eq(0).val() == "on"){
     $('#actions').append('<input type="hidden" name="asc_sort" value="true">');
     //チェックされていた場合
   }

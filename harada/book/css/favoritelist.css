@@ -61,7 +61,7 @@ button.favoimg {
     border-block-style: none;
     border-right-style: none;
     background: none;
-    font-size: 27px;
+    font-size: 220%;
 }
 
 img.imagelist {
@@ -96,10 +96,10 @@ input.genre {
     vertical-align: middle;
 }
 
-.asc_name {
+/* .asc_name {
     padding-left: 47px;
     padding-top: 40px;
-}
+} */
 
 
 button#while_delete:hover {
@@ -109,34 +109,34 @@ button#while_delete:hover {
 
 
 
-.cp_ipcheck {
+.asc_name {
 	width: 90%;
 	margin: 2em auto;
 	text-align: left;
 }
-.cp_ipcheck ul {
+.asc_name ul {
 	margin: 0.5rem 0.5rem 2rem 0.5rem;
 	padding: 0.5rem 1rem;
 	list-style: none;
 	/* border: 1px solid #cccccc;*/
 }
-.cp_ipcheck .list_item {
+.asc_name .list_item {
 	margin: 0 0 0.5rem 0;
 	padding: 0;
 }
-.cp_ipcheck label {
+.asc_name label {
 	line-height: 135%;
 	position: relative;
 	margin: 0.5rem;
 	cursor: pointer;
 	font-size: 35px;/**/
 }
-.cp_ipcheck .option-input05 {
+.asc_name .asc_sort {
 	position: relative;
 	margin: 0 1rem 0 0;
 	cursor: pointer;
 }
-.cp_ipcheck .option-input05:before {
+.asc_name .asc_sort:before {
     position: absolute;
     z-index: 1;
     top: -0.7rem;
@@ -152,11 +152,11 @@ button#while_delete:hover {
     border-top-style: none;
     border-right-style: none;
 }
-.cp_ipcheck .option-input05:checked:before {
+.asc_name .asc_sort:checked:before {
 	-webkit-transform: rotate(-45deg) scale(1, 1);
 	        transform: rotate(-45deg) scale(1, 1);
 }
-.cp_ipcheck .option-input05:after {
+.asc_name .asc_sort:after {
     position: absolute;
     top: -1.125rem;
     left: -11.5px;
@@ -166,4 +166,11 @@ button#while_delete:hover {
     cursor: pointer;
     border: 2px solid #f2f2f2;
     background: #ffffff;
+}
+
+div#mada {
+    position: fixed;
+    left: 4%;
+    top: 40%;
+    font-size: 3.9em;
 }

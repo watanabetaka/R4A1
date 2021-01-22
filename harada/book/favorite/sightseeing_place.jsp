@@ -32,9 +32,12 @@
         out.print(s.getSightseeing_Id());
       }
       %>">
-      <%-- エラーが生じた時は、下記のコードをコメントアウトして再度実行してください --%>
       <input type="hidden" name="ajax_trust" value="false">
-      <input type="submit" value="削除">
+      <input type="submit" value="削除" id="delete_submit" style="font-size:170%;">
+        <%-- <button type="button" name="delete_button0" class="update_button0" id="not_delete0">
+      	<font size="5">削除
+    	</font>
+      </button> --%>
     </form>
   </div>
 
@@ -128,7 +131,7 @@
     <%--twitterでレビューする際の処理--%>
     <div class="content">
       <%-- Twitterボタン --%>
-      <a class="twitter btn" href="http://twitter.com/share?url= &text=%0a%20%23まいらいずおおいた" target="_blank" id="twitter"><div class="share">Twitterでシェア</div><img class="share" id="twitter_image" src="../image/twitter.jpg"></a>
+      <a class="twitter btn" href="http://twitter.com/share?url= &text=%0a↑観光地の観光地の感想を書いてね！%0a%20%23まいらいずおおいた" target="_blank" id="twitter"><div class="share">Twitterでシェア</div><img class="share" id="twitter_image" src="../image/twitter.jpg"></a>
     </div>
   </div>
   <%-- <a target="_blank" href="https://www.instagram.com/?hl=ja" id="instagram">Instagramでシェア</a>

@@ -44,11 +44,14 @@ function delete_button(){
     });
 
     $('#while_delete').on('click' , function(){
-        $('.favoimg').attr('type','submit');
-        $('button[name="delete_button"]').html('<font size=5>削除</font>');
-        $('#while_delete').attr('id', 'not_delete');
-        $('.delete_button').remove();
-        delete_button();
+      if(0 === array_sightseeing_id.length){
+        $('#mada').html('まだ観光地を登録していません！');
+      }
+      $('.favoimg').attr('type','submit');
+      $('button[name="delete_button"]').html('<font size=5>削除</font>');
+      $('#while_delete').attr('id', 'not_delete');
+      $('.delete_button').remove();
+      delete_button();
     });
   });
 }

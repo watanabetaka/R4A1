@@ -19,9 +19,9 @@
 <!-- メールアドレス送信のJSPファイルです-->
 <form action="MailSend.action" method="post">
   <div id="newregmail_messe">
-    メールアドレス
+登録するメールアドレスを入力してください。<br>パスワード入力用メールをお送りします。
   </div>
-  <div id = "email"><input type="email" id = "mail" name="email"  placeholder="info@example.com"></div>
+  <div id = "email"><input type="email" id = "mail" name="email"  placeholder="メールアドレス"></div>
   <span id="result"></span>
   <div id ="sendmail"><input type="submit" name = "send" id = "send" value="送信"  disabled ></div>
 </form>
