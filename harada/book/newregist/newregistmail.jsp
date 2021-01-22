@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../html/userlogin_header.html" %>
+<%@include file="../html/newregist_header.html" %>
 <%@include file="../ipadress/ipadress.jsp" %>
 
 

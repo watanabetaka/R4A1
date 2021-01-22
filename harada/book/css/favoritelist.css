@@ -1,23 +1,24 @@
 div#favorite_title {
-    width: 42%;
+    width: 43%;
     position: fixed;
     top: 2%;
     text-align: center;
-    font-size: 363%;
+    font-size: 320%;
     left: 27%;
 }
 
 div#favoli {
     display: flex;
     width: 100%;
-    padding-top: 13%;
+    /* padding-top: 13%; */
+    padding-top: 18%;
     flex-wrap: wrap;
+    padding-bottom: 25%;
 }
-
 
 div#delete_button {
     text-align: end;
-    margin-right: 5%;
+    margin-right: 3%;
     font-size: 10%;
     position: fixed;
     right: 1%;
@@ -29,23 +30,31 @@ button.delete_button {
   border-color: red;
   background-color: red;
   color: white;
-  width: 12%;
-  height: 14%;
+  width: 13%;
+  height: 13%;
   float: left;
   margin-left: 10%;
   margin-top: -2%;
-  height: 4%;
 }
 
-button.update_button{
-  width: 9.5em;
-  height: 5.5em;
+button.update_button {
+    width: 9.5em;
+    height: 5.5em;
+    background-color: #a0522d;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: -11%;
+    /* font-size: 15px; */
 }
+
+
 
 .favocon {
     width: 50%;
     text-align: center;
-    padding-top: 5%;
+    padding-top: 1%;
+    padding-bottom: 5%;
     position: static;
 }
 
@@ -54,8 +63,50 @@ button.favoimg {
     border-block-style: none;
     border-right-style: none;
     background: none;
+    font-size: 27px;
 }
 
 img.imagelist {
     border-radius: 35px;
+    width: 100%;
+    height: 390px;
+}
+
+b.minus{
+  font-size: 340%;
+  font-weight: bold;
+}
+
+span.group-label {
+    font-size: 40px;
+}
+
+input#asc_sort {
+    width: 40px;
+    height: 40px;
+}
+
+div#area_list {
+    font-size: 37px;
+}
+
+input.area {
+    height: 43px;
+    width: 43px;
+    vertical-align: middle;
+}
+
+div#genre_list {
+    font-size: 37px;
+}
+
+input.genre {
+    height: 43px;
+    width: 43px;
+    vertical-align: middle;
+}
+
+.asc_name {
+    padding-left: 47px;
+    padding-top: 40px;
 }

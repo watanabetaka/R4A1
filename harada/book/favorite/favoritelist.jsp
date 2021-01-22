@@ -13,7 +13,6 @@
 <% List<Genre> list2=(List<Genre>)request.getAttribute("list2"); %>
 
 
-
 <%-- 児玉くん --%>
 <%-- 左上のソートバーのボタン --%>
 <script type="text/javascript" src="../js/hamburger.js"></script>
@@ -101,9 +100,12 @@
             <%-- <div class="switch"> --%>
             <p>古い順に並び替え</p>
             <%-- <label class="switch__label"> --%>
-            <form name="ascsort_form">
-              <input type="checkbox" name="asc_name" id="asc_sort">
-            </form>
+            <div class="asc_name">
+            	<label>
+            		<input type="checkbox" name="asc_name" id="asc_sort">
+            		<span class="group-label">古い順に並び替え</span>
+            	</label>
+            </div>
 
               <%-- フォームの検索ボタンを押したらSortAction.javaをフォルダ内から探索して遷移する --%>
             <form action="Favoritesort.action">
@@ -134,27 +136,31 @@
  let ipadress = '<%= ipadress%>';
 </script>
 
-<div id ="favoli">
+<div class="fade">
 
-  <c:if test="${empty list}">
-    <p>まだ観光地を登録していません!</p>
-  </c:if>
+  <div id ="favoli">
 
-  <% for(Favorite f: list){ %>
-    <div class ="favocon" id="<%=f.getSightseeing_Id()%>">
+    <c:if test="${empty list}">
+      <p>まだ観光地を登録していません!</p>
+    </c:if>
 
-      <form action="Detail.action">
-        <input type="hidden" name="sightseeing_id" value="<%= f.getSightseeing_Id() %>">
+    <% for(Favorite f: list){ %>
+      <div class ="favocon" id="<%=f.getSightseeing_Id()%>">
 
-          <button type="submit" class="favoimg">
-            <img class="imagelist" src="<%= f.getPicture_Path() %>"><br>
-            <c:out value="<%= f.getSightseeing_Name() %>"/>
-          </button>
-        </form>
+        <form action="Detail.action">
+          <input type="hidden" name="sightseeing_id" value="<%= f.getSightseeing_Id() %>">
 
-      </div>
+            <button type="submit" class="favoimg">
+              <img class="imagelist" src="<%= f.getPicture_Path() %>"><br>
+              <div class="sightseeing_name"><c:out value="<%= f.getSightseeing_Name() %>"/></div>
+            </button>
+          </form>
 
-  <% } %>
+        </div>
+
+    <% } %>
+
+  </div>
 
 </div>
 
