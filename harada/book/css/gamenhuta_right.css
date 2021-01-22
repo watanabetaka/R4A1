@@ -1,0 +1,56 @@
+
+
+div#i{
+  position: fixed;
+  left: 0;
+  top: 93%;
+  width: 100%;
+  height: 7.5%;
+}
+/* メニューバー 範囲*/
+div#menu-gazou {
+  height: 100%;
+}
+/* リストの範囲 */
+ul.topng {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+  height: 100%;
+	list-style-type: none;
+	background-color: #F0E68C;
+
+}
+
+
+/* 画像を画面に対して合わせ */
+img.menu-icon {
+    width: 25%;
+    position: absolute;
+    top:8%;
+    left:33%;
+    height:70%;
+    max-height:100%;
+}
+
+.button{
+  display: block;
+  width:100%;
+  height: 90%;
+  padding:0;
+  opacity:0;
+
+}
+
+/* リストの一要素の制御 */
+ul.topng li {
+	float: left;
+  text-align:center;
+  width: 25%;
+  height:75%;
+  position: relative;
+}
+
+div.footer_font{
+  font-size: 170%;
+}
