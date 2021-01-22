@@ -97,14 +97,20 @@
              </div>
             </div>
 
-            <%-- <div class="switch"> --%>
-            <p>古い順に並び替え</p>
             <%-- <label class="switch__label"> --%>
-            <div class="asc_name">
+            <%-- <div class="asc_name">
             	<label>
             		<input type="checkbox" name="asc_name" id="asc_sort">
             		<span class="group-label">古い順に並び替え</span>
             	</label>
+            </div> --%>
+
+            <div class="cp_ipcheck">
+              <ul>
+                <li class="list_item">
+                  <label><input type="checkbox" class="option-input05">古い順に並び替え</label>
+                </li>
+              </ul>
             </div>
 
               <%-- フォームの検索ボタンを押したらSortAction.javaをフォルダ内から探索して遷移する --%>

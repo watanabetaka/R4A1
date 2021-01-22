@@ -49,7 +49,7 @@ img{
   float: left;
   margin-left: 5%;
   margin-right: 5%;
-  font-size: 200%;
+  font-size: 140%;
 }
 
 .name{
@@ -81,20 +81,25 @@ img{
   z-index: 1;
 }
 
+
 #modal {
-  background: #fff;
-  color: #555;
-  width: 50%;
-  padding: 10%;
-  font-size: 150%;
-  border-radius: 4px;
-  position: fixed;
-  top: 25%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  z-index: 2;
-  transition: 0.4s;
+    background: #fff;
+    color: #555;
+    width: 58%;
+    padding: 10%;
+    font-size: 273%;
+    border-radius: 4px;
+    position: fixed;
+    top: 25%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 2;
+    transition: 0.4s;
+}
+
+#yes_center{
+  text-align: center;
 }
 
 #mask.hidden,#modal.hidden {

@@ -65,7 +65,7 @@
   <section id="modal" class="hidden">　<!--モーダルウィンドウ本体-->
   <p class="name">発行するとクーポンは<br>30分で消えてしまいます。<br>発行しますか？</p>
   <div id="close">
-    <input type="button" id="YES" class="YES modalbtn" value="YES" style="width: 40%; padding: 10%";>
+    <div id="yes_center"><input type="button" id="YES" class="YES modalbtn" value="YES" style="width: 40%; padding: 10%";></div>
     <input type="button" class="NO modalbtn" value="NO" style="width: 40%; padding: 10%";>
   </div>
   </section>
