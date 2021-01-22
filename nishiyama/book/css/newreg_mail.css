@@ -1,0 +1,85 @@
+div#back {
+    font-size: 5em;
+    float: left;
+    padding-top: 1%;
+}
+
+a#modoru {
+    text-decoration: none;
+    color: saddlebrown;
+}
+
+div#newreg_title {
+  position: fixed;
+  left: 38%;
+  top: 2%;
+  font-size: 300%;
+}
+div#newreg_form {
+    padding-top: 15%;
+    text-align: center;
+}
+
+div#newregmail_messe {
+    font-size: 2.2em;
+    display: inline-block;
+    text-align: left;
+    margin: 10%;
+    padding-top: 20%;
+    text-align: center;
+    margin-bottom: 14.5%;
+}
+
+div#newregpin_messe {
+    padding-top: 15%;
+    text-align: center;
+}
+
+input[type="email"] {
+    padding: 11px;
+    font-size: 4em;
+    background-color: gainsboro;
+    border-radius: 25px;
+}
+
+input::placeholder {
+    font-size: 0.7em;
+    /* font-style: italic; */
+    padding-left: 25px;
+}
+
+input[type="submit"] {
+    font-size: 3.5em;
+    background-color: #f5deb3;
+}
+
+div#send {
+    text-align: end;
+    padding-top: 50%;
+}
+
+
+div#email_touroku {
+    font-size: 2.2em;
+    display: inline-block;
+    text-align: left;
+    margin: 10%;
+}
+
+div#mail_error {
+    font-size: 3em;
+    display: inline-block;
+    text-align: left;
+    margin: 10%;
+    margin-bottom: 15%;
+    color: red;
+}
+
+div#sendmail {
+    text-align: end;
+    padding-top: 40%;
+}
+
+div#sendmail_error {
+    text-align: end;
+}

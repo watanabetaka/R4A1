@@ -1,0 +1,11 @@
+
+http://localhost:8080/book/login/userlogin.jsp
+http://localhost:8080/book/login/userlogin-error.jsp
+
+http://localhost:8080/book/newregist/newregistmail.jsp
+http://localhost:8080/book/newregist/newregistmail-error.jsp
+
+http://localhost:8080/book/newregist/newregistpass.jsp
+http://localhost:8080/book/newregist/newregistpass-error.jsp
+
+http://localhost:8080/book/newregist/newregistpin.jsp

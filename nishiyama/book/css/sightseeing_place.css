@@ -1,21 +1,42 @@
+div.fade{
+  animation: fadeIn 0.5s ease 0s 1 normal;
+}
+@keyframes fadeIn { /*animetion-nameで設定した値を書く*/
+
+  0% {opacity: 0} /*アニメーション開始時は不透明度0%*/
+
+  100% {opacity: 1} /*アニメーション終了時は不透明度100%*/
+
+}
+
 div#back {
     font-size: 5em;
+    padding-top:30px;
     float: left;
 }
 div#favorite_title {
   position: fixed;
-  left: 38%;
-  top: 2%;
-  font-size: 300%;
+  left: 35%;
+  top: 2.4%;
+  font-size: 363%;
 }
-div#delete {
-    text-align: end;
-    padding-right: 5%;
-    margin-top: 3%;
+div#delete_button {
+  text-align: end;
+  margin-right: 5%;
+  font-size: 10%;
+  position: fixed;
+  right: 1%;
+  top: 2.5%;
 }
-
-input[type="submit"] {
-    font-size: 2.5em;
+button[type="submit"] {
+  font-weight: 600;
+  color: #500;
+  border-radius: 1rem;
+  font-size: 15px;
+}
+button.delete_button{
+  width: 9.5em;
+  height: 5.5em;
 }
 
 a#modoru {
@@ -24,7 +45,7 @@ a#modoru {
 }
 
 div#pankuzu {
-    padding-top: 14%;
+    padding-top: 20%;
     font-size: 2em;
 }
 div#city_name {
@@ -35,10 +56,143 @@ div#city_name {
 div#genre_name {
     float: left;
 }
-img#pictures {
-    width: -webkit-fill-available;
-    border-radius: 35px;
+
+div#sightseeing_place{
+  font-size: 200%;
+  padding-top: 4%;
 }
+
+img#pictures {
+  width: -webkit-fill-available;
+  border-radius: 35px;
+}
+
 div#syousai {
     font-size: 3em;
+    padding-top: 10%;
+    padding-bottom: 21%;
+}
+
+div#syousai > *{
+  padding-top: 1%;
+}
+
+div.external{
+  padding-top:6%;
+  padding-left: 3%;
+}
+
+div.content{
+  padding-left: 3%;
+}
+
+img.adress_image{
+  width: 43%;
+}
+
+div.adress_container{
+  display:inline-block;
+  vertical-align:middle;
+}
+
+div#adress_container{
+  padding-left: 1%;
+}
+
+div#postal_code {
+    float: left;
+}
+
+div.adress{
+   font-size: 85%;
+}
+
+div#street_adress{
+  font-size: 100%;
+}
+
+div.image_class{
+  padding-left: 3%;
+  width: 10%;
+}
+
+/* div.adress{
+  display:inline-block;
+} */
+
+
+div.phone{
+  display: inline-block;
+  vertical-align:middle;
+}
+
+img.phone_image{
+  width: 43px;
+}
+
+div#phone_number{
+  padding-left: :100%;
+}
+
+img#twitter_image{
+  width: 10%;
+}
+
+div.business_hour{
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 0;
+}
+
+div.image_business{
+  margin-left: -0.5%;
+  margin-top: 1%;
+}
+
+img.businesshour_image{
+  width: 60%;
+}
+
+div.neareststation{
+  display: inline-block;
+  vertical-align:middle;
+}
+
+img.neareststation_image{
+  width: 81%;
+  text-align: center;
+}
+
+div.neareststation_container{
+  padding-left: 0.1%;
+  width: 13%;
+}
+
+div#reservation_url{
+  padding-top: 3%;
+}
+
+.kasen{
+  border-top: solid 3px orange;
+  padding-top: 10%;
+}
+
+.kasenfirst{
+  border-top: solid 4px orange;
+}
+
+.nothing_kasen{
+  margin-top: 6%;
+}
+
+p{
+  margin:0;
+  height: 1%;
+}
+
+.share{
+  display: inline-block;
+  padding-right: 3%;
+  padding-top: 3%;
+  vertical-align:middle;
 }

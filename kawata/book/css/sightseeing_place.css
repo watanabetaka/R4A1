@@ -1,0 +1,201 @@
+
+div#back {
+    font-size: 5em;
+    float: left;
+    padding-top: 3%;
+    padding-left: 3%;
+    font-weight: bold;
+}
+
+div#favorite_title {
+    position: fixed;
+    left: 37%;
+    top: 2.5%;
+    font-size: 320%;
+}
+
+div#delete {
+    text-align: end;
+    padding-right: 5%;
+    margin-top: 3%;
+}
+
+input[type="submit"] {
+    font-size: 2.5em;
+}
+
+a#modoru {
+    text-decoration: none;
+    color: #a0522d;
+}
+
+div#pankuzu {
+    padding-top: 15%;
+    font-size: 2em;
+}
+div#city_name {
+    float: left;
+}
+
+
+div#genre_name {
+    float: left;
+}
+
+div#sightseeing_place{
+  font-size: 200%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+img#pictures {
+  width: -webkit-fill-available;
+  border-radius: 35px;
+  height: 1000px; 　/*付け加え*/
+}
+
+div#syousai {
+    font-size: 2.3em;
+    padding-top: 10%;
+    padding-bottom: 13%;
+}
+
+div#syousai > *{
+  padding-top: 1%;
+}
+
+div.external{
+  padding-top:6%;
+  padding-left: 3%;
+}
+
+div.content{
+  padding-left: 3%;
+}
+
+img.adress_image{
+  width: 43%;
+}
+
+div.adress_container{
+  display:inline-block;
+  vertical-align:middle;
+}
+
+div#adress_container{
+  padding-left: 1%;
+}
+
+div#postal_code {
+    float: left;
+}
+
+div.adress{
+   font-size: 85%;
+}
+
+div#street_adress{
+  font-size: 100%;
+}
+
+div.image_class{
+  padding-left: 3%;
+  width: 10%;
+}
+
+/* div.adress{
+  display:inline-block;
+} */
+
+
+div.phone{
+  display: inline-block;
+  vertical-align:middle;
+}
+
+img.phone_image{
+  width: 43px;
+}
+
+div#phone_number{
+  padding-left: :100%;
+}
+
+img#twitter_image{
+  width: 10%;
+}
+
+div.business_hour{
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 0;
+}
+
+div.image_business{
+  margin-left: -0.5%;
+  margin-top: 1%;
+}
+
+img.businesshour_image{
+  width: 60%;
+}
+
+div.neareststation{
+  display: inline-block;
+  vertical-align:middle;
+}
+
+img.neareststation_image{
+  width: 81%;
+  text-align: center;
+}
+
+div.neareststation_container{
+  padding-left: 0.1%;
+  width: 13%;
+}
+
+div#reservation_url{
+  padding-top: 3%;
+}
+
+.kasen{
+  border-top: solid 3px orange;
+  padding-top: 10%;
+}
+
+.kasenfirst{
+  border-top: solid 4px orange;
+}
+
+.nothing_kasen{
+  margin-top: 6%;
+}
+
+p{
+  margin:0;
+  height: 1%;
+}
+
+.share{
+  display: inline-block;
+  padding-right: 3%;
+  padding-top: 3%;
+  vertical-align:middle;
+}
+
+button#not_delete0 {
+    width: 9.5em;
+    height: 5.5em;
+    background-color: #a0522d;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    /* font-size: 15px; */
+    /* padding-top: 22px; */
+    margin-top: 30px;
+}
+
+.external:active{
+  color : #a0522d;
+}

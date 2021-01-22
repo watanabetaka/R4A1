@@ -1,21 +1,21 @@
 $(document).ready(function() {
 
-    $('#email').keyup(function() {
-        $('#result').html(checkemail($('#email').val()))
+    $('#mail').keyup(function() {
+        $('#result').html(checkemail($('#mail').val()));
     })
 
     function checkemail(email) {
       var address = email;
         let inputElement = $('input[name="send"]');
-      var reg = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;;
+      var reg = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/;
+      console.log(11);
+      console.log(address);
         if (reg.test(address)) {
-          $('#result').removeClass()
-          $('#result').addClass('強いです！!')
           inputElement.prop('disabled', false);
-          return 'オッケー'
+          console.log(11);
+          return '適切です'
         } else {
-          $('#result').removeClass()
-          $('#result').addClass('弱いです〜')
+          console.log(11);
           inputElement.prop('disabled', true);
           return '不適切です'
         }

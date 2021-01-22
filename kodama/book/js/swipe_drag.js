@@ -1,5 +1,5 @@
 // このjavascriptファイルにおいて行っていること
-// 要素をドラッグ可能にし、アイメーションを追加
+// 要素をドラッグ可能にし、アニメーションを追加
 // サーブレットとのajax通信を行い、データベースへ追加（レスポンスはなし）
 
 // 添え字の初期化
@@ -52,7 +52,7 @@ $(document).ready(function(event) {
       // 送信したいリクエストタイプを指定
       type : "GET",
       // 通信するサーブレットのURLを指定
-      url  : "http://localhost:8080/book/sightseeing_swipe/favorite_insert",
+      url  : "http://" + ipadress + ":8080/book/sightseeing_swipe/favorite_insert",
       // 送信するデータを指定
       data : request,
       // 非同期通信であればtrue、同期通信であればfalseを指定
@@ -69,7 +69,7 @@ $(document).ready(function(event) {
 
     // スワイプ後のアニメーションの指定
     let swipe = new TimelineMax({repeat:0, yoyo:false, repeatDelay:0, onComplete:remove, onCompleteParams:[picture_path]});
-    swipe.staggerTo(picture_path, 0.8, {bezier:[{left:"+=400", top:"+=300", rotation:"60"}], ease:Power1.easeInOut});
+    swipe.staggerTo(picture_path, 0.2, {bezier:[{left:"+=900", top:"+=300", rotation:"60"}], ease:Power1.easeInOut});
 
     // 次の観光地情報を表示
     addNewSightseeing();
@@ -83,7 +83,7 @@ $(document).ready(function(event) {
 
     // スワイプ後のアニメーションの指定
     let swipe = new TimelineMax({repeat:0, yoyo:false, repeatDelay:0, onComplete:remove, onCompleteParams:[picture_path]});
-    swipe.staggerTo(picture_path, 0.8, {bezier:[{left:"+=-350", top:"+=300", rotation:"-60"}], ease:Power1.easeInOut});
+    swipe.staggerTo(picture_path, 0.2, {bezier:[{left:"+=-900", top:"+=300", rotation:"-60"}], ease:Power1.easeInOut});
 
     // 次の観光地情報を表示
     addNewSightseeing();
@@ -101,7 +101,21 @@ $(document).ready(function(event) {
     let city_name = array_city_name[count];
     let picture_path = array_picture_path[count];
     if(count !== array_sightseeing_name.length){
-      $('#sightseeing_place').html(sightseeing_name);
+      if(sightseeing_name.match(/^[^\x01-\x7E\xA1-\xDF]+$/)){//観光地が全角なら
+        $('#sightseeing_place').html(sightseeing_name);
+        if(sightseeing_name.length >= 10){
+          document.getElementById("sightseeing_place").style.fontSize = "34pt";
+        }else if(sightseeing_name.length >= 18){
+          document.getElementById("sightseeing_place").style.fontSize = "24pt";
+        }
+      }else{                                                 //半角なら
+        $('#sightseeing_place').html(sightseeing_name);
+        if(sightseeing_name.length >= 20){
+          document.getElementById("sightseeing_place").style.fontSize = "34pt";
+        }else if(sightseeing_name.length >= 38){
+          document.getElementById("sightseeing_place").style.fontSize = "24pt";
+        }
+      }
       $('#city_name').html(city_name);
       $("#picture").prepend('<img id="picture_path" src="'+picture_path+ '">');
     }else{

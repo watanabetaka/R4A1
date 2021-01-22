@@ -1,0 +1,173 @@
+div#favorite_title {
+    width: 43%;
+    position: fixed;
+    top: 2%;
+    text-align: center;
+    font-size: 320%;
+    left: 27%;
+}
+
+div#favoli {
+    display: flex;
+    width: 100%;
+    /* padding-top: 13%; */
+    padding-top: 18%;
+    flex-wrap: wrap;
+    padding-bottom: 25%;
+}
+
+div#delete_button {
+    text-align: end;
+    margin-right: 3%;
+    font-size: 10%;
+    position: fixed;
+    right: 1%;
+    top: 3%;
+}
+
+button.delete_button {
+  border-radius: 100%;
+  border-color: red;
+  background-color: red;
+  color: white;
+  width: 12%;
+  height: 14%;
+  float: left;
+  margin-left: 10%;
+  margin-top: -2%;
+}
+
+button.update_button {
+    width: 9.5em;
+    height: 5.5em;
+    background-color: #a0522d;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    /* font-size: 15px; */
+}
+
+
+
+.favocon {
+    width: 50%;
+    text-align: center;
+    padding-top: 1%;
+    position: static;
+}
+
+button.favoimg {
+    border-color: white;
+    border-block-style: none;
+    border-right-style: none;
+    background: none;
+    font-size: 27px;
+}
+
+img.imagelist {
+    border-radius: 35px;
+    width: 100%;
+    height: 390px;
+}
+
+
+span.group-label {
+    font-size: 40px;
+}
+
+input#asc_sort {
+    width: 40px;
+    height: 40px;
+}
+
+div#area_list {
+    font-size: 37px;
+}
+
+input.area {
+    height: 43px;
+    width: 43px;
+    vertical-align: middle;
+}
+
+div#genre_list {
+    font-size: 37px;
+}
+
+input.genre {
+    height: 43px;
+    width: 43px;
+    vertical-align: middle;
+}
+
+.asc_name {
+    padding-left: 47px;
+    padding-top: 40px;
+}
+
+
+button#while_delete:hover {
+    color: #a0522d;
+    background-color: white;
+}
+
+
+
+.cp_ipcheck {
+	width: 90%;
+	margin: 2em auto;
+	text-align: left;
+}
+.cp_ipcheck ul {
+	margin: 0.5rem 0.5rem 2rem 0.5rem;
+	padding: 0.5rem 1rem;
+	list-style: none;
+	/* border: 1px solid #cccccc;*/
+}
+.cp_ipcheck .list_item {
+	margin: 0 0 0.5rem 0;
+	padding: 0;
+}
+.cp_ipcheck label {
+	line-height: 135%;
+	position: relative;
+	margin: 0.5rem;
+	cursor: pointer;
+	font-size: 35px;/**/
+}
+.cp_ipcheck .option-input05 {
+	position: relative;
+	margin: 0 1rem 0 0;
+	cursor: pointer;
+}
+.cp_ipcheck .option-input05:before {
+    position: absolute;
+    z-index: 1;
+    top: -0.7rem;
+    left: -0.3rem;
+    width: 1.3rem;
+    height: 0.65rem;
+    content: '';
+    -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+    transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+    -webkit-transform: rotate(-45deg) scale(0, 0);
+    transform: rotate(-45deg) scale(0, 0);
+    border: 3.5px solid #da3c41;
+    border-top-style: none;
+    border-right-style: none;
+}
+.cp_ipcheck .option-input05:checked:before {
+	-webkit-transform: rotate(-45deg) scale(1, 1);
+	        transform: rotate(-45deg) scale(1, 1);
+}
+.cp_ipcheck .option-input05:after {
+    position: absolute;
+    top: -1.125rem;
+    left: -11.5px;
+    width: 2rem;
+    height: 2rem;
+    content: '';
+    cursor: pointer;
+    border: 2px solid #f2f2f2;
+    background: #ffffff;
+}

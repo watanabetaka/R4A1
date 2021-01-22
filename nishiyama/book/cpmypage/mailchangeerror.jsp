@@ -1,10 +1,12 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../html/cpmypage_header.html" %>
+<%@include file="../html/cpoperation_header.html" %>
+<%@include file="../ipadress/ipadress.jsp" %>
+
 
 <!-- ヘッダー部分 -->
 <header>
   <div id="back">
-    <a href="http://localhost:8080/book/cpmypage/mypage.jsp" id ="back_button">＜</a>
+    <a href="http://<%= ipadress%>:8080/book/cpmypage/mypage.jsp" id ="back_button">＜</a>
   </div>
   <div id="mypage_title">
 メールアドレス変更　　
@@ -20,7 +22,7 @@
   <div>　現在の<br>　　パスワード　</div>
 </div>
 <div class = inputer>
-<input type='text' class=mypage_form id='now_pass' name='now_pass' placeholder="Type Your Password here"><br>
+<input type='password' class=mypage_form id='now_pass' name='now_pass' placeholder="Type Your Password here"><br>
 </div>　
 </div>
 

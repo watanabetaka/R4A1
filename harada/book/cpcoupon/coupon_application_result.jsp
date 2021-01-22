@@ -1,6 +1,8 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%-- <%@include file="../html/header.html" %> --%>
 <%@page import="bean.Application_Coupon, java.util.List" %>
+<%@include file="../ipadress/ipadress.jsp" %>
+
 
 <%-- jqueryをインポート --%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -25,7 +27,7 @@
     $('#application_view').append('<div id="application_result">クーポン情報が送信できませんでした。<br>管理者にお問合せください。</div>');
   }
   // OKをクリックしたら、企業画面に戻る
-  $('#application_view').append('<a href="http://10.23.104.39:8080/book/cpoperation/cpoperation.jsp">ホームへ戻る</a>');
+  $('#application_view').append('<form action="http://<%= ipadress %>:8080/book/cpoperation/cpoperation.jsp"><input type="submit" value="OK"></form>');
 
 </script>
 

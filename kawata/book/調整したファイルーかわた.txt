@@ -1,0 +1,33 @@
+触ったファイルー
+
+●favoritelist.jsp
+<p>古い順に並び替え</p>
+<%-- <label class="switch__label"> --%>
+<form name="ascsort_form">
+	<input type="checkbox" name="asc_name" id="asc_sort">
+</form>
+
+			　⇓
+
+<div class="asc_name">
+	<label>
+		<input type="checkbox" name="asc_name" id="asc_sort">
+		<span class="group-label">古い順に並び替え</span>
+	</label>
+</div>
+●favoritelist.css
+
+●hamburger.css
+
+●gamenhuta.css
+
+●swipe.css
+
+●gamenhuta_right.css
+
+sightseeing_place.jsp
+
+<button type="button" name="delete_button0" class="update_button0" id="not_delete0">
+      	<font size="5">削除
+    	</font>
+      </button>

@@ -3,7 +3,8 @@ body{
 }
 
 div#back {
-    font-size: 4.55em;
+    margin-top: 3.5%;
+    font-size: 4.5em;
     float: left;
 }
 a#back_button {
@@ -15,11 +16,11 @@ div#mypage_title {
     text-align: center;
     font-size: 3em;
     font-weight: 550;
-    margin-top: 1%;
+    margin-top: 5%;
     margin-bottom: 1%;
 }
 div.mypage {
-    padding-top: 15%;
+    padding-top: 30%;
     text-align: center;
 }
 div.mypage_button_txt {
@@ -31,7 +32,7 @@ div.mypage_logout {
     font-size: 0.625em;
 }
 div.mypage_form_list {
-    padding-top: 15%;
+    padding-top: 30%;
     font-size: 2em;
 }
 
@@ -41,6 +42,27 @@ input#mailchange {
 input#passchange {
     font-size: 0.75em;
 }
+input#now_pass {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+input#new_address {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+input#new_address_2 {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+input#new_pass {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+input#new_pass_2 {
+  border-radius: 1rem;
+  background-color:#ddd;
+}
+
 input#send {
     font-size: 1.5em;
 }
