@@ -52,6 +52,14 @@
       }
         %>];
 
+    let coupon_eday = [<%
+      for(Coupon s: list){
+        out.print("\""+s.getCoupon_eday()+"\",");
+      }
+        %>];
+
+    let array_coupon_eday = Array.from(coupon_eday);
+
 
     // IPアドレスをjavascriptに変換
      let ipadress = '<%= ipadress%>';

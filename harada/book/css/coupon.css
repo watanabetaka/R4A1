@@ -19,6 +19,13 @@ div#coupon_header{
   border-bottom: solid;
 }
 
+
+.deco_parent{
+  width: 100%;
+  height: auto;
+  font-size: 145%;
+}
+
 img{
   width: 30%;
   height: 10%;
@@ -53,7 +60,7 @@ img{
 }
 
 .name{
-  margin-top: 5%;
+  margin-top: 3%;
   line-height: 130%;
 }
 
@@ -65,6 +72,7 @@ img{
   margin-top: 10%;
   margin-bottom: 10%;
 }
+
 
 /*ボタンのサイズ変更CSSいろいろｗ*/
 .open,#close{
@@ -111,17 +119,22 @@ img{
 }
 
 .sightseeing_name{
-  font-size: 50px;
+  font-size: 250%;
+  margin-bottom: 0;
+  font-weight: bold;
 }
 
 .coupon_name{
-  font-size: 213%;
+  font-size: 250%;
+
 }
 
 .valid{
   text-align: right;
-  font-size: 30px;
-  margin-right: 20px;
+  font-size: 150%;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-top: 8%;
 }
 
 .not_open{
@@ -130,5 +143,12 @@ img{
 
 .count{
   text-align: right;
+  margin-top: 0.2em;
   font-size: 100px;
+}
+
+
+.issue{
+  color: red;
+  font-size: 2em;
 }

@@ -7,6 +7,7 @@ public class Coupon implements java.io.Serializable {
   private String sightseeing_name;
   private String coupon_name;
 	private String get_coupon_etime;
+	private String coupon_eday;
 
 	// セッターの開始
 
@@ -34,6 +35,9 @@ public class Coupon implements java.io.Serializable {
 		this.get_coupon_etime = get_coupon_etime;
 	}
 
+	public void setCoupon_eday(String coupon_eday) {
+		this.coupon_eday = coupon_eday;
+	}
 	// ゲッターの開始
 
 	public int getGet_coupon_id() {
@@ -58,6 +62,10 @@ public class Coupon implements java.io.Serializable {
 
 	public String getGet_coupon_etime() {
 		return get_coupon_etime;
+	}
+
+	public String getCoupon_eday() {
+		return coupon_eday;
 	}
 
 }

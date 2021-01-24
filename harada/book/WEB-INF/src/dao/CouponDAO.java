@@ -15,7 +15,7 @@ public class CouponDAO extends DAO {
 
 		Connection con=getConnection();
 
-		PreparedStatement st=con.prepareStatement("SELECT g.get_coupon_id , c.coupon_id , s.picture_path , s.sightseeing_name , c.coupon_name , g.get_coupon_etime FROM get_coupon as g JOIN coupon as c ON g.coupon_id = c.coupon_id JOIN sightseeing_place as s ON c.sightseeing_id = s.sightseeing_id where g.user_id = ? and g.get_coupon_etime is null or g.get_coupon_etime > current_timestamp ; delete from get_coupon as g where g.get_coupon_etime < current_timestamp ;");
+		PreparedStatement st=con.prepareStatement("SELECT g.get_coupon_id , c.coupon_id , s.picture_path , s.sightseeing_name , c.coupon_name , g.get_coupon_etime , c.coupon_eday FROM get_coupon as g JOIN coupon as c ON g.coupon_id = c.coupon_id JOIN sightseeing_place as s ON c.sightseeing_id = s.sightseeing_id where g.user_id = ? and c.coupon_eday >= getdate() and (g.get_coupon_etime is null or g.get_coupon_etime >= current_timestamp); delete from get_coupon as g where g.get_coupon_etime < current_timestamp ;");
 		st.setInt(1,user_id);
 
 		ResultSet rs=st.executeQuery(); //データベースから取得
@@ -26,7 +26,8 @@ public class CouponDAO extends DAO {
 			p.setPicture_path(rs.getString("picture_path"));
 			p.setSightseeing_name(rs.getString("sightseeing_name"));
 			p.setCoupon_name(rs.getString("coupon_name"));
-      p.setGet_coupon_etime(rs.getString("get_coupon_etime"));
+			p.setGet_coupon_etime(rs.getString("get_coupon_etime"));
+      p.setCoupon_eday(rs.getString("coupon_eday"));
 			list.add(p);
 		}
 

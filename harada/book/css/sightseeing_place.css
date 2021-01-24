@@ -2,15 +2,15 @@
 div#back {
     font-size: 5em;
     float: left;
-    padding-top: 3%;
+    padding-top: 1%;
     padding-left: 3%;
     font-weight: bold;
 }
 
 div#favorite_title {
     position: fixed;
-    left: 37%;
-    top: 2.5%;
+    left: 35%;
+    top: 2%;
     font-size: 320%;
 }
 
@@ -193,7 +193,7 @@ input#delete_submit {
     font-weight: bold;
     /* font-size: 15px; */
     /* padding-top: 22px; */
-    margin-top: 1%;
+    margin-top: 0.3%;
 }
 
 .external:active{
