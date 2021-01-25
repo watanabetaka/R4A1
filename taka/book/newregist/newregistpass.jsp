@@ -2,7 +2,11 @@
 <%@include file="../html/header.html" %>
 <body>
   <p> ＊パスワード入力の際の注意事項<br>
+<<<<<<< Updated upstream
   英字の大文字小文字と半角数字を含めること<br>
+=======
+  1.英字の大文字小文字と数字を含めること<br>
+>>>>>>> Stashed changes
   </p>
 <form action="Pass.action" method="post">
 <label for="password"><b>パスワード  </b></label><br>
