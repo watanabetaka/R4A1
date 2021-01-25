@@ -22,7 +22,7 @@
 登録するメールアドレスを入力してください。<br>パスワード入力用メールをお送りします。
   </div>
   <div id = "email"><input type="email" id = "mail" name="email"  placeholder="メールアドレス"></div>
-  <span id="result"></span>
+  <div class="pass"><span id="result"></span></div>
   <div id ="sendmail"><input type="submit" name = "send" id = "send" value="送信"  disabled ></div>
 </form>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

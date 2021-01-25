@@ -19,11 +19,29 @@ div#coupon_header{
   border-bottom: solid;
 }
 
-
 .deco_parent{
   width: 100%;
   height: auto;
   font-size: 145%;
+}
+
+div#no_coupon{
+  font-size: 358%;
+  text-align: center;
+  margin-top: 22%;
+}
+
+div#no_coupon_message{
+  font-size: 358%;
+  text-align: center;
+  margin-top: 1%;
+}
+
+div#message_revise{
+  font-size: 125%;
+  text-align: center;
+  margin-top: 15%;
+  color: blue;
 }
 
 img{
@@ -32,7 +50,7 @@ img{
   float: left;
   margin-bottom: 0px;
   margin-left: 3%;
-
+  border-radius: 18px;
 }
 
 .btn{
@@ -40,7 +58,7 @@ img{
     margin-left: auto;
     margin-right: auto;
     margin-top :auto;
-    font-size: 250%;
+    font-size: 230%;
 }
 
 .kanname{

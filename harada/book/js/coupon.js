@@ -27,8 +27,8 @@ let temp_second;
 
 // クーポンを獲得していなかった時の処理
 if(array_coupon_id.length == 0){
-  $('#coupon').append('<div id="no_coupon">まだクーポンを獲得していません<br>');
-  $('#coupon').append('観光地の感想をSNSでシェアして、クーポンをゲットしよう！</div>');
+  $('#coupon').append('<div id = "no_coupon">まだクーポンを獲得していません</div>');
+  $('#coupon').append('<div id = "no_coupon_message">観光地の感想をSNSでシェアして、<div id = "message_revise">クーポンをゲットしよう！</div></div>');
 }
 
 const coupon = document.getElementById('coupon');

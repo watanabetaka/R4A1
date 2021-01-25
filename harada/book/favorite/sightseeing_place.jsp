@@ -120,9 +120,6 @@
     </div>
 
 
-
-
-
     <%-- SNSでシェアする機能（末松君実装） --%>
     <%-- 末松くんへ --%>
     <%-- 下記のaタグのフォーマットに従って作ってください --%>
@@ -131,7 +128,17 @@
     <%--twitterでレビューする際の処理--%>
     <div class="content">
       <%-- Twitterボタン --%>
-      <a class="twitter btn" href="http://twitter.com/share?url= &text=%0a↑観光地の観光地の感想を書いてね！%0a%20%23まいらいずおおいた" target="_blank" id="twitter"><div class="share">Twitterでシェア</div><img class="share" id="twitter_image" src="../image/twitter.jpg"></a>
+      <a class="twitter btn" href="http://twitter.com/share?url= &text=%0a<%for(Sightseeing_Place s: list){out.print(s.getSightseeing_Name());}%>に行ってきました！　%0a%20%23まいらいずおおいた %0a%20%23<%
+      for(Sightseeing_Place s: list){
+        String Sightseeing_Name = s.getSightseeing_Name();
+        if(Sightseeing_Name.matches((".*　.*"))){
+          Sightseeing_Name = s.getSightseeing_Name().replace("　","");
+          System.out.print(Sightseeing_Name);
+        }else if(" " == s.getSightseeing_Name()){
+          Sightseeing_Name = s.getSightseeing_Name().replace(" ","");
+        }
+        out.print(Sightseeing_Name);
+      }%>" target="_blank" id="twitter"><div class="share">Twitterでシェア</div><img class="share" id="twitter_image" src="../image/twitter.jpg"></a>
     </div>
   </div>
   <%-- <a target="_blank" href="https://www.instagram.com/?hl=ja" id="instagram">Instagramでシェア</a>
