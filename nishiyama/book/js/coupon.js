@@ -59,7 +59,7 @@ for(let i = 0 ; i < array_coupon_id.length ; i++){
 
     // HTML文の表示
     $('#coupon').append('<div id="deco_parent' + i + '" class="deco_parent"></div>');
-    $('#deco_parent' + i).append('<div class="deco"><img class="picture" src="../image/' + array_picture_path[i] + '"></div>');
+    $('#deco_parent' + i).append('<div class="deco"><img class="picture" src="' + array_picture_path[i] + '"></div>');
     $('#deco_parent' + i).append('<div class="deco"><p class="name sightseeing_name">' + array_sightseeing_name[i] + '</p><p class="name coupon_name">' + array_coupon_name[i] + '</p><font color="red"><p id="insert_time' + i + '" class="name valid"></p></font></div>');
 
     // 日付加工用の変数

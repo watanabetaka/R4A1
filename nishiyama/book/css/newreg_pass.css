@@ -16,6 +16,14 @@ div#newrwg_pass {
     margin: 10%;
 }
 
+b#pass_font{
+  font-size: 230%;
+}
+
+div#pass{
+  margin-left: 10%;
+}
+
 div#newregpass_messe {
     font-size: 2.2em;
     display: inline-block;
@@ -87,5 +95,3 @@ div#sendpass_error {
     text-align: end;
     padding-top: 10%;
 }
-
-

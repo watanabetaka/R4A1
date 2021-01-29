@@ -165,14 +165,16 @@
      <script type="text/javascript" src="../js/swipe_drag.js"></script>
 
      <%-- 観光地名の表示 --%>
-    <div id="sightseeing_place"></div>
-    <%-- 市名の表示 --%>
-    <div id="city_name"></div>
+     <div id="sightseeing_place_container"><div id="sightseeing_place"></div></div>
+     <%-- 市名の表示 --%>
+      <div id="city_name"></div>
 
 </header>
 
-<%-- 観光地の写真を表示 --%>
-<div id="picture"></div>
+<div class="fade">
+  <%-- 観光地の写真を表示 --%>
+  <div id="picture"></div>
+</div>
 
 <%@include file="../html/gamenhuta.html" %>
 

@@ -1,42 +1,31 @@
-div.fade{
-  animation: fadeIn 0.5s ease 0s 1 normal;
-}
-@keyframes fadeIn { /*animetion-nameで設定した値を書く*/
 
-  0% {opacity: 0} /*アニメーション開始時は不透明度0%*/
-
-  100% {opacity: 1} /*アニメーション終了時は不透明度100%*/
-
-}
 
 div#back {
+  padding-top: 3%;
     font-size: 5em;
-    padding-top:30px;
     float: left;
 }
 div#favorite_title {
   position: fixed;
-  left: 35%;
-  top: 2.4%;
-  font-size: 363%;
-}
-div#delete_button {
-  text-align: end;
-  margin-right: 5%;
-  font-size: 10%;
-  position: fixed;
-  right: 1%;
+  left: 38%;
   top: 2.5%;
+  font-size: 300%;
 }
-button[type="submit"] {
-  font-weight: 600;
-  color: #500;
-  border-radius: 1rem;
-  font-size: 15px;
+div#delete {
+  padding-top: 3%;
+  text-align: end;
+  padding-right: 4%;
+  margin-top: 2%;
 }
-button.delete_button{
-  width: 9.5em;
-  height: 5.5em;
+
+input[type="submit"] {
+    font-size: 1.5em;
+    width: 5.27em;
+    height: 3.1em;
+    background-color: #a0522d;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
 }
 
 a#modoru {
@@ -59,7 +48,8 @@ div#genre_name {
 
 div#sightseeing_place{
   font-size: 200%;
-  padding-top: 4%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 img#pictures {

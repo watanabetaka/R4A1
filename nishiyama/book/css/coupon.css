@@ -1,20 +1,26 @@
 header{
   text-align: center;
   position: fixed;
-
 }
 
 div.coupon_title {
     width: 100%;
-    padding-top: 4%;
+    padding-top: 2%;
     text-align: center;
-    font-size: 427%;
+    position: fixed;
+    top: 1.2%;
+    font-size: 330%;
 }
 
 h5{
   font-size: 300%;
   padding-top:11%;
 }
+
+div#coupon_header{
+  border-bottom: solid;
+}
+
 img{
   width: 30%;
   height: 10%;
@@ -49,9 +55,8 @@ img{
 }
 
 .name{
-  margin-top: 0px;
+  margin-top: 5%;
   line-height: 130%;
-  font-size: 200%;
 }
 
 .kasen{
@@ -62,6 +67,7 @@ img{
   margin-top: 10%;
   margin-bottom: 10%;
 }
+
 /*ボタンのサイズ変更CSSいろいろｗ*/
 .open,#close{
   cursor: pointer;
@@ -106,7 +112,7 @@ img{
 }
 
 .coupon_name{
-  font-size: 40px;
+  font-size: 213%;
 }
 
 .valid{
