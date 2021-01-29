@@ -1,7 +1,6 @@
 header{
   text-align: center;
   position: fixed;
-
 }
 
 div.coupon_title {
@@ -15,13 +14,43 @@ h5{
   font-size: 300%;
   padding-top:11%;
 }
+
+div#coupon_header{
+  border-bottom: solid;
+}
+
+.deco_parent{
+  width: 100%;
+  height: auto;
+  font-size: 145%;
+}
+
+div#no_coupon{
+  font-size: 358%;
+  text-align: center;
+  margin-top: 22%;
+}
+
+div#no_coupon_message{
+  font-size: 358%;
+  text-align: center;
+  margin-top: 1%;
+}
+
+div#message_revise{
+  font-size: 125%;
+  text-align: center;
+  margin-top: 15%;
+  color: blue;
+}
+
 img{
   width: 30%;
   height: 10%;
   float: left;
   margin-bottom: 0px;
   margin-left: 3%;
-
+  border-radius: 18px;
 }
 
 .btn{
@@ -29,7 +58,7 @@ img{
     margin-left: auto;
     margin-right: auto;
     margin-top :auto;
-    font-size: 250%;
+    font-size: 230%;
 }
 
 .kanname{
@@ -45,13 +74,12 @@ img{
   float: left;
   margin-left: 5%;
   margin-right: 5%;
-  font-size: 200%;
+  font-size: 140%;
 }
 
 .name{
-  margin-top: 0px;
+  margin-top: 3%;
   line-height: 130%;
-  font-size: 200%;
 }
 
 .kasen{
@@ -62,6 +90,8 @@ img{
   margin-top: 10%;
   margin-bottom: 10%;
 }
+
+
 /*ボタンのサイズ変更CSSいろいろｗ*/
 .open,#close{
   cursor: pointer;
@@ -77,20 +107,25 @@ img{
   z-index: 1;
 }
 
+
 #modal {
-  background: #fff;
-  color: #555;
-  width: 50%;
-  padding: 10%;
-  font-size: 150%;
-  border-radius: 4px;
-  position: fixed;
-  top: 25%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  z-index: 2;
-  transition: 0.4s;
+    background: #fff;
+    color: #555;
+    width: 58%;
+    padding: 10%;
+    font-size: 273%;
+    border-radius: 4px;
+    position: fixed;
+    top: 25%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 2;
+    transition: 0.4s;
+}
+
+#yes_center{
+  text-align: center;
 }
 
 #mask.hidden,#modal.hidden {
@@ -102,17 +137,22 @@ img{
 }
 
 .sightseeing_name{
-  font-size: 50px;
+  font-size: 250%;
+  margin-bottom: 0;
+  font-weight: bold;
 }
 
 .coupon_name{
-  font-size: 40px;
+  font-size: 250%;
+
 }
 
 .valid{
   text-align: right;
-  font-size: 30px;
-  margin-right: 20px;
+  font-size: 150%;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-top: 8%;
 }
 
 .not_open{
@@ -121,5 +161,12 @@ img{
 
 .count{
   text-align: right;
+  margin-top: 0.2em;
   font-size: 100px;
+}
+
+
+.issue{
+  color: red;
+  font-size: 2em;
 }

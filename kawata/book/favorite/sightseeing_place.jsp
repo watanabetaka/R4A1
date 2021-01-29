@@ -34,7 +34,13 @@
       %>">
       <%-- エラーが生じた時は、下記のコードをコメントアウトして再度実行してください --%>
       <input type="hidden" name="ajax_trust" value="false">
-      <input type="submit" value="削除">
+      <%-- input type="submit" value="削除" --%>
+
+      <button type="button" name="delete_button0" class="update_button0" id="not_delete0">
+      	<font size="5">削除
+    	</font>
+      </button>
+
     </form>
   </div>
 

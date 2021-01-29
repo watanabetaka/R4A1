@@ -49,7 +49,7 @@ public class CpinfoAction extends Action {
             //横
             int resizeW = 960;
             //縦
-            int resizeH = 1440 ;
+            int resizeH = 1440;
             //変更前の写真をBufferedImageクラスのoriginal変数に読み込ませる
             BufferedImage original = ImageIO.read(new File("C:\\work\\tomcat\\webapps\\book\\image\\"+file));
             //変更後の写真をBufferedImageクラスのscaleImg変数に読み込ませる

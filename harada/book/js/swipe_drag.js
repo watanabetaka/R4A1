@@ -101,7 +101,32 @@ $(document).ready(function(event) {
     let city_name = array_city_name[count];
     let picture_path = array_picture_path[count];
     if(count !== array_sightseeing_name.length){
-      $('#sightseeing_place').html(sightseeing_name);
+      if(sightseeing_name.match(/^[^\x01-\x7E\xA1-\xDF]+$/)){//観光地が全角なら
+        $('#sightseeing_place').html(sightseeing_name);
+        if(sightseeing_name.length >= 17){
+          $("#sightseeing_place").css("fontSize","202%");
+        }else if(sightseeing_name.length >= 13){
+          $("#sightseeing_place").css("fontSize","256%");
+        }else if(sightseeing_name.length >= 10){
+          $("#sightseeing_place").css("fontSize","280%");
+        }
+        else{
+          $("#sightseeing_place").css("fontSize","363%");
+        }
+      }else{                                                 //半角なら
+        $('#sightseeing_place').html(sightseeing_name);
+        if(sightseeing_name.length >= 54){
+          $("#sightseeing_place").css("fontSize","202%");
+          console.log("15");
+        }else if(sightseeing_name.length >= 26){
+          $("#sightseeing_place").css("fontSize","256%");
+        }else if(sightseeing_name.length >= 20){
+          $("#sightseeing_place").css("fontSize","280%");
+        }
+        else{
+          $("#sightseeing_place").css("fontSize","363%");
+        }
+      }
       $('#city_name').html(city_name);
       $("#picture").prepend('<img id="picture_path" src="'+picture_path+ '">');
     }else{

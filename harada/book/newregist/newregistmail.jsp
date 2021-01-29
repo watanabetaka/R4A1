@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../html/userlogin_header.html" %>
+<%@include file="../html/newregist_header.html" %>
 <%@include file="../ipadress/ipadress.jsp" %>
 
 
@@ -19,10 +19,10 @@
 <!-- メールアドレス送信のJSPファイルです-->
 <form action="MailSend.action" method="post">
   <div id="newregmail_messe">
-    メールアドレス
+登録するメールアドレスを入力してください。<br>パスワード入力用メールをお送りします。
   </div>
-  <div id = "email"><input type="email" id = "mail" name="email"  placeholder="info@example.com"></div>
-  <span id="result"></span>
+  <div id = "email"><input type="email" id = "mail" name="email"  placeholder="メールアドレス"></div>
+  <div class="pass"><span id="result"></span></div>
   <div id ="sendmail"><input type="submit" name = "send" id = "send" value="送信"  disabled ></div>
 </form>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

@@ -1,27 +1,28 @@
 div#favorite_title {
-    width: 42%;
+    width: 43%;
     position: fixed;
     top: 2%;
     text-align: center;
-    font-size: 363%;
+    font-size: 320%;
     left: 27%;
 }
 
 div#favoli {
     display: flex;
     width: 100%;
-    padding-top: 13%;
+    /* padding-top: 13%; */
+    padding-top: 18%;
     flex-wrap: wrap;
+    padding-bottom: 25%;
 }
-
 
 div#delete_button {
     text-align: end;
-    margin-right: 5%;
+    margin-right: 3%;
     font-size: 10%;
     position: fixed;
     right: 1%;
-    top: 3%;
+    top: 3.3%;
 }
 
 button.delete_button {
@@ -29,22 +30,29 @@ button.delete_button {
   border-color: red;
   background-color: red;
   color: white;
-  width: 12%;
-  height: 14%;
+  width: 13%;
+  height: 13%;
   float: left;
   margin-left: 10%;
   margin-top: -2%;
 }
 
-button.update_button{
-  width: 9.5em;
-  height: 5.5em;
+button.update_button {
+    width: 9.5em;
+    height: 5.5em;
+    background-color: #a0522d;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: -11%;
+    /* font-size: 15px; */
 }
 
 .favocon {
     width: 50%;
     text-align: center;
-    padding-top: 5%;
+    padding-top: 1%;
+    padding-bottom: 5%;
     position: static;
 }
 
@@ -53,8 +61,116 @@ button.favoimg {
     border-block-style: none;
     border-right-style: none;
     background: none;
+    font-size: 220%;
 }
 
 img.imagelist {
     border-radius: 35px;
+    width: 100%;
+    height: 390px;
+}
+
+b.minus{
+  font-size: 340%;
+  font-weight: bold;
+}
+
+span.group-label {
+    font-size: 40px;
+}
+
+input#asc_sort {
+    width: 40px;
+    height: 40px;
+}
+
+input.area {
+    height: 43px;
+    width: 43px;
+    vertical-align: middle;
+}
+
+input.genre {
+    height: 43px;
+    width: 43px;
+    vertical-align: middle;
+}
+
+/* .asc_name {
+    padding-left: 47px;
+    padding-top: 40px;
+} */
+
+
+button#while_delete:hover {
+    color: #a0522d;
+    background-color: white;
+}
+
+
+
+.asc_name {
+	width: 90%;
+	margin: 2em auto;
+	text-align: left;
+}
+.asc_name ul {
+	margin: 0.5rem 0.5rem 2rem 0.5rem;
+	padding: 0.5rem 1rem;
+	list-style: none;
+	/* border: 1px solid #cccccc;*/
+}
+.asc_name .list_item {
+	margin: 0 0 0.5rem 0;
+	padding: 0;
+}
+.asc_name label {
+	line-height: 135%;
+	position: relative;
+	margin: 0.5rem;
+	cursor: pointer;
+	font-size: 35px;/**/
+}
+.asc_name .asc_sort {
+	position: relative;
+	margin: 0 1rem 0 0;
+	cursor: pointer;
+}
+.asc_name .asc_sort:before {
+    position: absolute;
+    z-index: 1;
+    top: -0.7rem;
+    left: -0.3rem;
+    width: 1.3rem;
+    height: 0.65rem;
+    content: '';
+    -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+    transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+    -webkit-transform: rotate(-45deg) scale(0, 0);
+    transform: rotate(-45deg) scale(0, 0);
+    border: 3.5px solid #da3c41;
+    border-top-style: none;
+    border-right-style: none;
+}
+.asc_name .asc_sort:checked:before {
+	-webkit-transform: rotate(-45deg) scale(1, 1);
+	        transform: rotate(-45deg) scale(1, 1);
+}
+.asc_name .asc_sort:after {
+    position: absolute;
+    top: -1.125rem;
+    left: -11.5px;
+    width: 2rem;
+    height: 2rem;
+    content: '';
+    cursor: pointer;
+    border: 2px solid #f2f2f2;
+    background: #ffffff;
+}
+
+div#mada {
+    position: fixed;
+    left: 4%;
+    top: 40%;
+    font-size: 3.9em;
 }

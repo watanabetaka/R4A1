@@ -13,7 +13,6 @@
 <% List<Genre> list2=(List<Genre>)request.getAttribute("list2"); %>
 
 
-
 <%-- 児玉くん --%>
 <%-- 左上のソートバーのボタン --%>
 <script type="text/javascript" src="../js/hamburger.js"></script>
@@ -48,7 +47,6 @@
                          out.print("\""+c.getCity_Name()+"\",");
                        }
                        %>];
-                       console.log(array_city_name1);
 
                        for(let id in array_city_id){
                          $('#area_list').append('<input type="checkbox" class="area" name="area_name"><label class="city_kind area1">' + array_city_name1[id] +'</label><br>');
@@ -99,12 +97,21 @@
              </div>
             </div>
 
-            <%-- <div class="switch"> --%>
-            <p>古い順に並び替え</p>
             <%-- <label class="switch__label"> --%>
-            <form name="ascsort_form">
-              <input type="checkbox" name="asc_name" id="asc_sort">
-            </form>
+            <%-- <div class="asc_name">
+            	<label>
+            		<input type="checkbox" name="asc_name" id="asc_sort">
+            		<span class="group-label">古い順に並び替え</span>
+            	</label>
+            </div> --%>
+
+            <div class="asc_name">
+              <ul>
+                <li class="list_item">
+                  <label><input type="checkbox" name="asc_name"  class="asc_sort">古い順に並び替え</label>
+                </li>
+              </ul>
+            </div>
 
               <%-- フォームの検索ボタンを押したらSortAction.javaをフォルダ内から探索して遷移する --%>
             <form action="Favoritesort.action">
@@ -122,40 +129,42 @@
 </header>
 
 <script>
-  let dummy_sightseeing_id= '<%
-  for(Favorite f: list){
-    out.print(f.getSightseeing_Id());
-  }
-  %>';
+  let dummy_sightseeing_id= [<%
+    for(Favorite f: list){
+      out.print("\""+f.getSightseeing_Id()+"\",");
+    }
+    %>];
 
-  // array型に変換
+  // array型に変換する
   let array_sightseeing_id=Array.from(dummy_sightseeing_id);
 
  // IPアドレスをjavascriptに変換
  let ipadress = '<%= ipadress%>';
 </script>
 
-<div id ="favoli">
+<div class="fade">
 
-  <c:if test="${empty list}">
-    <p>まだ観光地を登録していません!</p>
-  </c:if>
+  <div id ="favoli">
 
-  <% for(Favorite f: list){ %>
-    <div class ="favocon" id="<%=f.getSightseeing_Id()%>">
+    <div id = "mada"><c:if test="${empty list}">まだ観光地を登録していません！</c:if></div>
 
-      <form action="Detail.action">
-        <input type="hidden" name="sightseeing_id" value="<%= f.getSightseeing_Id() %>">
+    <% for(Favorite f: list){ %>
+      <div class ="favocon" id="<%=f.getSightseeing_Id()%>">
 
-          <button type="submit" class="favoimg">
-            <img class="imagelist" src="../image/<%= f.getPicture_Path() %>"/><br>
-            <c:out value="<%= f.getSightseeing_Name() %>"/>
-          </button>
-        </form>
+        <form action="Detail.action">
+          <input type="hidden" name="sightseeing_id" value="<%= f.getSightseeing_Id() %>">
 
-      </div>
+            <button type="submit" class="favoimg">
+              <img class="imagelist" src="<%= f.getPicture_Path() %>"><br>
+              <div class="sightseeing_name"><c:out value="<%= f.getSightseeing_Name() %>"/></div>
+            </button>
+          </form>
 
-  <% } %>
+        </div>
+
+    <% } %>
+
+  </div>
 
 </div>
 

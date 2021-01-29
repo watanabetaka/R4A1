@@ -8,67 +8,77 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <header><div class="coupon_title">クーポン</div></header>
-<h5>使用可能クーポン</h5>
+<h5><div id="coupon_header">使用可能クーポン</h5></div>
 
-<% List<Coupon> list =(List<Coupon>)request.getAttribute("list");%>
+<div class="fade">
+  <% List<Coupon> list =(List<Coupon>)request.getAttribute("list");%>
 
-<%-- javaの配列をjavascriptの配列に入れる --%>
+  <%-- javaの配列をjavascriptの配列に入れる --%>
 
-<script>
-  let array_picture_path = [<%
-    for(Coupon s: list){
-      out.print("\""+s.getPicture_path()+"\",");
-    }
-    %>];
-
-  let array_sightseeing_name = [<%
-    for(Coupon s: list){
-      out.print("\""+s.getSightseeing_name()+"\",");
-    }
-    %>];
-
-  let array_coupon_name = [<%
-    for(Coupon s: list){
-      out.print("\""+s.getCoupon_name()+"\",");
-    }
-    %>];
-
-  let array_get_coupon_etime = [<%
-    for(Coupon s: list){
-      out.print("\""+s.getGet_coupon_etime()+"\",");
-    }
-    %>];
-
-  let array_get_coupon_id = [<%
-    for(Coupon s: list){
-      out.print("\""+s.getGet_coupon_id()+"\",");
-    }
+  <script>
+    let array_picture_path = [<%
+      for(Coupon s: list){
+        out.print("\""+s.getPicture_path()+"\",");
+      }
       %>];
 
-  let array_coupon_id = [<%
-    for(Coupon s: list){
-      out.print("\""+s.getCoupon_id()+"\",");
-    }
+    let array_sightseeing_name = [<%
+      for(Coupon s: list){
+        out.print("\""+s.getSightseeing_name()+"\",");
+      }
       %>];
 
+    let array_coupon_name = [<%
+      for(Coupon s: list){
+        out.print("\""+s.getCoupon_name()+"\",");
+      }
+      %>];
 
-  // IPアドレスをjavascriptに変換
-   let ipadress = '<%= ipadress%>';
+    let array_get_coupon_etime = [<%
+      for(Coupon s: list){
+        out.print("\""+s.getGet_coupon_etime()+"\",");
+      }
+      %>];
 
-</script>
-<div class="coupon" id="coupon">
+    let array_get_coupon_id = [<%
+      for(Coupon s: list){
+        out.print("\""+s.getGet_coupon_id()+"\",");
+      }
+        %>];
 
+    let array_coupon_id = [<%
+      for(Coupon s: list){
+        out.print("\""+s.getCoupon_id()+"\",");
+      }
+        %>];
+
+    let coupon_eday = [<%
+      for(Coupon s: list){
+        out.print("\""+s.getCoupon_eday()+"\",");
+      }
+        %>];
+
+    let array_coupon_eday = Array.from(coupon_eday);
+
+
+    // IPアドレスをjavascriptに変換
+     let ipadress = '<%= ipadress%>';
+
+  </script>
+  <div class="coupon" id="coupon">
+
+  </div>
+
+  <div id="mask" class="hidden"></div> <!--モーダルウィンドウ背景-->
+  <section id="modal" class="hidden">　<!--モーダルウィンドウ本体-->
+  <p class="name">発行するとクーポンは<br>30分で消えてしまいます。<br>発行しますか？</p>
+  <div id="close">
+    <div id="yes_center"><input type="button" id="YES" class="YES modalbtn" value="YES" style="width: 40%; padding: 10%";></div>
+    <input type="button" class="NO modalbtn" value="NO" style="width: 40%; padding: 10%";>
+  </div>
+  </section>
+  <script src="../js/coupon.js"></script>
 </div>
-
-<div id="mask" class="hidden"></div> <!--モーダルウィンドウ背景-->
-<section id="modal" class="hidden">　<!--モーダルウィンドウ本体-->
-<p class="name">発行するとクーポンは<br>30分で消えてしまいます。<br>発行しますか？</p>
-<div id="close">
-  <input type="button" id="YES" class="YES modalbtn" value="YES" style="width: 40%; padding: 10%";>
-  <input type="button" class="NO modalbtn" value="NO" style="width: 40%; padding: 10%";>
-</div>
-</section>
-<script src="../js/coupon.js"></script>
 
 <%@include file="../html/gamenhuta.html" %>
 <%@include file="../html/footer.html" %>

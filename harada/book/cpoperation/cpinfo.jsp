@@ -28,9 +28,9 @@
 </div>
 
 <div class=cpinfo_form>
-<p id="sightname-null" style="display: none; color: red;"> 観光地名を入力して下さい</p>
+<p id="sightname-null" style="display: none; color: red;"> 観光地名を入力して下さい(20文字以内)</p>
 <div class=cpinfo_column>観光地名*</div>
-<input type="sightname" id="sightname" name="sightname">
+<input type="sightname" id="sightname" name="sightname"maxlength="20">
 </div>
 
 <div class=cpinfo_form>
@@ -147,6 +147,5 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="../js/imageresize.js"></script>
-<script src="../js/select_box.js"></script>
 <script src="../js/send.js"></script>
 <%@include file="../html/footer.html" %>

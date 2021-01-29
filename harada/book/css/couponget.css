@@ -1,0 +1,26 @@
+body {
+  background-image: url("../image/haikei.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.KTm {
+    text-align: center;
+    font-size: 3.5em;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+div#KtM {
+    text-align: end;
+    font-size: 2em;
+}
+div#Ktm {
+    padding-top: 70%;
+    font-weight: 600;
+}
+div#login_title {
+  position: fixed;
+  left: 38%;
+  top: 2%;
+  font-size: 300%;
+}

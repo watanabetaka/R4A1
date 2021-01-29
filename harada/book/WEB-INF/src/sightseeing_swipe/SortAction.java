@@ -84,12 +84,14 @@ public class SortAction extends Action {
 		// 	// 観光地をシャッフルする処理
 		// 	Collections.shuffle(list);
 		// }
+		Collections.shuffle(list);
+
 		CityDAO dao1=new CityDAO();
 		List<City> list1 = dao1.search();
 
 		GenreDAO dao2=new GenreDAO();
 		List<Genre> list2 = dao2.search();
-	
+
 
 		// 値をjspへ送る為にセットする
 		request.setAttribute("list",list);

@@ -1,15 +1,19 @@
 
-
 div#back {
     font-size: 5em;
     float: left;
+    padding-top: 3%;
+    padding-left: 3%;
+    font-weight: bold;
 }
+
 div#favorite_title {
-  position: fixed;
-  left: 38%;
-  top: 2%;
-  font-size: 300%;
+    position: fixed;
+    left: 37%;
+    top: 2.5%;
+    font-size: 320%;
 }
+
 div#delete {
     text-align: end;
     padding-right: 5%;
@@ -22,7 +26,7 @@ input[type="submit"] {
 
 a#modoru {
     text-decoration: none;
-    color: black;
+    color: #a0522d;
 }
 
 div#pankuzu {
@@ -47,10 +51,11 @@ div#sightseeing_place{
 img#pictures {
   width: -webkit-fill-available;
   border-radius: 35px;
+  height: 1000px; 　/*付け加え*/
 }
 
 div#syousai {
-    font-size: 3em;
+    font-size: 2.3em;
     padding-top: 10%;
     padding-bottom: 13%;
 }
@@ -177,4 +182,20 @@ p{
   padding-right: 3%;
   padding-top: 3%;
   vertical-align:middle;
+}
+
+button#not_delete0 {
+    width: 9.5em;
+    height: 5.5em;
+    background-color: #a0522d;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    /* font-size: 15px; */
+    /* padding-top: 22px; */
+    margin-top: 30px;
+}
+
+.external:active{
+  color : #a0522d;
 }

@@ -18,6 +18,7 @@
 <%-- 左上のソートバーのボタン --%>
 <script type="text/javascript" src="../js/hamburger.js"></script>
 <header>
+
   <div id="nav-drawer">
       <input id="nav-input" type="checkbox" class="nav-unshown">
       <label id="nav-open" for="nav-input"><span></span></label>
@@ -101,11 +102,15 @@
 
             <%-- <div class="switch"> --%>
 
-           <div class="asc_name">
-           	<label>
-           		<input type="checkbox" name="asc_name" id="asc_sort">
-           		<span class="group-label">古い順に並び替え</span>
-           	</label>
+
+           <div class="cp_ipcheck">
+              <ul>
+	         <li class="list_item">
+		 <form name="ascsort_form">
+	   	    <label><input type="checkbox" class="option-input05">古い順に並び替え</label>
+	         </li>
+</form>
+              </ul>
            </div>
 
 
@@ -121,7 +126,7 @@
             </div>
           </div>
           <div id="favorite_title">お気に入り一覧</div>
-          <div id="delete_button"><button type="button" name="delete_button" class="update_button" id="not_delete"><font size=5>削除</font></button></div>
+          <div id="delete_button" ontouchstart=""><button type="button" name="delete_button" class="update_button" id="not_delete"><font size=5>削除</font></button></div>
 </header>
 
 <script>

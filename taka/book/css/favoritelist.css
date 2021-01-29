@@ -1,0 +1,60 @@
+div#favorite_title {
+    width: 42%;
+    position: fixed;
+    top: 2%;
+    text-align: center;
+    font-size: 363%;
+    left: 27%;
+}
+
+div#favoli {
+    display: flex;
+    width: 100%;
+    padding-top: 13%;
+    flex-wrap: wrap;
+}
+
+
+div#delete_button {
+    text-align: end;
+    margin-right: 5%;
+    font-size: 10%;
+    position: fixed;
+    right: 1%;
+    top: 3%;
+}
+
+button.delete_button {
+  border-radius: 100%;
+  border-color: red;
+  background-color: red;
+  color: white;
+  width: 12%;
+  height: 14%;
+  float: left;
+  margin-left: 10%;
+  margin-top: -2%;
+}
+
+button.update_button{
+  width: 9.5em;
+  height: 5.5em;
+}
+
+.favocon {
+    width: 50%;
+    text-align: center;
+    padding-top: 5%;
+    position: static;
+}
+
+button.favoimg {
+    border-color: white;
+    border-block-style: none;
+    border-right-style: none;
+    background: none;
+}
+
+img.imagelist {
+    border-radius: 35px;
+}

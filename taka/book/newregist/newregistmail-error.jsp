@@ -1,7 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/header.html" %>
 <!-- メールアドレス送信のJSPファイルです-->
-<p>aaa</p>
+<p>入力されたメールアドレスは既に登録されています</p>
 <form action="MailSend.action" method="post">
 <p>メールアドレス<input type="email" id = "email" name="email"  placeholder="info@example.com"></p>
 <span id="result"></span>

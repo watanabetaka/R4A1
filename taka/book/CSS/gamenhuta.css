@@ -1,14 +1,11 @@
-/* 基準 */
-html {
-    height: 100%;
-}
 
-body {
-    height: 100%;
-}
 
 div#i{
-  height:4.5%;
+  position: fixed;
+  left: 0;
+  top: 93%;
+  width: 100%;
+  height: 7.5%;
 }
 /* メニューバー 範囲*/
 div#menu-gazou {
@@ -31,14 +28,15 @@ img.menu-icon {
     width: 25%;
     position: absolute;
     top:8%;
-    left:37%;
+    left:36%;
+    height:70%;
     max-height:100%;
 }
 
 .button{
   display: block;
   width:100%;
-  height: 100%;
+  height: 90%;
   padding:0;
   opacity:0;
 
@@ -52,8 +50,8 @@ ul.topng li {
   height:75%;
   position: relative;
 }
-/* 画像（元）の画像があってないもの合わせ */
-/* img[src$="okiniiri.png"] { */
-    /* height: 80.25px; */
-    /* width: 80.25px */
-/* } */
+
+
+div.footer_font{
+  font-size: 170%;
+}

@@ -2,8 +2,11 @@
 <%@include file="../html/header.html" %>
 <body>
   <p> ＊パスワード入力の際の注意事項<br>
-  1.英字の大文字小文字を含めること<br>
-  2.数字と記号を含めること
+<<<<<<< Updated upstream
+  英字の大文字小文字と半角数字を含めること<br>
+=======
+  1.英字の大文字小文字と数字を含めること<br>
+>>>>>>> Stashed changes
   </p>
 <form action="Pass.action" method="post">
 <label for="password"><b>パスワード  </b></label><br>
@@ -24,12 +27,12 @@ function confirm(){
   var t2=document.getElementById("result_confirm");
   var inputElement = $('input[name="send"]');
   if(password==password_confirm){
-    t2.innerHTML = "適切です";
+    t2.innerHTML = "上のパスワードと一致しています";
   }else{
-    t2.innerHTML = "不適切です";
+    t2.innerHTML = "上のパスワードと異なっています";
   }
 
-  if(t1.innerHTML=="適切です"&&t2.innerHTML=="適切です"){
+  if(t1.innerHTML=="正しい入力です"&&t2.innerHTML=="上のパスワードと一致しています"){
     inputElement.prop('disabled', false);
   }else{
     inputElement.prop('disabled', true);

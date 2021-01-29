@@ -2,7 +2,8 @@
 
 // このJSファイルで行っていること
 // ・クーポン重複の際の重複枚数表示
-// ・日付加工の処理し、有効期限時間の残りの時間を表示
+// ・クーポンの有効期限日数を表示
+// ・発行後の日付加工の処理し、有効期限時間の残りの時間を表示
 // ・有効期限時間が来たら、自動的に画面を更新し、獲得クーポンデータベースから行を削除
 // ・モーダルウィンドウをクリックした際のクラスの追加・削除（CSSのため）
 // ・モーダルウィンドウのYESボタンをクリックした際のサーブレットへの送信
@@ -26,8 +27,8 @@ let temp_second;
 
 // クーポンを獲得していなかった時の処理
 if(array_coupon_id.length == 0){
-  $('#coupon').append('<div id="no_coupon">まだクーポンを獲得していません<br>');
-  $('#coupon').append('観光地の感想をSNSでシェアして、クーポンをゲットしよう！</div>');
+  $('#coupon').append('<div id = "no_coupon">まだクーポンを獲得していません</div>');
+  $('#coupon').append('<div id = "no_coupon_message">観光地の感想をSNSでシェアして、<div id = "message_revise">クーポンをゲットしよう！</div></div>');
 }
 
 const coupon = document.getElementById('coupon');
@@ -59,62 +60,30 @@ for(let i = 0 ; i < array_coupon_id.length ; i++){
 
     // HTML文の表示
     $('#coupon').append('<div id="deco_parent' + i + '" class="deco_parent"></div>');
-    $('#deco_parent' + i).append('<div class="deco"><img class="picture" src="../image/' + array_picture_path[i] + '"></div>');
-    $('#deco_parent' + i).append('<div class="deco"><p class="name sightseeing_name">' + array_sightseeing_name[i] + '</p><p class="name coupon_name">' + array_coupon_name[i] + '</p><font color="red"><p id="insert_time' + i + '" class="name valid"></p></font></div>');
+    $('#deco_parent' + i).append('<img class="picture" src="' + array_picture_path[i] + '">');
+    $('#deco_parent' + i).append('<div class="name sightseeing_name">' + array_sightseeing_name[i] + '</div><div class="name coupon_name">' + array_coupon_name[i] + '</div><div id="insert_time' + i + '" class="name valid"></div>');
 
     // 日付加工用の変数
-    let array_count;
+    let array_count = 0;
     let insert = '';
     let insert_auth = '';
     let temp_etime;
     let array_etime = array_get_coupon_etime[i];
+    let array_eday = array_coupon_eday[i];
     let dead = '';
+
+    // デフォルトの日付型は yyyy-mm-dd のため、変換する処理
+    if(array_eday.match('-')){
+      array_eday = array_eday.replace('-', '年');
+      array_eday = array_eday.replace('-', '月');
+      array_eday = array_eday + '日 23時00分まで有効';
+      $('#insert_time' + i).html('※' + array_eday);
+    }
 
     // array_get_coupon_etime が null の場合、表示しない処理
     if(array_get_coupon_etime[i] != 'null'){
       array_count=0;
 
-      // デフォルトの日付型は yyyy-mm-dd hh:mm:ss のため、変換する処理
-      // 同時に後で用いる、 javascript のデータ型にも変換する
-      if(array_etime.match('-') || array_etime.match(':')){
-        for(let temp_count = 0 ; temp_count < array_etime.length ; temp_count++){
-          temp_etime = array_etime[temp_count];
-          // console.log(temp_etime);
-          if(temp_etime == '-' && array_count === 0){
-            insert = insert + '/';
-            insert_auth = insert_auth + '/';
-            array_count ++;
-          }else if(temp_etime == '-' && array_count === 1){
-            insert = insert + '/';
-            insert_auth = insert_auth + '/';
-            array_count ++;
-          }else if(temp_etime == ' ' && array_count === 2){
-            insert = insert + ' ';
-            insert_auth = insert_auth + ' ';
-            array_count ++;
-          }else if(temp_etime == ':' && array_count === 3){
-            insert = insert + ':';
-            insert_auth = insert_auth + ':';
-            dead='dead';
-            array_count ++;
-          }else if(temp_etime == ':' && array_count === 4){
-            insert = insert + ':';
-            array_count ++;
-          }else if(temp_etime == '.' && array_count === 5){
-            insert = insert + '';
-            array_count ++;
-          }else if(array_count > 5){
-            // 秒以降は何も表示しない
-          }else{
-            insert = insert + temp_etime;
-            if(dead != 'dead'){
-            insert_auth = insert_auth + temp_etime;
-            }
-          }
-
-
-        }
-      }
 
 
       setInterval('showClock(' + i + ')',1000);
@@ -191,10 +160,11 @@ for(let i = 0 ; i < array_coupon_id.length ; i++){
           // reloadメソッドによりページをリロード
            window.location.reload();
         }else{
+          $('#insert_time' + i).addClass("issue");
           if(temp_minute === 0){
-            document.getElementById('insert_time' + i).innerHTML = '残り' + temp_second + '秒 有効';
+            $('#insert_time' + i).html('残り' + temp_second + '秒 有効');
           }else{
-            document.getElementById('insert_time' + i).innerHTML = '残り' + temp_minute + '分' + temp_second + '秒 有効';
+            $('#insert_time' + i).html('残り' + temp_minute + '分' + temp_second + '秒 有効');
           }
         }
 

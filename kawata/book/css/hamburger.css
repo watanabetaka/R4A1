@@ -1,6 +1,6 @@
 /*ヘッダーまわりはご自由に*/
 header {
-    background: #f8fbaf;
+    background: #e9dfbf;
     width: 100%;
     height: 8%;
     position: fixed;
@@ -9,7 +9,8 @@ header {
 }
 
 #nav-drawer {
-  position: relative;
+    position: relative;
+    height: 0;
 }
 
 /*チェックボックス等は非表示に*/
@@ -24,7 +25,11 @@ header {
     /* width: 30px; */
     height: 100px;
     vertical-align: middle;
+    padding-top: 50px;
+    /* margin: 14px; */
+    padding-left: 35px;
 }
+
 /*ハンバーガーアイコンをCSSだけで表現*/
 #nav-open span, #nav-open span:before, #nav-open span:after {
     position: absolute;
@@ -66,14 +71,13 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999;/*最前面に*/
-    width: 80%;/*右側に隙間を作る*/
-    /* max-width: 330px;/*最大幅*/
+    z-index: 9999;
+    width: 80%;
     height: 100%;
-    background: #ead995;/*背景色*/
-    transition: .3s ease-in-out;/*滑らかに表示*/
+    background: #efe7cc;
+    transition: .3s ease-in-out;
     -webkit-transform: translateX(-105%);
-    transform: translateX(-105%);/*左に隠しておく*/
+    transform: translateX(-105%);
 }
 
 
@@ -94,11 +98,11 @@ header {
 }
 
 /* エリア選択>のスペース */
-#areaselect-range{
-  padding-top: 5px;
-  margin-bottom: 5px;
-  border: 1px solid #333333;
-  background-color: white;
+#areaselect-range {
+    padding: 15px;
+    margin-bottom: 0px;
+    border: 1px solid #333333;
+    background-color: white;
 }
 
 /*AreaDrawer*/
@@ -171,7 +175,7 @@ header {
     padding-bottom: 5px;
     margin-bottom: 1px;
     border: 1px solid #333333;
-    background: #f8fbaf;
+    background: #e9dfbf;
 }
 
 #area_list {
@@ -184,12 +188,14 @@ header {
   position: relative;
 }
 
+
+
 /* ジャンル選択>のスペース */
-#genreselect-range{
-  padding-top: 5px;
-  margin-bottom: 5px;
-  border: 1px solid #333333;
-  background-color: white;
+#genreselect-range {
+    padding: 15px;
+    margin-bottom: 5px;
+    border: 1px solid #333333;
+    background-color: white;
 }
 
 /*アイコン(<)のスペース*/
@@ -256,18 +262,20 @@ header {
     padding-bottom: 5px;
     margin-bottom: 1px;
     border: 1px solid #333333;
-    background: #f8fbaf;
+    background: #e9dfbf;
 }
 
 #genre_list {
-    padding-left: 110px;
+    padding-left: 85px;
     padding-top: 40px;
 }
 
+
 #actions {
-    padding-left: 870px;
+    padding-left: 555px;
     padding-top: 110px;
 }
+
 
 #sendtojava {
     font-size: 35px;
@@ -280,11 +288,11 @@ header {
 
 /* 文字サイズ */
 .p_size{
-  font-size:20pt
+  font-size:27pt
 }
 
 .button-position {
-    padding-left: 660px;
+    padding-left: 434px;
     padding-top: 70px;
 }
 
@@ -292,8 +300,8 @@ header {
     font-size: 36px;
     width: 152px;
     height: 85px;
-    border-radius: 20px;
-    background-color: #f8fbaf;
+    border-radius: 3px;
+    background-color: #e9dfbf;
     color: #a0522d;
 }
 
@@ -435,10 +443,4 @@ div {
 
 div#area_list {
     font-size: 37px;
-}
-
-input.area {
-    height: 43px;
-    width: 43px;
-    vertical-align: middle;
 }
