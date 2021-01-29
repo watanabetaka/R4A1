@@ -12,6 +12,10 @@
 </div>
 </header>
 
+<script>
+document.getElementsByTagName("title")[0].innerHTML="企業情報入力";
+</script>
+
 <div class=fade>
 
 <div class=cpinfo>
@@ -37,7 +41,7 @@
 <div class=cpinfo_form>
 <p id="file-null" style="display: none; color: red;"> fileを選択してください</p>
 <div class=cpinfo_column>写真</div>
-<input type="file" name="file" id="file" accept=".png, .jpg, .jpeg"><br>
+<input type="file" name="file" id="file" accept="*"><br>
 <canvas id="canvas" width="0" height="0"></canvas>
 <br>
 </div>

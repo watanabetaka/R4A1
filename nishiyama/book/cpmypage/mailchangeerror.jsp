@@ -13,6 +13,10 @@
   </div>
 </header>
 
+<script>
+document.getElementsByTagName("title")[0].innerHTML="メールアドレス変更";
+</script>
+
 <!-- 入力フォーム -->
 <div class=mypage_form_list>
 

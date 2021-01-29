@@ -3,7 +3,7 @@ body{
 }
 
 div#back {
-    margin-top: 0.2%;
+    margin-top: 0.6%;
     font-size: 4.5em;
     float: left;
 }
@@ -17,7 +17,7 @@ div#mypage_title {
     text-align: center;
     font-size: 3em;
     font-weight: 550;
-    margin-top: 1.5%;
+    margin-top: 2.5%;
     margin-bottom: 1%;
 }
 
@@ -90,9 +90,6 @@ input#passchange {
 }
 input#send {
     font-size: 1.5em;
-}
-input#application_submit {
-    font-size: 1em;
 }
 
 input#cpname {

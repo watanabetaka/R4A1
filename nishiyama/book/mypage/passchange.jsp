@@ -12,6 +12,10 @@
   </div>
 </header>
 
+<script>
+document.getElementsByTagName("title")[0].innerHTML="パスワード変更";
+</script>
+
 <div class=fade>
 <!-- 入力フォーム -->
 <div class=mypage_form_list>

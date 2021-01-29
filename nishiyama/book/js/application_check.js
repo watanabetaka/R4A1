@@ -12,7 +12,7 @@ if(message === 'null'){
     $('#view').append('<div class="message">観光地を登録してください</div>')
 
   }else{
-    $('#view').append('<form id="application_form" action="Couponinsert.action"><div class="coupon_application">観光地名を選択してください</div><select class=sightseeing_select name="sightseeing_id" id="select">');
+    $('#view').append('<form id="application_form" action="Couponinsert.action"><div class="coupon_application">観光地名を選択してください</div><select name="sightseeing_id" id="select">');
 
     // 拡張for文的なやつで、id はプロパティではなく、インデックス値を返している
     for (let id in array_sightseeing_id) {
@@ -20,7 +20,7 @@ if(message === 'null'){
     }
 
     $('#select').append('</select>')
-    $('#application_form').append('<br><br><div class="coupon_application">クーポン割引情報</div><input type="text" id="coupon_name" name="coupon_name"><div id="forexample">（例）○○入場料200円引き</div><br><br><input type="submit" id="application_submit" value="申請">');
+    $('#application_form').append('<div class="coupon_application">クーポン割引情報</div><input type="text" id="coupon_name" name="coupon_name"><div id="forexample">（例）○○入場料200円引き</div><input type="submit" id="application_submit" value="申請">');
     $('#view').append('</form>');
   }
 

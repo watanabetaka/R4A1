@@ -9,6 +9,10 @@
   </div>
 </header>
 
+<script>
+document.getElementsByTagName("title")[0].innerHTML="企業画面";
+</script>
+
 <div class=fade>
 <div class=cpoperation>
 <div class=cpoperation_list onclick="location.href='http://<%= ipadress%>:8080/book/cpoperation/Examingflag.action'">

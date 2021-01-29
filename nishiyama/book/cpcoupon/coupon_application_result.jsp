@@ -3,6 +3,9 @@
 <%@page import="bean.Application_Coupon, java.util.List" %>
 <%@include file="../ipadress/ipadress.jsp" %>
 
+<script>
+document.getElementsByTagName("title")[0].innerHTML="クーポン申請";
+</script>
 
 <%-- jqueryをインポート --%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

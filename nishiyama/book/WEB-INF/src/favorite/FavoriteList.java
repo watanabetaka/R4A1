@@ -42,7 +42,7 @@ public class FavoriteList extends HttpServlet {
 			request.setAttribute("list1",list1);
 
 			request.setAttribute("list2",list2);
-			
+
 			request.getRequestDispatcher("/favorite/favoritelist.jsp").forward(request,response); //フォワードを行う
 
 		} catch (Exception e) {
