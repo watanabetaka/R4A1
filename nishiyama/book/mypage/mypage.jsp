@@ -10,6 +10,10 @@
 </div>
 </header>
 
+<script>
+document.getElementsByTagName("title")[0].innerHTML="マイページ";
+</script>
+
 <!-- 会員情報変更ボタン -->
 <div class=fade>
 <div class=mypage>

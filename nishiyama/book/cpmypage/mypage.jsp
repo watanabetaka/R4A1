@@ -9,9 +9,13 @@
     <a href="http://<%= ipadress%>:8080/book/cpoperation/cpoperation.jsp" id ="back_button">＜</a>
   </div>
 <div id="mypage_title">
-企業情報変更　　
+メアド・パスワード変更　　
 </div>
 </header>
+
+<script>
+document.getElementsByTagName("title")[0].innerHTML="メアド・パスワード変更";
+</script>
 
 <!-- 会員情報変更ボタン -->
 <div class=fade>

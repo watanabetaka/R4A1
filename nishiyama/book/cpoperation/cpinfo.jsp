@@ -12,6 +12,10 @@
 </div>
 </header>
 
+<script>
+document.getElementsByTagName("title")[0].innerHTML="企業情報入力";
+</script>
+
 <div class=fade>
 
 <div class=cpinfo>

@@ -2,6 +2,10 @@
 <%@include file="../html/mypage_header.html" %>
 <%@include file="../ipadress/ipadress.jsp" %>
 
+<script>
+document.getElementsByTagName("title")[0].innerHTML="マイページ";
+</script>
+
 <div class=fade>
 
 <div class=success>

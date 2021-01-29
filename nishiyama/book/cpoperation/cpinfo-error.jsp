@@ -1,5 +1,10 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../html/header.html" %>
+
+<script>
+document.getElementsByTagName("title")[0].innerHTML="企業情報入力";
+</script>
+
 <p style="display: block; color: red;"> 既に入力された観光地が登録されています</p>
 <p>企業情報の登録には審査が必要となります。<br>
   企業情報入力後に送信ボタンを押してください。<br>

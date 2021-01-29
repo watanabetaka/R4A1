@@ -2,6 +2,9 @@
 <%@include file="../html/cpoperation_header.html" %>
 <%@include file="../ipadress/ipadress.jsp" %>
 
+<script>
+document.getElementsByTagName("title")[0].innerHTML="メールアドレス変更";
+</script>
 
 <div class=fade>
 

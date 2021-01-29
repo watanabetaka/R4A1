@@ -16,6 +16,10 @@
 </div>
 </header>
 
+<script>
+document.getElementsByTagName("title")[0].innerHTML="クーポン申請";
+</script>
+
 <div class=fade>
 
 <div class=caution>
