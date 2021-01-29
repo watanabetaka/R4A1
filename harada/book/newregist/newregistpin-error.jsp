@@ -12,12 +12,12 @@
 
 </header>
 
-<div id="newregmail_messe">メールで送られた6桁のPINを入力して下さい。
+<div id="newregmail_messe">メールで送られた6桁の暗証番号を入力して下さい。
 </div>
 <form action="Pin.action" method="post">
 <div id = email><input type="pin" id = "pin" name="pin"placeholder="暗証番号6桁"></div>
 <span id="result"></span>
-<div id = mail_error>PINが間違えています<br>再入力してください。</div>
+<div id = mail_error>暗証番号が間違えています<br>再入力してください。</div>
 <div id = sendmail_error><input type="submit" name = "send"id = "send" value="次へ"  ></div>
 </form>
 <%@include file="../html/footer.html" %>

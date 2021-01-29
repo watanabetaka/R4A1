@@ -14,7 +14,7 @@
 <!-- メールアドレス送信のJSPファイルです-->
 <div id = "newregpin_form">
 <form action="Pin.action" method="post">
-    <div id="newregmail_messe">メールで送られた6桁のPINを入力して下さい。
+    <div id="newregmail_messe">メールで送られた6桁の暗証番号を入力して下さい。
   </div>
   <div id = "email"><input type="pin" id = "pin" name="pin"placeholder="暗証番号6桁"></div>
 <span id="result"></span>
